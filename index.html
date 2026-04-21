@@ -3,545 +3,596 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Oluwafunmilayo Animashaun - Professional Business Analyst Portfolio. Expertise in requirements elicitation, stakeholder management, digital transformation, and data-driven insights.">
+    <meta name="description" content="Oluwafunmilayo Animashaun - Professional Business Analyst Portfolio.">
     <title>Oluwafunmilayo Animashaun | Business Analyst</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
-
+        /* ══════════════════════════════════════════
+           DESIGN TOKENS  (single source of truth)
+        ══════════════════════════════════════════ */
         :root {
-            --primary: #1e3a8a;
+            --bg-page:        #0f1623;
+            --bg-surface:     #161e2e;
+            --bg-elevated:    #1c2740;
+            --bg-subtle:      #1e2d45;
+
+            --accent-blue:    #3b82f6;
+            --accent-emerald: #10b981;
+            --accent-blue-dim:#1d4ed8;
+
+            --text-primary:   #e2e8f0;
+            --text-secondary: #94a3b8;
+            --text-muted:     #64748b;
+
+            --border-subtle:  rgba(255,255,255,0.07);
+            --border-default: rgba(255,255,255,0.12);
+            --border-strong:  rgba(255,255,255,0.20);
+
+            --tint-blue:    rgba(59,130,246,0.12);
+            --tint-emerald: rgba(16,185,129,0.12);
+            --tint-amber:   rgba(245,158,11,0.12);
+            --tint-purple:  rgba(139,92,246,0.12);
+            --tint-teal:    rgba(20,184,166,0.12);
+            --tint-rose:    rgba(244,63,94,0.12);
         }
 
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
         body {
             font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-primary);
             overflow-x: hidden;
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
         }
 
-        /* ── NAV LINK underline ── */
-        .nav-link { position: relative; }
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0; height: 2px;
-            bottom: -2px; left: 0;
-            background-color: #1e3a8a;
-            transition: width 0.2s;
-        }
-        .nav-link:hover:after { width: 100%; }
-
-        /* ── SECTION HEADER rule ── */
         .section-header { position: relative; }
         .section-header:after {
             content: '';
             position: absolute;
-            width: 64px; height: 3px;
-            background: linear-gradient(to right, #1e3a8a, #10b981);
-            bottom: -8px; left: 0;
+            width: 56px; height: 3px;
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-emerald));
+            bottom: -10px; left: 0;
             border-radius: 9999px;
         }
 
-        /* ── PROJECT CARD hover ── */
-        .project-card { transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
+        .project-card {
+            transition: transform 0.3s cubic-bezier(0.4,0,0.2,1),
+                        box-shadow 0.3s cubic-bezier(0.4,0,0.2,1),
+                        border-color 0.2s;
+        }
         .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0/.1), 0 8px 10px -6px rgb(0 0 0/.1);
+            transform: translateY(-5px);
+            box-shadow: 0 24px 40px rgba(0,0,0,0.5);
+            border-color: var(--border-strong) !important;
         }
 
-        /* ── MODAL animation ── */
+        .skill-card { transition: border-color 0.2s, background 0.2s; }
+        .skill-card:hover { background: var(--bg-subtle) !important; }
+
         .modal { animation: modalPop 0.3s ease forwards; }
         @keyframes modalPop {
-            0%   { opacity: 0; transform: scale(0.95) translateY(20px); }
+            0%   { opacity: 0; transform: scale(0.95) translateY(16px); }
             100% { opacity: 1; transform: scale(1)    translateY(0); }
         }
 
-        /* ── HERO NAME — clamp so it never overflows ── */
         .hero-name {
             font-size: clamp(2rem, 8vw, 4.5rem);
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: -0.03em;
             line-height: 1;
-            color: #0f172a;
+            color: var(--text-primary);
             margin-bottom: 1rem;
             word-break: break-word;
         }
-
-        /* ── HERO TAGLINE ── */
         .hero-tagline {
-            font-size: clamp(1.5rem, 5vw, 3.5rem);
+            font-size: clamp(1.4rem, 4.5vw, 3rem);
             font-weight: 600;
-            line-height: 1.1;
+            line-height: 1.15;
             letter-spacing: -0.02em;
-            color: #0f172a;
-            margin-bottom: 2rem;
+            color: var(--text-primary);
+            margin-bottom: 1.75rem;
         }
-
-        /* ── STAT NUMBERS ── */
         .stat-number {
             font-size: clamp(1.5rem, 5vw, 2.25rem);
-            font-weight: 600;
+            font-weight: 700;
         }
 
-        /* ── SKILL CARD TAG WRAP ── */
-        .tag-wrap { flex-wrap: wrap; }
-
-        /* ── CONTACT form grid collapses on small screens ── */
-        @media (max-width: 640px) {
-            .contact-grid { grid-template-columns: 1fr !important; }
-            .contact-email-badge { display: none; }
-            .send-btn { width: 100% !important; justify-content: center; }
-        }
-
-        /* ── Stats grid stays 3-col on ≥400px, collapses to 1 below ── */
-        @media (max-width: 399px) {
-            .stats-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
-        }
-
-        /* ── Modal body scroll ── */
-        #project-modal { overflow-y: auto; }
-
-        /* ── Prevent horizontal scroll globally ── */
-        section { overflow-x: hidden; }
-
-        /* ── Skills badge text ── */
         .skill-tag {
-            padding: 0.375rem 0.875rem;
+            padding: 0.35rem 0.8rem;
             font-size: 0.7rem;
             font-weight: 500;
-            background: #f1f5f9;
-            color: #334155;
+            background: var(--bg-subtle);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-subtle);
             border-radius: 9999px;
+        }
+
+        .badge {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            padding: 0.35rem 0.9rem;
+            font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em;
+            border-radius: 9999px;
+        }
+        .badge-blue    { background: var(--tint-blue);              color: #93c5fd; border: 1px solid rgba(59,130,246,0.25); }
+        .badge-emerald { background: var(--tint-emerald);           color: #6ee7b7; border: 1px solid rgba(16,185,129,0.25); }
+        .badge-amber   { background: var(--tint-amber);             color: #fcd34d; border: 1px solid rgba(245,158,11,0.25); }
+        .badge-indigo  { background: rgba(99,102,241,.12);          color: #a5b4fc; border: 1px solid rgba(99,102,241,0.25); }
+        .badge-teal    { background: var(--tint-teal);              color: #5eead4; border: 1px solid rgba(20,184,166,0.25); }
+
+        .meta-chip {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.45rem 1rem;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-default);
+            border-radius: 9999px;
+            font-size: 0.8rem; font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .form-input {
+            width: 100%;
+            background: var(--bg-subtle);
+            border: 1px solid var(--border-default);
+            border-radius: 12px;
+            padding: 0.75rem 1.25rem;
+            color: var(--text-primary);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .form-input::placeholder { color: var(--text-muted); }
+        .form-input:focus { border-color: var(--accent-blue); }
+
+        .divider { border-color: var(--border-subtle); }
+
+        section { overflow-x: hidden; }
+        #project-modal { overflow-y: auto; }
+
+        @media (max-width: 640px) {
+            .contact-grid { grid-template-columns: 1fr !important; }
+            .contact-email-text { display: none; }
+            .send-btn { width: 100% !important; justify-content: center; }
+        }
+        @media (max-width: 399px) {
+            .stats-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ════════════════════════════
-         ABOUT / HERO SECTION
-    ════════════════════════════ -->
-    <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24">
-        <div class="grid md:grid-cols-12 gap-10 md:gap-12 items-center">
+<!-- ══ HERO ══ -->
+<section id="about" style="background: var(--bg-page);"
+         class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-28">
+    <div class="grid md:grid-cols-12 gap-10 md:gap-14 items-center">
 
-            <!-- Profile image -->
-            <div class="md:col-span-5 flex justify-center md:justify-end">
-                <div class="relative">
-                    <div class="absolute -inset-4 bg-gradient-to-br from-[#1e3a8a] to-[#10b981] rounded-3xl rotate-6 opacity-10"></div>
-                    <img src="assets/images/my_profile.jpeg"
-                         alt="Oluwafunmilayo Animashaun - Business Analyst"
-                         class="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover rounded-3xl shadow-2xl border-4 sm:border-8 border-white"
-                         style="filter: contrast(1.05) brightness(1.05);">
-                </div>
-            </div>
-
-            <!-- Bio content -->
-            <div class="md:col-span-7">
-                <p class="text-lg md:text-xl text-slate-600 mb-2">Hi, my name is</p>
-
-                <h1 class="hero-name">Oluwafunmilayo Animashaun</h1>
-
-                <div class="inline-flex items-center gap-x-2 px-4 py-2 bg-slate-100 text-slate-600 text-xs font-medium rounded-3xl mb-5">
-                    <i class="fa-solid fa-briefcase"></i>
-                    BUSINESS ANALYST
-                </div>
-
-                <h2 class="hero-tagline">
-                    Turning business challenges into digital solutions
-                </h2>
-
-                <p class="text-base md:text-lg text-slate-600 max-w-2xl mb-8">
-                    Experienced Business Analyst specialising in requirements elicitation, stakeholder engagement, process transformation, and data-driven decision making.
-                    I bridge the gap between business needs and technical delivery across healthcare, finance, and retail sectors.
-                </p>
-
-                <!-- Meta badges -->
-                <div class="flex flex-wrap gap-3 text-sm">
-                    <div class="flex items-center gap-x-2 bg-white border border-slate-200 shadow-sm rounded-2xl px-4 py-2.5">
-                        <i class="fa-solid fa-location-dot text-[#1e3a8a]"></i>
-                        <span class="font-medium">United Kingdom</span>
-                    </div>
-                    <div class="flex items-center gap-x-2 bg-white border border-slate-200 shadow-sm rounded-2xl px-4 py-2.5">
-                        <i class="fa-solid fa-rocket text-[#10b981]"></i>
-                        <span class="font-medium">Delivering high-impact projects</span>
-                    </div>
-                    <div class="flex items-center gap-x-2 bg-white border border-slate-200 shadow-sm rounded-2xl px-4 py-2.5">
-                        <i class="fa-solid fa-chart-line text-[#1e3a8a]"></i>
-                        <span class="font-medium">Certified in Business Analysis &amp; Data Analytics</span>
-                    </div>
-                </div>
-
-                <!-- Stats -->
-                <div class="mt-10 stats-grid grid grid-cols-3 gap-6 border-t border-slate-100 pt-10">
-                    <div>
-                        <div class="stat-number text-[#1e3a8a]">40%</div>
-                        <p class="text-xs text-slate-500 mt-1">Average reduction in process cycle time across projects</p>
-                    </div>
-                    <div>
-                        <div class="stat-number text-[#10b981]">1000+</div>
-                        <p class="text-xs text-slate-500 mt-1">Orders analysed in retail performance dashboard</p>
-                    </div>
-                    <div>
-                        <div class="stat-number text-[#1e3a8a]">5 mins</div>
-                        <p class="text-xs text-slate-500 mt-1">Target loan approval time achieved in banking transformation</p>
-                    </div>
-                </div>
+        <div class="md:col-span-5 flex justify-center md:justify-end">
+            <div class="relative">
+                <div class="absolute -inset-5 rounded-3xl rotate-6 opacity-20"
+                     style="background: linear-gradient(135deg, var(--accent-blue), var(--accent-emerald));"></div>
+                <img src="assets/images/my_profile.jpeg"
+                     alt="Oluwafunmilayo Animashaun - Business Analyst"
+                     class="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover rounded-3xl shadow-2xl"
+                     style="border: 4px solid var(--border-strong); filter: contrast(1.05) brightness(0.95);">
             </div>
         </div>
-    </section>
 
-    <!-- ════════════════════════════
-         SKILLS SECTION
-    ════════════════════════════ -->
-    <section id="skills" class="bg-slate-50 py-12 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-10 md:mb-12">
-                <span class="px-4 py-1.5 text-xs font-semibold tracking-widest bg-[#1e3a8a] text-white rounded-3xl">EXPERTISE</span>
-                <h2 class="text-3xl md:text-4xl font-semibold text-slate-900 mt-3 section-header">Core Competencies</h2>
+        <div class="md:col-span-7">
+            <p class="text-base md:text-lg mb-2" style="color: var(--text-secondary);">Hi, my name is</p>
+            <h1 class="hero-name">Oluwafunmilayo Animashaun</h1>
+            <div class="badge badge-blue mb-5">
+                <i class="fa-solid fa-briefcase"></i> BUSINESS ANALYST
+            </div>
+            <h2 class="hero-tagline">Turning business challenges<br>into digital solutions</h2>
+            <p class="text-sm md:text-base max-w-2xl mb-8 leading-relaxed" style="color: var(--text-secondary);">
+                Experienced Business Analyst specialising in requirements elicitation, stakeholder engagement,
+                process transformation, and data-driven decision making. I bridge the gap between business needs
+                and technical delivery across healthcare, finance, and retail sectors.
+            </p>
+
+            <div class="flex flex-wrap gap-3">
+                <span class="meta-chip"><i class="fa-solid fa-location-dot" style="color: var(--accent-blue);"></i>United Kingdom</span>
+                <span class="meta-chip"><i class="fa-solid fa-rocket" style="color: var(--accent-emerald);"></i>Delivering high-impact projects</span>
+                <span class="meta-chip"><i class="fa-solid fa-chart-line" style="color: var(--accent-blue);"></i>Certified in Business Analysis &amp; Data Analytics</span>
             </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                <!-- Card 1 -->
-                <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100 hover:border-[#1e3a8a]/30 transition-colors">
-                    <div class="w-11 h-11 bg-[#1e3a8a]/10 text-[#1e3a8a] rounded-2xl flex items-center justify-center text-2xl mb-5">📋</div>
-                    <h3 class="text-xl font-semibold mb-3">Requirements &amp; Analysis</h3>
-                    <ul class="space-y-2.5 text-slate-600 text-sm">
-                        <li class="flex items-start gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5 shrink-0"></i>Business Requirements Documents (BRD)</li>
-                        <li class="flex items-start gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5 shrink-0"></i>Functional &amp; Non-functional Requirements</li>
-                        <li class="flex items-start gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5 shrink-0"></i>As-Is / To-Be Process Mapping</li>
-                        <li class="flex items-start gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5 shrink-0"></i>User Stories &amp; Acceptance Criteria</li>
-                    </ul>
+            <div class="mt-10 stats-grid grid grid-cols-3 gap-6 border-t pt-10 divider">
+                <div>
+                    <div class="stat-number" style="color: var(--accent-blue);">40%</div>
+                    <p class="text-xs mt-1" style="color: var(--text-muted);">Average reduction in process cycle time across projects</p>
                 </div>
-
-                <!-- Card 2 -->
-                <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100 hover:border-[#1e3a8a]/30 transition-colors">
-                    <div class="w-11 h-11 bg-[#10b981]/10 text-[#10b981] rounded-2xl flex items-center justify-center text-2xl mb-5">👥</div>
-                    <h3 class="text-xl font-semibold mb-3">Stakeholder Management</h3>
-                    <ul class="space-y-2.5 text-slate-600 text-sm">
-                        <li class="flex items-start gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5 shrink-0"></i>RACI Matrix Development</li>
-                        <li class="flex items-start gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5 shrink-0"></i>Power/Interest Stakeholder Mapping</li>
-                        <li class="flex items-start gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5 shrink-0"></i>Stakeholder Communication Plans</li>
-                        <li class="flex items-start gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5 shrink-0"></i>Requirements Elicitation &amp; Workshops</li>
-                    </ul>
+                <div>
+                    <div class="stat-number" style="color: var(--accent-emerald);">1000+</div>
+                    <p class="text-xs mt-1" style="color: var(--text-muted);">Orders analysed in retail performance dashboard</p>
                 </div>
-
-                <!-- Card 3 -->
-                <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100 hover:border-amber-400/30 transition-colors">
-                    <div class="w-11 h-11 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center text-2xl mb-5">📊</div>
-                    <h3 class="text-xl font-semibold mb-3">Data &amp; Analytics</h3>
-                    <ul class="space-y-2.5 text-slate-600 text-sm">
-                        <li class="flex items-start gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5 shrink-0"></i>SQL Query Development &amp; Analysis</li>
-                        <li class="flex items-start gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5 shrink-0"></i>Power BI Dashboards &amp; Visualisation</li>
-                        <li class="flex items-start gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5 shrink-0"></i>Excel Pivot Tables &amp; KPI Reporting</li>
-                        <li class="flex items-start gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5 shrink-0"></i>Revenue, Profit &amp; Performance Metrics</li>
-                    </ul>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100 hover:border-purple-400/30 transition-colors">
-                    <div class="w-11 h-11 bg-purple-500/10 text-purple-500 rounded-2xl flex items-center justify-center text-2xl mb-5">🚀</div>
-                    <h3 class="text-xl font-semibold mb-3">Digital Transformation</h3>
-                    <ul class="space-y-2.5 text-slate-600 text-sm">
-                        <li class="flex items-start gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5 shrink-0"></i>Mobile-First Solutions &amp; Portals</li>
-                        <li class="flex items-start gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5 shrink-0"></i>Change Management &amp; Training Plans</li>
-                        <li class="flex items-start gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5 shrink-0"></i>User Acceptance Testing (UAT)</li>
-                        <li class="flex items-start gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5 shrink-0"></i>Go-Live &amp; Post-Implementation Support</li>
-                    </ul>
-                </div>
-
-                <!-- Card 5 — Tools -->
-                <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100 hover:border-teal-400/30 transition-colors">
-                    <div class="w-11 h-11 bg-teal-500/10 text-teal-500 rounded-2xl flex items-center justify-center text-2xl mb-5">🔧</div>
-                    <h3 class="text-xl font-semibold mb-4">Tools &amp; Platforms</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Power BI</span>
-                        <span class="skill-tag">Excel / Pivot Tables</span>
-                        <span class="skill-tag">Microsoft 365</span>
-                        <span class="skill-tag">Jira / Trello</span>
-                        <span class="skill-tag">BRD Documentation</span>
-                        <span class="skill-tag">RACI &amp; Stakeholder Tools</span>
-                    </div>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100 hover:border-rose-400/30 transition-colors">
-                    <div class="w-11 h-11 bg-rose-500/10 text-rose-500 rounded-2xl flex items-center justify-center text-2xl mb-5">📈</div>
-                    <h3 class="text-xl font-semibold mb-3">Business Impact</h3>
-                    <ul class="space-y-2.5 text-slate-600 text-sm">
-                        <li class="flex items-start gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5 shrink-0"></i>Reduced manual workload by 60%+</li>
-                        <li class="flex items-start gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5 shrink-0"></i>Eliminated 40% abandonment rate in processes</li>
-                        <li class="flex items-start gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5 shrink-0"></i>Delivered real-time dashboards &amp; insights</li>
-                        <li class="flex items-start gap-x-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5 shrink-0"></i>Improved stakeholder alignment &amp; adoption</li>
-                    </ul>
+                <div>
+                    <div class="stat-number" style="color: var(--accent-blue);">5 mins</div>
+                    <p class="text-xs mt-1" style="color: var(--text-muted);">Target loan approval time achieved in banking transformation</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- ════════════════════════════
-         PROJECTS SECTION
-    ════════════════════════════ -->
-    <section id="projects" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24">
-        <div class="mb-10 md:mb-12">
-            <span class="px-4 py-1.5 text-xs font-semibold tracking-widest bg-[#10b981] text-white rounded-3xl">CASE STUDIES</span>
-            <h2 class="text-3xl md:text-4xl font-semibold text-slate-900 mt-3 section-header">Selected Projects</h2>
-            <p class="text-slate-600 mt-4 max-w-md text-sm md:text-base">Real-world examples of how I deliver measurable business value through structured analysis and transformation.</p>
-        </div>
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Project 1 -->
-            <div onclick="showProjectModal(1)" class="project-card cursor-pointer bg-white rounded-3xl overflow-hidden border border-slate-100">
-                <div class="h-2 bg-gradient-to-r from-[#1e3a8a] to-[#10b981]"></div>
-                <div class="p-6 md:p-8">
-                    <div class="flex justify-between items-start mb-5">
-                        <div class="text-xs uppercase font-semibold tracking-widest px-3 py-1 bg-teal-50 text-teal-700 rounded-3xl">Healthcare • Digital Portal</div>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-slate-300 text-base ml-2 shrink-0"></i>
-                    </div>
-                    <h3 class="text-lg md:text-xl font-semibold leading-tight mb-3">SmilePoint Dental Clinic – Online Appointment Booking Portal</h3>
-                    <p class="text-slate-600 text-sm line-clamp-4">Streamlined manual scheduling processes, reduced patient wait times, and eliminated booking errors through a modern online portal.</p>
-                    <div class="mt-6 flex items-center justify-between text-xs text-slate-500">
-                        <div class="flex -space-x-2">
-                            <div class="w-6 h-6 bg-slate-100 rounded-full flex items-center justify-center text-xs">R</div>
-                            <div class="w-6 h-6 bg-slate-100 rounded-full flex items-center justify-center text-xs">S</div>
-                        </div>
-                        <span class="font-medium text-right">RACI • Stakeholder • Comms Plan</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div onclick="showProjectModal(2)" class="project-card cursor-pointer bg-white rounded-3xl overflow-hidden border border-slate-100">
-                <div class="h-2 bg-gradient-to-r from-[#1e3a8a] to-[#10b981]"></div>
-                <div class="p-6 md:p-8">
-                    <div class="flex justify-between items-start mb-5">
-                        <div class="text-xs uppercase font-semibold tracking-widest px-3 py-1 bg-indigo-50 text-indigo-700 rounded-3xl">Banking • Digital Lending</div>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-slate-300 text-base ml-2 shrink-0"></i>
-                    </div>
-                    <h3 class="text-lg md:text-xl font-semibold leading-tight mb-3">Apex Global Bank – Project Zenith (Instant Loan Solution)</h3>
-                    <p class="text-slate-600 text-sm line-clamp-4">Authored full BRD for a mobile-first instant personal loan platform, reducing approval time from 7–10 days to under 5 minutes and eliminating 40% customer abandonment.</p>
-                    <div class="mt-6 flex items-center justify-between text-xs text-slate-500">
-                        <div class="flex gap-x-4">
-                            <span class="flex items-center gap-1"><i class="fa-solid fa-file-lines"></i>BRD</span>
-                            <span class="flex items-center gap-1"><i class="fa-solid fa-diagram-project"></i>Process Flows</span>
-                        </div>
-                        <span class="font-medium">NIN • e-Signature</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div onclick="showProjectModal(3)" class="project-card cursor-pointer bg-white rounded-3xl overflow-hidden border border-slate-100 sm:col-span-2 lg:col-span-1">
-                <div class="h-2 bg-gradient-to-r from-[#1e3a8a] to-[#10b981]"></div>
-                <div class="p-6 md:p-8">
-                    <div class="flex justify-between items-start mb-5">
-                        <div class="text-xs uppercase font-semibold tracking-widest px-3 py-1 bg-amber-50 text-amber-700 rounded-3xl">Retail • Analytics</div>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-slate-300 text-base ml-2 shrink-0"></i>
-                    </div>
-                    <h3 class="text-lg md:text-xl font-semibold leading-tight mb-3">GreenLeaf Stores – Sales Performance Dashboard</h3>
-                    <p class="text-slate-600 text-sm line-clamp-4">Built interactive Power BI &amp; Excel dashboard analysing 1,000+ orders. Delivered key insights on revenue (£117k), profit (£81k), delivery rates, and category performance.</p>
-                    <div class="mt-6 flex items-center justify-between text-xs text-slate-500">
-                        <div class="flex gap-x-4">
-                            <span class="flex items-center gap-1"><i class="fa-solid fa-table"></i>SQL</span>
-                            <span class="flex items-center gap-1"><i class="fa-solid fa-chart-pie"></i>Power BI</span>
-                        </div>
-                        <span class="font-medium">KPI • Pivot Tables</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ════════════════════════════
-         CONTACT SECTION
-    ════════════════════════════ -->
-    <section id="contact" class="bg-slate-900 text-white py-12 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-12 gap-10 md:gap-16">
-
-                <!-- Left col -->
-                <div class="md:col-span-5">
-                    <h2 class="text-3xl md:text-4xl font-semibold text-white mb-4">Let's connect</h2>
-                    <p class="text-slate-400 text-base md:text-lg">Whether you're looking for a Business Analyst to join your team or need expert support on your next digital transformation project, I'm currently open to opportunities in the UK.</p>
-
-                    <div class="mt-8 md:mt-12">
-                        <a href="mailto:olufunmianimashaun2020@gmail.com"
-                           class="inline-flex flex-wrap items-center gap-3 text-base font-medium group">
-                            <span class="bg-white text-slate-900 rounded-3xl px-6 py-4 flex items-center gap-3 hover:bg-emerald-400 hover:text-white transition-colors">
-                                Email me directly
-                                <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-                            </span>
-                            <span class="text-emerald-400 text-sm break-all contact-email-badge">olufunmianimashaun2020@gmail.com</span>
-                        </a>
-                    </div>
-
-                    <div class="mt-10 text-xs uppercase tracking-widest text-slate-400">Available for contract or permanent roles in the UK</div>
-                </div>
-
-                <!-- Form col -->
-                <div class="md:col-span-7 bg-white/10 backdrop-blur-xl rounded-3xl p-6 md:p-12">
-                    <form id="contact-form" onsubmit="handleSubmit(event)" class="space-y-6 md:space-y-8">
-                        <div class="contact-grid grid grid-cols-2 gap-4 md:gap-6">
-                            <div>
-                                <label class="block text-xs font-medium text-slate-400 mb-2">YOUR NAME</label>
-                                <input type="text" id="name" required
-                                       class="w-full bg-white/10 border border-white/30 focus:border-white rounded-2xl px-4 py-3 md:px-6 md:py-4 text-white placeholder:text-slate-400 outline-none">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-medium text-slate-400 mb-2">YOUR EMAIL</label>
-                                <input type="email" id="email" required
-                                       class="w-full bg-white/10 border border-white/30 focus:border-white rounded-2xl px-4 py-3 md:px-6 md:py-4 text-white placeholder:text-slate-400 outline-none">
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-medium text-slate-400 mb-2">MESSAGE</label>
-                            <textarea id="message" rows="5" required placeholder="Tell me about your project or opportunity..."
-                                      class="w-full bg-white/10 border border-white/30 focus:border-white rounded-3xl px-4 py-3 md:px-6 md:py-4 text-white placeholder:text-slate-400 outline-none resize-none"></textarea>
-                        </div>
-
-                        <button type="submit"
-                                class="send-btn w-full sm:w-auto bg-white text-slate-900 hover:bg-emerald-400 hover:text-white font-semibold text-base md:text-lg px-10 md:px-16 py-4 md:py-5 rounded-3xl flex items-center gap-3 transition-colors">
-                            SEND MESSAGE
-                            <i class="fa-solid fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ════════════════════════════
-         PROJECT MODALS
-    ════════════════════════════ -->
-    <div id="project-modal"
-         onclick="if(event.target === this) hideModal()"
-         class="hidden fixed inset-0 bg-black/70 items-center justify-center z-[9999] p-4"
-         style="overflow-y:auto;">
-        <div onclick="event.stopImmediatePropagation()"
-             class="modal bg-white w-full max-w-2xl rounded-3xl my-8 mx-auto">
-            <div class="sticky top-0 bg-white border-b px-6 md:px-8 py-5 flex items-center justify-between z-10 rounded-t-3xl">
-                <div id="modal-title" class="text-lg md:text-xl font-semibold pr-4 leading-tight"></div>
-                <button onclick="hideModal()" class="w-9 h-9 flex-shrink-0 flex items-center justify-center text-2xl text-slate-400 hover:text-slate-900">×</button>
-            </div>
-            <div id="modal-content" class="px-6 md:px-8 pb-8 pt-4 text-slate-600 leading-relaxed text-sm md:text-base"></div>
         </div>
     </div>
+</section>
 
-    <script>
-        /* ── Project data ── */
-        const projects = {
-            1: {
-                title: "SmilePoint Dental Clinic – Online Appointment Booking Portal",
-                content: `
-                    <div>
-                        <p class="text-base"><strong>Business Problem:</strong> Inefficient manual scheduling, long patient wait times, frequent booking errors, high staff workload, missed appointments, lost revenue, and damaged reputation.</p>
-                        <h4 class="text-lg font-semibold mt-6 mb-3">Key Deliverables</h4>
-                        <ul class="space-y-3">
-                            <li class="flex gap-x-3 items-start"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 shrink-0"></i>Comprehensive Stakeholder Register &amp; Analysis (Power/Interest Grid)</li>
-                            <li class="flex gap-x-3 items-start"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 shrink-0"></i>RACI Matrix for all project tasks and stakeholders</li>
-                            <li class="flex gap-x-3 items-start"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 shrink-0"></i>Detailed Stakeholder Communication Plan (channels, frequency, owners)</li>
-                            <li class="flex gap-x-3 items-start"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 shrink-0"></i>Business problems &amp; objectives documentation</li>
-                            <li class="flex gap-x-3 items-start"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 shrink-0"></i>Requirements gathering &amp; user workflow design</li>
-                            <li class="flex gap-x-3 items-start"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 shrink-0"></i>Training &amp; change management plan</li>
-                        </ul>
-                        <h4 class="text-lg font-semibold mt-6 mb-2">Impact</h4>
-                        <p>Modernised clinic operations, improved patient experience, reduced no-shows, and positioned the clinic for scalable growth.</p>
-                        <div class="bg-slate-50 p-5 rounded-2xl mt-6 flex items-center justify-center text-xs font-medium border">
-                            <i class="fa-solid fa-file-excel mr-2"></i>
-                            Supporting documents: RACI Matrix • Stakeholder Matrix • Communication Plan
+<!-- ══ SKILLS ══ -->
+<section id="skills" style="background: var(--bg-surface);" class="py-14 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-14">
+            <span class="badge badge-blue">EXPERTISE</span>
+            <h2 class="text-3xl md:text-4xl font-semibold mt-4 section-header"
+                style="color: var(--text-primary);">Core Competencies</h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+            <div class="skill-card rounded-3xl p-6 md:p-8 border"
+                 style="background: var(--bg-elevated); border-color: var(--border-subtle);">
+                <div class="w-11 h-11 rounded-2xl flex items-center justify-center text-2xl mb-5"
+                     style="background: var(--tint-blue);">📋</div>
+                <h3 class="text-lg font-semibold mb-4" style="color: var(--text-primary);">Requirements &amp; Analysis</h3>
+                <ul class="space-y-2.5 text-sm" style="color: var(--text-secondary);">
+                    <li class="flex items-start gap-x-2"><i class="fa-solid fa-check mt-0.5 shrink-0" style="color: var(--accent-emerald);"></i>Business Requirements Documents (BRD)</li>
+                    <li class="flex items-start gap-x-2"><i class="fa-solid fa-check mt-0.5 shrink-0" style="color: var(--accent-emerald);"></i>Functional &amp; Non-functional Requirements</li>
+                    <li class="flex items-start gap-x-2"><i class="fa-solid fa-check mt-0.5 shrink-0" style="color: var(--accent-emerald);"></i>As-Is / To-Be Process Mapping</li>
+                    <li class="flex items-start gap-x-2"><i class="fa-solid fa-check mt-0.5 shrink-0" style="color: var(--accent-emerald);"></i>User Stories &amp; Acceptance Criteria</li>
+                </ul>
+            </div>
+
+            <div class="skill-card rounded-3xl p-6 md:p-8 border"
+                 style="background: var(--bg-elevated); border-color: var(--border-subtle);">
+                <div class="w-11 h-11 rounded-2xl flex items-center justify-center text-2xl mb-5"
+                     style="background: var(--tint-emerald);">👥</div>
+                <h3 class="text-lg font-semibold mb-4" style="color: var(--text-primary);">Stakeholder Management</h3>
+                <ul class="space-y-2.5 text-sm" style="color: var(--text-secondary);">
+                    <li class="flex items-start gap-x-2"><i class="fa-solid fa-check mt-0.5 shrink-0" style="color: var(--accent-emerald);"></i>RACI Matrix Development</li>
+                    <li class="flex items-start gap-x-2"><i class="fa-solid fa-check mt-0.5 shrink-0" style="color: var(--accent-emerald);"></i>Power/Interest Stakeholder Mapping</li>
+                    <li class="flex items-start gap-x-2"><i class="fa-solid fa-check mt-0.5 shrink-0" style="color: var(--accent-emerald);"></i>Stakeholder Communication Plans</li>
+                    <li class="flex items-start gap-x-2"><i class="fa-solid fa-check mt-0.5 shrink-0" style="color: var(--accent-emerald);"></i>Requirements Elicitation &amp; Workshops</li>
+                </ul>
+            </div>
+
+            <div class="skill-card rounded-3xl p-6 md:p-8 border"
+                 style="background: var(--bg-elevated); border-color: var(--border-subtle);">
+                <div class="w-11 h-11 rounded-2xl flex items-center justify-center text-2xl mb-5"
+                     style="background: var(--tint-amber);">📊</div>
+                <h3 class="text-lg font-semibold mb-4" style="color: var(--text-primary);">Data &amp; Analytics</h3>
+                <ul class="space-y-2.5 text-sm" style="color: var(--text-secondary);">
+                    <li class="flex items-start gap-x-2"><i class="fa-solid fa-check mt-0.5 shrink-0" style="color: var(--accent-emerald);"></i>SQL Query Development &amp; Analysis</li>
+                    <li class="flex items-start gap-x-2"><i class="fa-solid fa-check mt-0.5 shrink-0" style="color: var(--accent-emerald);"></i>Power BI Dashboards &amp; Visualisation</li>
+                    <li class="flex items-start gap-x-2"><i class="fa-solid fa-check mt-0.5 shrink-0" style="color: var(--accent-emerald);"></i>Excel Pivot Tables &amp; KPI Reporting</li>
+                    <li class="flex items-start gap-x-2"><i class="fa-solid fa-check mt-0.5 shrink-0" style="color: var(--accent-emerald);"></i>Revenue, Profit &amp; Performance Metrics</li>
+                </ul>
+            </div>
+
+            <div class="skill-card rounded-3xl p-6 md:p-8 border"
+                 style="background: var(--bg-elevated); border-color: var(--border-subtle);">
+                <div class="w-11 h-11 rounded-2xl flex items-center justify-center text-2xl mb-5"
+                     style="background: var(--tint-purple);">🚀</div>
+                <h3 class="text-lg font-semibold mb-4" style="color: var(--text-primary);">Digital Transformation</h3>
+                <ul class="space-y-2.5 text-sm" style="color: var(--text-secondary);">
+                    <li class="flex items-start gap-x-2"><i class="fa-solid fa-check mt-0.5 shrink-0" style="color: var(--accent-emerald);"></i>Mobile-First Solutions &amp; Portals</li>
+                    <li class="flex items-start gap-x-2"><i class="fa-solid fa-check mt-0.5 shrink-0" style="color: var(--accent-emerald);"></i>Change Management &amp; Training Plans</li>
+                    <li class="flex items-start gap-x-2"><i class="fa-solid fa-check mt-0.5 shrink-0" style="color: var(--accent-emerald);"></i>User Acceptance Testing (UAT)</li>
+                    <li class="flex items-start gap-x-2"><i class="fa-solid fa-check mt-0.5 shrink-0" style="color: var(--accent-emerald);"></i>Go-Live &amp; Post-Implementation Support</li>
+                </ul>
+            </div>
+
+            <div class="skill-card rounded-3xl p-6 md:p-8 border"
+                 style="background: var(--bg-elevated); border-color: var(--border-subtle);">
+                <div class="w-11 h-11 rounded-2xl flex items-center justify-center text-2xl mb-5"
+                     style="background: var(--tint-teal);">🔧</div>
+                <h3 class="text-lg font-semibold mb-4" style="color: var(--text-primary);">Tools &amp; Platforms</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">Excel / Pivot Tables</span>
+                    <span class="skill-tag">Microsoft 365</span>
+                    <span class="skill-tag">Jira / Trello</span>
+                    <span class="skill-tag">BRD Documentation</span>
+                    <span class="skill-tag">RACI &amp; Stakeholder Tools</span>
+                </div>
+            </div>
+
+            <div class="skill-card rounded-3xl p-6 md:p-8 border"
+                 style="background: var(--bg-elevated); border-color: var(--border-subtle);">
+                <div class="w-11 h-11 rounded-2xl flex items-center justify-center text-2xl mb-5"
+                     style="background: var(--tint-rose);">📈</div>
+                <h3 class="text-lg font-semibold mb-4" style="color: var(--text-primary);">Business Impact</h3>
+                <ul class="space-y-2.5 text-sm" style="color: var(--text-secondary);">
+                    <li class="flex items-start gap-x-2"><i class="fa-solid fa-check mt-0.5 shrink-0" style="color: var(--accent-emerald);"></i>Reduced manual workload by 60%+</li>
+                    <li class="flex items-start gap-x-2"><i class="fa-solid fa-check mt-0.5 shrink-0" style="color: var(--accent-emerald);"></i>Eliminated 40% abandonment rate in processes</li>
+                    <li class="flex items-start gap-x-2"><i class="fa-solid fa-check mt-0.5 shrink-0" style="color: var(--accent-emerald);"></i>Delivered real-time dashboards &amp; insights</li>
+                    <li class="flex items-start gap-x-2"><i class="fa-solid fa-check mt-0.5 shrink-0" style="color: var(--accent-emerald);"></i>Improved stakeholder alignment &amp; adoption</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ══ PROJECTS ══ -->
+<section id="projects" style="background: var(--bg-page);"
+         class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-24">
+    <div class="mb-14">
+        <span class="badge badge-emerald">CASE STUDIES</span>
+        <h2 class="text-3xl md:text-4xl font-semibold mt-4 mb-3 section-header"
+            style="color: var(--text-primary);">Selected Projects</h2>
+        <p class="mt-6 text-sm md:text-base max-w-md" style="color: var(--text-secondary);">
+            Real-world examples of how I deliver measurable business value through structured analysis and transformation.
+        </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div onclick="showProjectModal(1)" class="project-card cursor-pointer rounded-3xl overflow-hidden border"
+             style="background: var(--bg-surface); border-color: var(--border-subtle);">
+            <div class="h-1.5" style="background: linear-gradient(to right, var(--accent-blue), var(--accent-emerald));"></div>
+            <div class="p-6 md:p-8">
+                <div class="flex justify-between items-start mb-5">
+                    <span class="badge badge-teal">Healthcare • Digital Portal</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-base ml-2 shrink-0" style="color: var(--text-muted);"></i>
+                </div>
+                <h3 class="text-base md:text-lg font-semibold leading-snug mb-3" style="color: var(--text-primary);">
+                    SmilePoint Dental Clinic – Online Appointment Booking Portal
+                </h3>
+                <p class="text-sm line-clamp-4" style="color: var(--text-secondary);">
+                    Streamlined manual scheduling processes, reduced patient wait times, and eliminated booking errors through a modern online portal.
+                </p>
+                <div class="mt-6 flex items-center justify-between text-xs" style="color: var(--text-muted);">
+                    <div class="flex -space-x-2">
+                        <div class="w-6 h-6 rounded-full flex items-center justify-center text-xs"
+                             style="background: var(--bg-subtle); color: var(--text-secondary);">R</div>
+                        <div class="w-6 h-6 rounded-full flex items-center justify-center text-xs"
+                             style="background: var(--bg-subtle); color: var(--text-secondary);">S</div>
+                    </div>
+                    <span class="font-medium">RACI • Stakeholder • Comms</span>
+                </div>
+            </div>
+        </div>
+
+        <div onclick="showProjectModal(2)" class="project-card cursor-pointer rounded-3xl overflow-hidden border"
+             style="background: var(--bg-surface); border-color: var(--border-subtle);">
+            <div class="h-1.5" style="background: linear-gradient(to right, var(--accent-blue), var(--accent-emerald));"></div>
+            <div class="p-6 md:p-8">
+                <div class="flex justify-between items-start mb-5">
+                    <span class="badge badge-indigo">Banking • Digital Lending</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-base ml-2 shrink-0" style="color: var(--text-muted);"></i>
+                </div>
+                <h3 class="text-base md:text-lg font-semibold leading-snug mb-3" style="color: var(--text-primary);">
+                    Apex Global Bank – Project Zenith (Instant Loan Solution)
+                </h3>
+                <p class="text-sm line-clamp-4" style="color: var(--text-secondary);">
+                    Authored full BRD for a mobile-first instant personal loan platform, reducing approval time from 7–10 days to under 5 minutes and eliminating 40% customer abandonment.
+                </p>
+                <div class="mt-6 flex items-center justify-between text-xs" style="color: var(--text-muted);">
+                    <div class="flex gap-x-4">
+                        <span class="flex items-center gap-1"><i class="fa-solid fa-file-lines"></i>BRD</span>
+                        <span class="flex items-center gap-1"><i class="fa-solid fa-diagram-project"></i>Process Flows</span>
+                    </div>
+                    <span class="font-medium">NIN • e-Sig</span>
+                </div>
+            </div>
+        </div>
+
+        <div onclick="showProjectModal(3)" class="project-card cursor-pointer rounded-3xl overflow-hidden border sm:col-span-2 lg:col-span-1"
+             style="background: var(--bg-surface); border-color: var(--border-subtle);">
+            <div class="h-1.5" style="background: linear-gradient(to right, var(--accent-blue), var(--accent-emerald));"></div>
+            <div class="p-6 md:p-8">
+                <div class="flex justify-between items-start mb-5">
+                    <span class="badge badge-amber">Retail • Analytics</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-base ml-2 shrink-0" style="color: var(--text-muted);"></i>
+                </div>
+                <h3 class="text-base md:text-lg font-semibold leading-snug mb-3" style="color: var(--text-primary);">
+                    GreenLeaf Stores – Sales Performance Dashboard
+                </h3>
+                <p class="text-sm line-clamp-4" style="color: var(--text-secondary);">
+                    Built interactive Power BI &amp; Excel dashboard analysing 1,000+ orders. Delivered key insights on revenue (£117k), profit (£81k), delivery rates, and category performance.
+                </p>
+                <div class="mt-6 flex items-center justify-between text-xs" style="color: var(--text-muted);">
+                    <div class="flex gap-x-4">
+                        <span class="flex items-center gap-1"><i class="fa-solid fa-table"></i>SQL</span>
+                        <span class="flex items-center gap-1"><i class="fa-solid fa-chart-pie"></i>Power BI</span>
+                    </div>
+                    <span class="font-medium">KPI • Pivot Tables</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact" style="background: var(--bg-surface);" class="py-14 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-12 gap-10 md:gap-16">
+
+            <div class="md:col-span-5">
+                <span class="badge badge-blue mb-4">GET IN TOUCH</span>
+                <h2 class="text-3xl md:text-4xl font-semibold mt-4 mb-4" style="color: var(--text-primary);">Let's connect</h2>
+                <p class="text-sm md:text-base leading-relaxed" style="color: var(--text-secondary);">
+                    Whether you're looking for a Business Analyst to join your team or need expert support on your next digital transformation project, I'm currently open to opportunities.
+                </p>
+                <div class="mt-8">
+                    <a href="mailto:olufunmianimashaun2020@gmail.com"
+                       class="inline-flex flex-wrap items-center gap-3 text-sm font-medium group">
+                        <span class="rounded-2xl px-6 py-4 flex items-center gap-3 transition-colors"
+                              style="background: var(--accent-blue); color: #fff;"
+                              onmouseover="this.style.background='var(--accent-blue-dim)'"
+                              onmouseout="this.style.background='var(--accent-blue)'">
+                            Email me directly
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </span>
+                        <span class="text-sm break-all contact-email-text" style="color: var(--accent-emerald);">
+                            olufunmianimashaun2020@gmail.com
+                        </span>
+                    </a>
+                </div>
+                <div class="mt-8 text-xs uppercase tracking-widest" style="color: var(--text-muted);">
+                    Available for contract or permanent roles
+                </div>
+            </div>
+
+            <div class="md:col-span-7 rounded-3xl p-6 md:p-10 border"
+                 style="background: var(--bg-elevated); border-color: var(--border-default);">
+                <form id="contact-form" onsubmit="handleSubmit(event)" class="space-y-5">
+                    <div class="contact-grid grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-medium mb-2" style="color: var(--text-muted);">YOUR NAME</label>
+                            <input type="text" id="name" required placeholder="Jane Smith" class="form-input">
                         </div>
-                    </div>`
-            },
-            2: {
-                title: "Apex Global Bank – Project Zenith (Instant Personal Loan Solution)",
-                content: `
-                    <div>
-                        <p class="text-base"><strong>Project Purpose:</strong> Replace a fully manual 7–10 day loan approval process with a fully digital, mobile-first instant loan solution reducing approval time to under 5 minutes and eliminating 40% customer abandonment.</p>
-                        <h4 class="text-lg font-semibold mt-6 mb-3">Key Contributions</h4>
-                        <ul class="space-y-3">
-                            <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 shrink-0"></i>Authored complete Business Requirements Document (BRD)</li>
-                            <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 shrink-0"></i>Defined functional requirements (NIN verification, credit scoring, e-signature, instant disbursement)</li>
-                            <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 shrink-0"></i>Documented non-functional requirements (real-time performance, 24/7 availability, bank-grade security)</li>
-                            <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 shrink-0"></i>Mapped As-Is and To-Be processes with detailed flowcharts</li>
-                            <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 shrink-0"></i>Stakeholder mapping across Retail, Risk &amp; Credit, IT, Compliance, and Legal teams</li>
-                        </ul>
-                        <div class="mt-8 p-5 bg-gradient-to-r from-[#1e3a8a] to-[#10b981] text-white rounded-3xl">
-                            <p class="text-xl font-semibold">SMART Objectives Achieved</p>
-                            <p class="mt-1 opacity-90 text-sm">Approval time &lt; 5 minutes • Abandonment rate ≤ 5% • MVP go-live in 6 months</p>
+                        <div>
+                            <label class="block text-xs font-medium mb-2" style="color: var(--text-muted);">YOUR EMAIL</label>
+                            <input type="email" id="email" required placeholder="jane@example.com" class="form-input">
                         </div>
-                    </div>`
-            },
-            3: {
-                title: "GreenLeaf Stores – Sales Performance Dashboard (2024)",
-                content: `
+                    </div>
                     <div>
-                        <p class="text-base"><strong>Project Overview:</strong> Comprehensive sales analytics solution for a sustainable products retailer. Analysed full-year 2024 data (1,000 orders) using SQL, Excel Pivot Tables, and Power BI.</p>
-                        <div class="grid grid-cols-3 gap-3 my-6 text-center">
-                            <div class="bg-slate-50 rounded-2xl p-4">
-                                <p class="text-xl font-semibold text-[#1e3a8a]">£117,278</p>
-                                <p class="text-xs uppercase tracking-widest mt-1 text-slate-500">Total Revenue</p>
-                            </div>
-                            <div class="bg-slate-50 rounded-2xl p-4">
-                                <p class="text-xl font-semibold text-[#10b981]">£81,853</p>
-                                <p class="text-xs uppercase tracking-widest mt-1 text-slate-500">Total Profit</p>
-                            </div>
-                            <div class="bg-slate-50 rounded-2xl p-4">
-                                <p class="text-xl font-semibold">60.2%</p>
-                                <p class="text-xs uppercase tracking-widest mt-1 text-slate-500">Delivery Rate</p>
-                            </div>
-                        </div>
-                        <h4 class="text-lg font-semibold mb-3">Key Insights Delivered</h4>
-                        <ul class="space-y-2.5">
-                            <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 shrink-0"></i>Monthly revenue trends (Jan–Dec 2024)</li>
-                            <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 shrink-0"></i>Product category performance (Lighting, Bags, Kitchenware, etc.)</li>
-                            <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 shrink-0"></i>Top customers &amp; repeat purchase analysis</li>
-                            <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 shrink-0"></i>Shipment status breakdown (Delivered, Shipped, Pending, Returned)</li>
-                            <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 shrink-0"></i>Profit margin by product line</li>
-                            <li class="flex gap-x-3"><i class="fa-solid fa-circle-check text-emerald-500 mt-1 shrink-0"></i>Advanced SQL queries for unsold products, weekend sales, and department revenue</li>
-                        </ul>
-                        <p class="mt-6 text-xs italic text-slate-400">Tools used: SQL, Microsoft Excel (Pivot Tables &amp; Charts), Power BI Desktop</p>
-                    </div>`
-            }
-        };
+                        <label class="block text-xs font-medium mb-2" style="color: var(--text-muted);">MESSAGE</label>
+                        <textarea id="message" rows="5" required placeholder="Tell me about your project or opportunity..."
+                                  class="form-input" style="border-radius: 14px; resize: none;"></textarea>
+                    </div>
+                    <button type="submit"
+                            class="send-btn flex items-center gap-3 font-semibold text-sm px-10 py-4 rounded-2xl transition-colors"
+                            style="background: var(--accent-blue); color: #fff;"
+                            onmouseover="this.style.background='var(--accent-blue-dim)'"
+                            onmouseout="this.style.background='var(--accent-blue)'">
+                        SEND MESSAGE
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
 
-        function showProjectModal(id) {
-            const modal = document.getElementById('project-modal');
-            document.getElementById('modal-title').innerHTML = projects[id].title;
-            document.getElementById('modal-content').innerHTML = projects[id].content;
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            document.body.style.overflow = 'hidden';
+        </div>
+    </div>
+</section>
+
+<!-- ══ MODAL ══ -->
+<div id="project-modal"
+     onclick="if(event.target===this) hideModal()"
+     class="hidden fixed inset-0 items-center justify-center z-[9999] p-4"
+     style="background: rgba(0,0,0,0.8); overflow-y: auto;">
+    <div onclick="event.stopImmediatePropagation()"
+         class="modal w-full max-w-2xl rounded-3xl my-8 mx-auto border"
+         style="background: var(--bg-surface); border-color: var(--border-default);">
+        <div class="sticky top-0 rounded-t-3xl px-6 md:px-8 py-5 flex items-center justify-between border-b z-10"
+             style="background: var(--bg-surface); border-color: var(--border-subtle);">
+            <div id="modal-title" class="text-base md:text-lg font-semibold pr-4 leading-snug"
+                 style="color: var(--text-primary);"></div>
+            <button onclick="hideModal()"
+                    class="w-9 h-9 flex-shrink-0 flex items-center justify-center text-2xl rounded-full transition-colors"
+                    style="color: var(--text-muted);"
+                    onmouseover="this.style.background='var(--bg-elevated)'"
+                    onmouseout="this.style.background='transparent'">×</button>
+        </div>
+        <div id="modal-content" class="px-6 md:px-8 pb-8 pt-5 leading-relaxed text-sm md:text-base"
+             style="color: var(--text-secondary);"></div>
+    </div>
+</div>
+
+<script>
+    const MS = `
+        .m-h { color: #e2e8f0; font-size: 1rem; font-weight: 600; margin: 1.4rem 0 0.6rem; }
+        .m-p { color: #94a3b8; font-size: 0.9rem; line-height: 1.7; }
+        .m-ul { list-style: none; padding: 0; margin: 0; }
+        .m-li { display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start; color: #94a3b8; font-size: 0.875rem; line-height: 1.6; }
+        .m-ck { color: #10b981; flex-shrink: 0; margin-top: 3px; }
+        .m-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 1.2rem 0; }
+        .m-stat { background: #1c2740; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 0.9rem; text-align: center; }
+        .m-sv-b { color: #93c5fd; font-size: 1.1rem; font-weight: 700; }
+        .m-sv-g { color: #6ee7b7; font-size: 1.1rem; font-weight: 700; }
+        .m-sv-w { color: #e2e8f0; font-size: 1.1rem; font-weight: 700; }
+        .m-sl { color: #64748b; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+        .m-note { background: #1c2740; border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 0.9rem; margin-top: 1.4rem; font-size: 0.75rem; color: #64748b; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .m-cta { background: linear-gradient(135deg,#1d4ed8,#065f46); border-radius: 14px; padding: 1.1rem 1.25rem; margin-top: 1.5rem; }
+        .m-ct { color: #fff; font-size: 1rem; font-weight: 700; }
+        .m-cs { color: rgba(255,255,255,0.8); font-size: 0.8rem; margin-top: 4px; }
+    `;
+
+    const projects = {
+        1: {
+            title: "SmilePoint Dental Clinic – Online Appointment Booking Portal",
+            content: `<style>${MS}</style>
+                <p class="m-p"><strong style="color:#e2e8f0">Business Problem:</strong> Inefficient manual scheduling, long patient wait times, frequent booking errors, high staff workload, missed appointments, lost revenue, and damaged reputation.</p>
+                <p class="m-h">Key Deliverables</p>
+                <ul class="m-ul">
+                    <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Comprehensive Stakeholder Register &amp; Analysis (Power/Interest Grid)</li>
+                    <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>RACI Matrix for all project tasks and stakeholders</li>
+                    <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Detailed Stakeholder Communication Plan (channels, frequency, owners)</li>
+                    <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Business problems &amp; objectives documentation</li>
+                    <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Requirements gathering &amp; user workflow design</li>
+                    <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Training &amp; change management plan</li>
+                </ul>
+                <p class="m-h">Impact</p>
+                <p class="m-p">Modernised clinic operations, improved patient experience, reduced no-shows, and positioned the clinic for scalable growth.</p>
+                <div class="m-note"><i class="fa-solid fa-file-excel"></i>Supporting documents: RACI Matrix • Stakeholder Matrix • Communication Plan</div>`
+        },
+        2: {
+            title: "Apex Global Bank – Project Zenith (Instant Personal Loan Solution)",
+            content: `<style>${MS}</style>
+                <p class="m-p"><strong style="color:#e2e8f0">Project Purpose:</strong> Replace a fully manual 7–10 day loan approval process with a fully digital, mobile-first instant loan solution reducing approval time to under 5 minutes and eliminating 40% customer abandonment.</p>
+                <p class="m-h">Key Contributions</p>
+                <ul class="m-ul">
+                    <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Authored complete Business Requirements Document (BRD)</li>
+                    <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Defined functional requirements (NIN verification, credit scoring, e-signature, instant disbursement)</li>
+                    <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Documented non-functional requirements (real-time performance, 24/7 availability, bank-grade security)</li>
+                    <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Mapped As-Is and To-Be processes with detailed flowcharts</li>
+                    <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Stakeholder mapping across Retail, Risk &amp; Credit, IT, Compliance, and Legal teams</li>
+                </ul>
+                <div class="m-cta">
+                    <p class="m-ct">SMART Objectives Achieved</p>
+                    <p class="m-cs">Approval time &lt; 5 minutes • Abandonment rate ≤ 5% • MVP go-live in 6 months</p>
+                </div>`
+        },
+        3: {
+            title: "GreenLeaf Stores – Sales Performance Dashboard (2024)",
+            content: `<style>${MS}</style>
+                <p class="m-p"><strong style="color:#e2e8f0">Project Overview:</strong> Comprehensive sales analytics solution for a sustainable products retailer. Analysed full-year 2024 data (1,000 orders) using SQL, Excel Pivot Tables, and Power BI.</p>
+                <div class="m-stats">
+                    <div class="m-stat"><p class="m-sv-b">£117,278</p><p class="m-sl">Total Revenue</p></div>
+                    <div class="m-stat"><p class="m-sv-g">£81,853</p><p class="m-sl">Total Profit</p></div>
+                    <div class="m-stat"><p class="m-sv-w">60.2%</p><p class="m-sl">Delivery Rate</p></div>
+                </div>
+                <p class="m-h">Key Insights Delivered</p>
+                <ul class="m-ul">
+                    <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Monthly revenue trends (Jan–Dec 2024)</li>
+                    <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Product category performance (Lighting, Bags, Kitchenware, etc.)</li>
+                    <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Top customers &amp; repeat purchase analysis</li>
+                    <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Shipment status breakdown (Delivered, Shipped, Pending, Returned)</li>
+                    <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Profit margin by product line</li>
+                    <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Advanced SQL queries for unsold products, weekend sales, and department revenue</li>
+                </ul>
+                <p style="margin-top:1rem;font-size:0.75rem;font-style:italic;color:#64748b;">Tools used: SQL, Microsoft Excel (Pivot Tables &amp; Charts), Power BI Desktop</p>`
         }
+    };
 
-        function hideModal() {
-            const modal = document.getElementById('project-modal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-            document.body.style.overflow = '';
-        }
-
-        function handleSubmit(e) {
-            e.preventDefault();
-            const btn = e.target.querySelector('button');
-            const orig = btn.innerHTML;
-            btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin mr-2"></i> SENDING...';
-            setTimeout(() => {
-                alert("✅ Thank you! Your message has been sent. Oluwafunmilayo will reply within 48 hours.");
-                e.target.reset();
-                btn.innerHTML = orig;
-            }, 1200);
-        }
-
-        document.addEventListener('keydown', e => {
-            if (e.key === 'Escape') hideModal();
-        });
-    </script>
+    function showProjectModal(id) {
+        const modal = document.getElementById('project-modal');
+        document.getElementById('modal-title').innerHTML = projects[id].title;
+        document.getElementById('modal-content').innerHTML = projects[id].content;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    }
+    function hideModal() {
+        const modal = document.getElementById('project-modal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+    }
+    function handleSubmit(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('button');
+        const orig = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> SENDING...';
+        setTimeout(() => {
+            alert("✅ Thank you! Your message has been sent. Oluwafunmilayo will reply within 48 hours.");
+            e.target.reset();
+            btn.innerHTML = orig;
+        }, 1200);
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') hideModal(); });
+</script>
 </body>
 </html>
