@@ -455,8 +455,8 @@
 
         </div>
     </div>
-</section>
-
+</section>    
+    
 <!-- ══ MODAL ══ -->
 <div id="project-modal"
      onclick="if(event.target===this) hideModal()"
@@ -494,162 +494,89 @@
         .m-sv-w { color: #e2e8f0; font-size: 1.1rem; font-weight: 700; }
         .m-sl { color: #64748b; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
         .m-note { background: #1c2740; border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 0.9rem; margin-top: 1.4rem; font-size: 0.75rem; color: #64748b; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        .m-cta { background: linear-gradient(135deg,#1d4ed8,#065f46); border-radius: 14px; padding: 1.1rem 1.25rem; margin-top: 1.5rem; }
-        .m-ct { color: #fff; font-size: 1rem; font-weight: 700; }
-        .m-cs { color: rgba(255,255,255,0.8); font-size: 0.8rem; margin-top: 4px; }
+        .m-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; font-size: 0.9rem; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; text-decoration: none; color: white; flex: 1; min-width: 160px; transition: opacity 0.2s; }
+        .m-btn:hover { opacity: 0.85; }
+        .m-btn-row { margin: 1.5rem 0 1rem 0; display: flex; gap: 12px; flex-wrap: wrap; }
     `;
 
     const projects = {
         1: {
-    title: "SmilePoint Dental Clinic – Online Appointment Booking Portal",
-    content: `<style>${MS}</style>
-        <p class="m-p"><strong style="color:#e2e8f0">Business Problem:</strong> Inefficient manual scheduling, long patient wait times, frequent booking errors, high staff workload, missed appointments, lost revenue, and damaged reputation.</p>
-        
-        <p class="m-h">Key Deliverables</p>
-        <ul class="m-ul">
-            <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Comprehensive Stakeholder Register &amp; Analysis (Power/Interest Grid)</li>
-            <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>RACI Matrix for all project tasks and stakeholders</li>
-            <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Detailed Stakeholder Communication Plan (channels, frequency, owners)</li>
-            <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Business problems &amp; objectives documentation</li>
-            <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Requirements gathering &amp; user workflow design</li>
-            <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Training &amp; change management plan</li>
-        </ul>
-        
-        <p class="m-h">Impact</p>
-        <p class="m-p">Modernised clinic operations, improved patient experience, reduced no-shows, and positioned the clinic for scalable growth.</p>
+            title: "SmilePoint Dental Clinic – Online Appointment Booking Portal",
+            content: `<style>${MS}</style>
+            <p class="m-p"><strong style="color:#e2e8f0">Business Problem:</strong> Inefficient manual scheduling, long patient wait times, frequent booking errors, high staff workload, missed appointments, lost revenue, and damaged clinic reputation.</p>
 
-        <!-- Three Medium Buttons for Excel Documents -->
-        <div style="margin: 1.8rem 0 1.2rem 0; display: flex; gap: 12px; flex-wrap: wrap;">
-            <a href="RACI_Matrix.xlsx" 
-               target="_blank" 
-               style="flex: 1; min-width: 180px; text-decoration: none;">
-                <button style="width: 100%; padding: 13px 18px; font-size: 0.95rem; font-weight: 600; 
-                               background: #22c55e; color: white; border: none; border-radius: 8px; 
-                               cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                    📋 RACI Matrix
-                </button>
-            </a>
-            
-            <a href="Stakeholder_Matrix.xlsx" 
-               target="_blank" 
-               style="flex: 1; min-width: 180px; text-decoration: none;">
-                <button style="width: 100%; padding: 13px 18px; font-size: 0.95rem; font-weight: 600; 
-                               background: #3b82f6; color: white; border: none; border-radius: 8px; 
-                               cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                    📊 Stakeholder Matrix
-                </button>
-            </a>
-            
-            <a href="Stakeholder_Communication_Plan.xlsx" 
-               target="_blank" 
-               style="flex: 1; min-width: 180px; text-decoration: none;">
-                <button style="width: 100%; padding: 13px 18px; font-size: 0.95rem; font-weight: 600; 
-                               background: #8b5cf6; color: white; border: none; border-radius: 8px; 
-                               cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                    📧 Communication Plan
-                </button>
-            </a>
-        </div>
+            <p class="m-h">Key Deliverables</p>
+            <ul class="m-ul">
+                <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Comprehensive Stakeholder Register &amp; Analysis (Power/Interest Grid)</li>
+                <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>RACI Matrix for all project tasks and stakeholders</li>
+                <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Detailed Stakeholder Communication Plan (channels, frequency, owners)</li>
+                <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Business problems &amp; objectives documentation</li>
+                <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Requirements gathering &amp; user workflow design</li>
+                <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Training &amp; change management plan</li>
+            </ul>
 
-        <div class="m-note"><i class="fa-solid fa-file-excel"></i> Supporting documents: RACI Matrix • Stakeholder Matrix • Communication Plan</div>`
-},
+            <p class="m-h">Impact</p>
+            <p class="m-p">Modernised clinic operations, improved patient experience, reduced no-shows, and positioned the clinic for scalable growth.</p>
+
+            <div class="m-btn-row">
+                <a href="assets/images/RACI MATRIX.xlsx" target="_blank" class="m-btn" style="background:#22c55e;">📋 View RACI Matrix</a>
+                <a href="assets/images/stakeholder matrics.xlsx" target="_blank" class="m-btn" style="background:#3b82f6;">📊 View Stakeholder Matrix</a>
+                <a href="assets/images/STAKEHOLDER COMMUNICATION PLAN.xlsx" target="_blank" class="m-btn" style="background:#8b5cf6;">📧 View Communication Plan</a>
+            </div>
+
+            <div class="m-note"><i class="fa-solid fa-file-excel"></i> Documents: RACI Matrix • Stakeholder Matrix • Communication Plan</div>`
+        },
         2: {
-    title: "SmilePoint Dental Clinic – Online Appointment Booking Portal",
-    content: `<style>${MS}</style>
-        <p class="m-p"><strong style="color:#e2e8f0">Business Problem:</strong> Inefficient manual scheduling, long patient wait times, frequent booking errors, high staff workload, missed appointments, lost revenue, and damaged reputation.</p>
-        
-        <p class="m-h">Key Deliverables</p>
-        <ul class="m-ul">
-            <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Comprehensive Stakeholder Register &amp; Analysis (Power/Interest Grid)</li>
-            <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>RACI Matrix for all project tasks and stakeholders</li>
-            <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Detailed Stakeholder Communication Plan (channels, frequency, owners)</li>
-            <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Business problems &amp; objectives documentation</li>
-            <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Requirements gathering &amp; user workflow design</li>
-            <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Training &amp; change management plan</li>
-        </ul>
-        
-        <p class="m-h">Impact</p>
-        <p class="m-p">Modernised clinic operations, improved patient experience, reduced no-shows, and positioned the clinic for scalable growth.</p>
+            title: "Apex Global Bank – Project Zenith (Instant Loan Solution)",
+            content: `<style>${MS}</style>
+            <p class="m-p"><strong style="color:#e2e8f0">Business Problem:</strong> The existing loan application process took 7–10 days, was paper-heavy, and caused 40% customer abandonment. The bank needed a fast, digital-first solution to remain competitive.</p>
 
-        <!-- Three Medium Buttons for Excel Documents -->
-        <div style="margin: 1.8rem 0 1.2rem 0; display: flex; gap: 12px; flex-wrap: wrap;">
-            <a href="RACI_Matrix.xlsx" 
-               target="_blank" 
-               style="flex: 1; min-width: 180px; text-decoration: none;">
-                <button style="width: 100%; padding: 13px 18px; font-size: 0.95rem; font-weight: 600; 
-                               background: #22c55e; color: white; border: none; border-radius: 8px; 
-                               cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                    📋 RACI Matrix
-                </button>
-            </a>
-            
-            <a href="Stakeholder_Matrix.xlsx" 
-               target="_blank" 
-               style="flex: 1; min-width: 180px; text-decoration: none;">
-                <button style="width: 100%; padding: 13px 18px; font-size: 0.95rem; font-weight: 600; 
-                               background: #3b82f6; color: white; border: none; border-radius: 8px; 
-                               cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                    📊 Stakeholder Matrix
-                </button>
-            </a>
-            
-            <a href="Stakeholder_Communication_Plan.xlsx" 
-               target="_blank" 
-               style="flex: 1; min-width: 180px; text-decoration: none;">
-                <button style="width: 100%; padding: 13px 18px; font-size: 0.95rem; font-weight: 600; 
-                               background: #8b5cf6; color: white; border: none; border-radius: 8px; 
-                               cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                    📧 Communication Plan
-                </button>
-            </a>
-        </div>
+            <p class="m-h">Key Deliverables</p>
+            <ul class="m-ul">
+                <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Full Business Requirements Document (BRD) for mobile-first instant loan platform</li>
+                <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>End-to-end process flow diagrams (as-is vs to-be)</li>
+                <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>NIN-based identity verification &amp; e-signature integration requirements</li>
+                <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Functional &amp; non-functional requirements</li>
+                <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Stakeholder analysis &amp; sign-off documentation</li>
+                <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Business Analyst presentation deck for stakeholder review</li>
+            </ul>
 
-        <div class="m-note"><i class="fa-solid fa-file-excel"></i> Supporting documents: RACI Matrix • Stakeholder Matrix • Communication Plan</div>`
-},
+            <p class="m-h">Impact</p>
+            <p class="m-p">Approval time reduced from 7–10 days to under 5 minutes. Eliminated 40% customer abandonment. Enabled fully digital loan origination with real-time credit decisioning.</p>
+
+            <div class="m-btn-row">
+                <a href="assets/images/BRD Project.docx" target="_blank" class="m-btn" style="background:#3b82f6;">📄 View BRD Document</a>
+                <a href="assets/images/BA 2.pptx" target="_blank" class="m-btn" style="background:#f59e0b;">📊 View BA Presentation</a>
+            </div>
+
+            <div class="m-note"><i class="fa-solid fa-file-lines"></i> Documents: BRD • BA Presentation</div>`
+        },
         3: {
-    title: "GreenLeaf Stores – Sales Performance Dashboard (2024)",
-    content: `<style>${MS}</style>
-        <p class="m-p"><strong style="color:#e2e8f0">Project Overview:</strong> Comprehensive sales analytics solution for a sustainable products retailer. Analysed full-year 2024 data (1,000 orders) using SQL, Excel Pivot Tables, and Power BI.</p>
-        <div class="m-stats">
-            <div class="m-stat"><p class="m-sv-b">£117,278</p><p class="m-sl">Total Revenue</p></div>
-            <div class="m-stat"><p class="m-sv-g">£81,853</p><p class="m-sl">Total Profit</p></div>
-            <div class="m-stat"><p class="m-sv-w">60.2%</p><p class="m-sl">Delivery Rate</p></div>
-        </div>
-        <p class="m-h">Key Insights Delivered</p>
-        <ul class="m-ul">
-            <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Monthly revenue trends (Jan–Dec 2024)</li>
-            <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Product category performance (Lighting, Bags, Kitchenware, etc.)</li>
-            <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Top customers &amp; repeat purchase analysis</li>
-            <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Shipment status breakdown (Delivered, Shipped, Pending, Returned)</li>
-            <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Profit margin by product line</li>
-            <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Advanced SQL queries for unsold products, weekend sales, and department revenue</li>
-        </ul>
+            title: "GreenLeaf Stores – Sales Performance Dashboard (2024)",
+            content: `<style>${MS}</style>
+            <p class="m-p"><strong style="color:#e2e8f0">Project Overview:</strong> Comprehensive sales analytics solution for a sustainable products retailer. Analysed full-year 2024 data (1,000 orders) using SQL, Excel Pivot Tables, and Power BI.</p>
+            <div class="m-stats">
+                <div class="m-stat"><p class="m-sv-b">£117,278</p><p class="m-sl">Total Revenue</p></div>
+                <div class="m-stat"><p class="m-sv-g">£81,853</p><p class="m-sl">Total Profit</p></div>
+                <div class="m-stat"><p class="m-sv-w">60.2%</p><p class="m-sl">Delivery Rate</p></div>
+            </div>
+            <p class="m-h">Key Insights Delivered</p>
+            <ul class="m-ul">
+                <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Monthly revenue trends (Jan–Dec 2024)</li>
+                <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Product category performance (Lighting, Bags, Kitchenware, etc.)</li>
+                <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Top customers &amp; repeat purchase analysis</li>
+                <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Shipment status breakdown (Delivered, Shipped, Pending, Returned)</li>
+                <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Profit margin by product line</li>
+                <li class="m-li"><i class="fa-solid fa-circle-check m-ck"></i>Advanced SQL queries for unsold products, weekend sales, and department revenue</li>
+            </ul>
 
-        <!-- Two medium buttons -->
-        <div style="margin-top: 1.5rem; display: flex; gap: 12px; flex-wrap: wrap;">
-            <a href="GreenLeaf_Sales_Analysis.sql" 
-               target="_blank" 
-               style="flex: 1; min-width: 160px; text-decoration: none;">
-                <button style="width: 100%; padding: 12px 20px; font-size: 0.95rem; font-weight: 600; 
-                               background: #0ea5e9; color: white; border: none; border-radius: 8px; 
-                               cursor: pointer; transition: all 0.2s;">
-                    📄 View / Download SQL Script
-                </button>
-            </a>
-            
-            <a href="GreenLeaf_Stores_Dashboard.png" 
-               target="_blank" 
-               style="flex: 1; min-width: 160px; text-decoration: none;">
-                <button style="width: 100%; padding: 12px 20px; font-size: 0.95rem; font-weight: 600; 
-                               background: #22c55e; color: white; border: none; border-radius: 8px; 
-                               cursor: pointer; transition: all 0.2s;">
-                    📊 View Power BI Dashboard Image
-                </button>
-            </a>
-        </div>
+            <div class="m-btn-row">
+                <a href="capstone_sql" target="_blank" class="m-btn" style="background:#0ea5e9;">📄 View SQL Script</a>
+                <a href="assets/images/capstone.pbix" target="_blank" class="m-btn" style="background:#22c55e;">📊 View Power BI File</a>
+            </div>
 
-        <p style="margin-top:1rem;font-size:0.75rem;font-style:italic;color:#64748b;">Tools used: SQL, Microsoft Excel (Pivot Tables &amp; Charts), Power BI Desktop</p>`
-}
+            <p style="margin-top:1rem;font-size:0.75rem;font-style:italic;color:#64748b;">Tools used: SQL, Microsoft Excel (Pivot Tables &amp; Charts), Power BI Desktop</p>`
+        }
     };
 
     function showProjectModal(id) {
