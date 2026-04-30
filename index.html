@@ -81,50 +81,7 @@
     .nav-links a:hover { color: var(--gold-light); }
     .nav-links a:hover::after { width: 100%; }
 
-    /* ─── HAMBURGER ──────────────────────────────────────── */
-    .nav-hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-      background: none;
-      border: none;
-      z-index: 200;
-    }
-    .nav-hamburger span {
-      display: block;
-      width: 24px; height: 1.5px;
-      background: var(--gold);
-      transition: var(--transition);
-    }
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-    .nav-mobile-menu {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(10,22,40,0.98);
-      z-index: 150;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-    }
-    .nav-mobile-menu.open { display: flex; }
-    .nav-mobile-menu a {
-      color: var(--white-muted);
-      text-decoration: none;
-      font-size: 1.3rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      font-weight: 400;
-      transition: var(--transition);
-    }
-    .nav-mobile-menu a:hover { color: var(--gold); }
-
+   
     /* ─── HERO ────────────────────────────────────────────── */
     #hero {
       min-height: 100vh;
@@ -630,19 +587,6 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-
-  <!-- MOBILE MENU -->
-  <div class="nav-mobile-menu" id="mobileMenu">
-    <a href="#about" class="mobile-link">About</a>
-    <a href="#skills" class="mobile-link">Skills</a>
-    <a href="#projects" class="mobile-link">Projects</a>
-    <a href="#experience" class="mobile-link">Experience</a>
-    <a href="#contact" class="mobile-link">Contact</a>
-  </div>
 
   <!-- HERO -->
   <section id="hero">
@@ -1091,8 +1035,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-copy">&copy; 2024 <span>Oluwafunmilayo Animashaun</span>. All rights reserved.</div>
-    <div class="footer-copy">Crafted with <span>✦</span> precision</div>
+    <div class="footer-copy">&copy; 2026 <span>Oluwafunmilayo Animashaun</span>. All rights reserved.</div>
   </footer>
 
   <script>
