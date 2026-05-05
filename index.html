@@ -451,10 +451,7 @@
       white-space: nowrap; transition: var(--transition);
       position: relative; overflow: hidden;
     }
-    .projects-cta-btn::before { content: ''; position: absolute; inset: 0; background: var(--gold); transform: translateX(-101%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); z-index: 0; }
-    .projects-cta-btn:hover::before { transform: translateX(0); }
-    .projects-cta-btn:hover { color: var(--navy); }
-    .projects-cta-btn > * { position: relative; z-index: 1; }
+
 
     /* ─── EXPERIENCE ──────────────────────────────────────── */
     #experience {}
@@ -671,10 +668,7 @@
             <div class="stat-num">20+</div>
             <div class="stat-label">Projects Delivered</div>
           </div>
-          <div class="stat-item">
-            <div class="stat-num">₦2.4M</div>
-            <div class="stat-label">Revenue Recovered</div>
-          </div>
+      
         </div>
       </div>
       <div class="hero-portrait-wrap">
@@ -721,38 +715,49 @@
         </div>
       </div>
       <div class="about-card fade-up">
-        <div class="about-card-title">Certifications & Education</div>
-        <div class="cert-item">
-          <div class="cert-icon"><i class="fa fa-certificate"></i></div>
-          <div>
-            <div class="cert-name">CBAP — Certified Business Analysis Professional</div>
-            <div class="cert-body">IIBA · 2023</div>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-icon"><i class="fa fa-chart-bar"></i></div>
-          <div>
-            <div class="cert-name">Microsoft Power BI Data Analyst Associate</div>
-            <div class="cert-body">Microsoft · 2022</div>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-icon"><i class="fa fa-diagram-project"></i></div>
-          <div>
-            <div class="cert-name">PMI Agile Certified Practitioner (PMI-ACP)</div>
-            <div class="cert-body">PMI · 2022</div>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-icon"><i class="fa fa-graduation-cap"></i></div>
-          <div>
-            <div class="cert-name">B.Sc. Computer Science</div>
-            <div class="cert-body">University of Lagos · First Class Honours</div>
-          </div>
-        </div>
+           <div class="about-card-title">Certifications & Education</div>
+    
+    <div class="cert-item">
+      <div class="cert-icon"><i class="fa fa-graduation-cap"></i></div>
+      <div>
+        <div class="cert-name">MSc Adult Nursing (Pre-Registration)</div>
+        <div class="cert-body">University of Huddersfield · January 2026 – Present</div>
       </div>
     </div>
-  </section>
+    
+    <div class="cert-item">
+      <div class="cert-icon"><i class="fa fa-graduation-cap"></i></div>
+      <div>
+        <div class="cert-name">BSc (Hons) Business with Logistics and Supply Chain Management</div>
+        <div class="cert-body">University of Huddersfield · Graduated June 2025</div>
+      </div>
+    </div>
+    
+    <div class="cert-item">
+      <div class="cert-icon"><i class="fa fa-graduation-cap"></i></div>
+      <div>
+        <div class="cert-name">Diploma in Social Development and Administration</div>
+        <div class="cert-body">University of Lagos, Nigeria · Feb 2002 – July 2004</div>
+      </div>
+    </div>
+    
+    <div class="cert-item">
+      <div class="cert-icon"><i class="fa fa-certificate"></i></div>
+      <div>
+        <div class="cert-name">Business Analytics</div>
+        <div class="cert-body">10Alytics</div>
+      </div>
+    </div>
+    
+    <div class="cert-item">
+      <div class="cert-icon"><i class="fa fa-certificate"></i></div>
+      <div>
+        <div class="cert-name">Entrepreneurship Development Training</div>
+        <div class="cert-body">Entrepreneurship Development Centre · Aug 2004 – Aug 2005</div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- SKILLS -->
   <section id="skills">
@@ -766,7 +771,7 @@
         <div class="skill-row">
           <div class="skill-row-icon"><i class="fa fa-database"></i></div>
           <div class="skill-row-info">
-            <div class="skill-row-name">Data Analysis & SQL</div>
+            <div class="skill-row-name">MS Excel & SQL</div>
             <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:92%"></div></div>
           </div>
           <div class="skill-row-pct">92%</div>
@@ -778,14 +783,6 @@
             <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:90%"></div></div>
           </div>
           <div class="skill-row-pct">90%</div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-icon"><i class="fab fa-python"></i></div>
-          <div class="skill-row-info">
-            <div class="skill-row-name">Python (Pandas / NumPy)</div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:78%"></div></div>
-          </div>
-          <div class="skill-row-pct">78%</div>
         </div>
         <div class="skill-row">
           <div class="skill-row-icon"><i class="fa fa-diagram-project"></i></div>
@@ -818,8 +815,6 @@
           <div class="tool-chips">
             <span class="tool-chip">Microsoft Excel</span>
             <span class="tool-chip">SQL / MySQL</span>
-            <span class="tool-chip">Python (Pandas)</span>
-            <span class="tool-chip">Google Analytics</span>
           </div>
         </div>
         <div class="tool-group">
@@ -844,7 +839,6 @@
           <div class="tool-chips">
             <span class="tool-chip">Microsoft Visio</span>
             <span class="tool-chip">Lucidchart</span>
-            <span class="tool-chip">Figma</span>
           </div>
         </div>
         <div class="tool-group">
@@ -987,44 +981,105 @@
       <h2 class="section-title">Professional <em>Experience</em></h2>
     </div>
     <div class="timeline">
-      <div class="timeline-item fade-up">
-        <div class="timeline-header">
-          <div class="timeline-role">Senior Business Analyst</div>
-          <div class="timeline-period">2022 — Present</div>
-        </div>
-        <div class="timeline-company">Accenture Nigeria · Lagos</div>
-        <div class="timeline-desc">Lead analyst on digital transformation engagements across financial services and telecoms, managing cross-functional teams of up to 12 members.</div>
-        <ul class="timeline-achievements">
-          <li>Delivered 7 end-to-end digital transformation projects with combined value of over $4M</li>
-          <li>Established BA Centre of Excellence standards and templates adopted firm-wide</li>
-          <li>Mentored and supervised 4 junior analysts, all progressing to senior roles</li>
-        </ul>
-      </div>
+
       <div class="timeline-item fade-up">
         <div class="timeline-header">
           <div class="timeline-role">Business Analyst</div>
-          <div class="timeline-period">2020 — 2022</div>
+          <div class="timeline-period">November 2025 — Present</div>
         </div>
-        <div class="timeline-company">GTBank Plc · Lagos</div>
-        <div class="timeline-desc">Embedded analyst within the Digital Banking division, partnering with product and engineering teams to deliver customer-facing and back-office system improvements.</div>
+        <div class="timeline-company">Amdari Inc. · UK</div>
+        <div class="timeline-desc">Gathering, analysing, and documenting business and functional requirements while driving process improvements and stakeholder alignment across cross-functional teams.</div>
         <ul class="timeline-achievements">
-          <li>Defined requirements for 3 major mobile banking feature releases totalling 1.8M users</li>
-          <li>Reduced requirements rework rate by 40% through improved elicitation process</li>
-          <li>Presented monthly BI reports directly to divisional heads and executive committee</li>
+          <li>Improved requirement traceability and reduced project rework by 30% by documenting BRDs and PRDs using Confluence</li>
+          <li>Streamlined issue resolution and reduced sprint delays by 20% through backlog management in JIRA and Azure DevOps</li>
+          <li>Boosted operational efficiency by 25% by designing and optimising business process flows in Microsoft Visio and Lucidchart</li>
+          <li>Reduced post-launch defects by 35% by leading UAT in JIRA and tracking defects throughout deployment</li>
+          <li>Enhanced team accountability across 5+ cross-functional teams by developing RACI Matrices in Excel and Confluence</li>
         </ul>
       </div>
+
       <div class="timeline-item fade-up">
         <div class="timeline-header">
-          <div class="timeline-role">Junior Business Analyst</div>
-          <div class="timeline-period">2019 — 2020</div>
+          <div class="timeline-role">Support Worker</div>
+          <div class="timeline-period">November 2024 — October 2025</div>
         </div>
-        <div class="timeline-company">Interswitch Group · Lagos</div>
-        <div class="timeline-desc">Supported senior analysts on payments infrastructure and merchant onboarding projects, building core competencies in process mapping and data analysis.</div>
+        <div class="timeline-company">Creative Support · UK</div>
+        <div class="timeline-desc">Delivered person-centred care tailored to individual needs, fostering independence and enhancing quality of life for clients.</div>
         <ul class="timeline-achievements">
-          <li>Documented over 45 business processes across 3 product lines using BPMN 2.0</li>
-          <li>Built Excel-based reporting tools that reduced weekly reconciliation time by 5 hours</li>
+          <li>Assisted clients with daily living activities including personal hygiene, meal preparation, and mobility support</li>
+          <li>Monitored and safeguarded client wellbeing by identifying risks and following safeguarding protocols</li>
+          <li>Collaborated with multidisciplinary teams including healthcare professionals, social workers, and family members</li>
+          <li>Implemented and followed care plans, documenting progress and changes to inform ongoing support strategies</li>
         </ul>
       </div>
+
+      <div class="timeline-item fade-up">
+        <div class="timeline-header">
+          <div class="timeline-role">Healthcare Assistant</div>
+          <div class="timeline-period">July 2024 — October 2024</div>
+        </div>
+        <div class="timeline-company">Cucumber Recruitment Healthcare · UK</div>
+        <div class="timeline-desc">Provided high-quality personal care to patients while balancing full-time university study, demonstrating strong time management and prioritisation skills.</div>
+        <ul class="timeline-achievements">
+          <li>Assisted with hygiene, dressing, feeding, and daily living activities, ensuring patient comfort and dignity</li>
+          <li>Monitored patient health, recording observations and reporting changes to senior staff for timely interventions</li>
+          <li>Supported patient mobility through transfers, walking, and exercise routines to promote independence</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item fade-up">
+        <div class="timeline-header">
+          <div class="timeline-role">Warehouse Operative (Part-time)</div>
+          <div class="timeline-period">April 2023 — June 2024</div>
+        </div>
+        <div class="timeline-company">PPG Paints · UK</div>
+        <div class="timeline-desc">Supported stock control, inventory management, and order fulfilment operations within a fast-paced warehouse environment.</div>
+        <ul class="timeline-achievements">
+          <li>Conducted regular cycle counts and reconciliations to maintain high levels of inventory accuracy</li>
+          <li>Assisted in preparing orders for shipment, verifying accuracy and reducing order errors</li>
+          <li>Collaborated with team members to streamline workflows and maintain organised storage areas</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item fade-up">
+        <div class="timeline-header">
+          <div class="timeline-role">Production Operative</div>
+          <div class="timeline-period">January 2022 — March 2023</div>
+        </div>
+        <div class="timeline-company">Fox's Biscuits · UK</div>
+        <div class="timeline-desc">Ensured seamless production operations by following schedules and maintaining strict compliance with food safety and health & safety regulations.</div>
+        <ul class="timeline-achievements">
+          <li>Conducted quality inspections on raw materials, in-process items, and finished products</li>
+          <li>Assisted in equipment setup, calibration, and basic maintenance, contributing to reduced machine downtime</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item fade-up">
+        <div class="timeline-header">
+          <div class="timeline-role">Order Picker</div>
+          <div class="timeline-period">March 2020 — December 2021</div>
+        </div>
+        <div class="timeline-company">Marks & Spencer · UK</div>
+        <div class="timeline-desc">Efficiently picked, packed, and prepared customer orders according to company standards, ensuring accuracy and timeliness.</div>
+        <ul class="timeline-achievements">
+          <li>Conducted quality checks on picked items, ensuring damaged or incorrect products were flagged before dispatch</li>
+          <li>Followed strict stock-placement and inventory procedures to maintain organised storage and improve workflow</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item fade-up">
+        <div class="timeline-header">
+          <div class="timeline-role">Volunteer Support Worker</div>
+          <div class="timeline-period">April 2017 — February 2020</div>
+        </div>
+        <div class="timeline-company">DASH – Destitute Asylum Seekers · Huddersfield</div>
+        <div class="timeline-desc">Provided orientation, translation, and integration support to asylum seekers, connecting them with essential local services and resources.</div>
+        <ul class="timeline-achievements">
+          <li>Assisted with translation and interpretation, enabling effective communication with service providers</li>
+          <li>Guided individuals to access healthcare, education, employment, and social services</li>
+        </ul>
+      </div>
+
     </div>
   </section>
 
@@ -1059,7 +1114,7 @@
         </button>
       </div>
       <div class="contact-info fade-up">
-        <p class="contact-text">Available for full-time engagements, project-based contracts, and consulting arrangements. Based in Lagos, open to remote and hybrid arrangements.</p>
+        <p class="contact-text">Available for full-time engagements, project-based contracts, and consulting arrangements. Open to remote and hybrid arrangements.</p>
         <div class="contact-detail">
           <div class="contact-detail-icon"><i class="fa fa-envelope"></i></div>
           <div>
@@ -1091,7 +1146,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-copy">&copy; 2024 <span>Oluwafunmilayo Animashaun</span>. All rights reserved.</div>
+    <div class="footer-copy">&copy; 2026 <span>Oluwafunmilayo Animashaun</span>. All rights reserved.</div>
   </footer>
 
   <script>
