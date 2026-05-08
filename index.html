@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -200,6 +202,12 @@
       white-space: nowrap;
     }
     .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-primary:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
+    .btn-primary:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+      transform: none;
+    }
     .btn-ghost {
       display: inline-flex; align-items: center; gap: 0.6rem;
       padding: 0.85rem 2rem;
@@ -452,7 +460,6 @@
       position: relative; overflow: hidden;
     }
 
-
     /* ─── EXPERIENCE ──────────────────────────────────────── */
     #experience {}
     .timeline { position: relative; padding-left: 2rem; }
@@ -480,6 +487,19 @@
     .form-group input::placeholder, .form-group textarea::placeholder { color: var(--white-dim); }
     .form-group input:focus, .form-group textarea:focus { border-color: var(--gold); }
     .form-full { margin-bottom: 1rem; }
+
+    /* ─── FORM STATUS MESSAGE ─── */
+    #form-status {
+      margin-top: 0.9rem;
+      font-size: 0.82rem;
+      text-align: center;
+      min-height: 1.4em;
+      letter-spacing: 0.03em;
+      transition: opacity 0.3s ease;
+    }
+    #form-status.success { color: #4caf7d; }
+    #form-status.error   { color: #e06c6c; }
+
     .contact-info { display: flex; flex-direction: column; gap: 0; }
     .contact-text { font-size: 0.9rem; color: var(--white-muted); line-height: 1.9; margin-bottom: 2.5rem; }
     .contact-detail { display: flex; align-items: center; gap: 1rem; padding: 1.2rem 0; border-bottom: 0.5px solid var(--navy-border); }
@@ -506,7 +526,6 @@
        RESPONSIVE BREAKPOINTS
     ═══════════════════════════════════════════════════════════ */
 
-    /* ─── LARGE DESKTOP (≤1200px) ─── */
     @media (max-width: 1200px) {
       nav { padding: 1.2rem 2.5rem; }
       section { padding: 6rem 2.5rem; }
@@ -515,7 +534,6 @@
       .projects-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
-    /* ─── TABLET (≤960px) ─── */
     @media (max-width: 960px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
@@ -536,28 +554,29 @@
       .section-header { margin-bottom: 2.5rem; }
 
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-
       .skills-layout { grid-template-columns: 1fr; gap: 2rem; }
-
       .projects-grid { grid-template-columns: repeat(2, 1fr); }
 
+      /* Contact responsive */
       .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .contact-form-card { padding: 1.8rem; }
 
       footer { padding: 1.5rem 1.5rem; flex-direction: column; align-items: center; text-align: center; }
     }
 
-    /* ─── MOBILE LANDSCAPE / SMALL TABLET (≤768px) ─── */
     @media (max-width: 768px) {
       .about-highlights { grid-template-columns: 1fr; }
       .projects-grid { grid-template-columns: 1fr; }
       .projects-cta-inner { flex-direction: column; align-items: flex-start; }
-      .form-row { grid-template-columns: 1fr; }
+
+      /* Stack name/email fields on mobile */
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .form-row .form-group { margin-bottom: 1rem; }
+
       .hero-stats { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
       .stat-num { font-size: 2rem; }
     }
 
-    /* ─── MOBILE (≤480px) ─── */
     @media (max-width: 480px) {
       nav { padding: 0.9rem 1.2rem; }
       .nav-logo { font-size: 1.2rem; }
@@ -604,7 +623,6 @@
       .projects-cta-btn { width: 100%; justify-content: center; }
     }
 
-    /* ─── VERY SMALL (≤360px) ─── */
     @media (max-width: 360px) {
       .hero-name { font-size: 1.9rem; }
       .hero-portrait-wrap { width: 190px; }
@@ -668,7 +686,6 @@
             <div class="stat-num">20+</div>
             <div class="stat-label">Projects Delivered</div>
           </div>
-      
         </div>
       </div>
       <div class="hero-portrait-wrap">
@@ -715,49 +732,45 @@
         </div>
       </div>
       <div class="about-card fade-up">
-           <div class="about-card-title">Certifications & Education</div>
-    
-    <div class="cert-item">
-      <div class="cert-icon"><i class="fa fa-graduation-cap"></i></div>
-      <div>
-        <div class="cert-name">MSc Adult Nursing (Pre-Registration)</div>
-        <div class="cert-body">University of Huddersfield · January 2026 – Present</div>
+        <div class="about-card-title">Certifications & Education</div>
+        <div class="cert-item">
+          <div class="cert-icon"><i class="fa fa-graduation-cap"></i></div>
+          <div>
+            <div class="cert-name">MSc Adult Nursing (Pre-Registration)</div>
+            <div class="cert-body">University of Huddersfield · January 2026 – Present</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon"><i class="fa fa-graduation-cap"></i></div>
+          <div>
+            <div class="cert-name">BSc (Hons) Business with Logistics and Supply Chain Management</div>
+            <div class="cert-body">University of Huddersfield · Graduated June 2025</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon"><i class="fa fa-graduation-cap"></i></div>
+          <div>
+            <div class="cert-name">Diploma in Social Development and Administration</div>
+            <div class="cert-body">University of Lagos, Nigeria · Feb 2002 – July 2004</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon"><i class="fa fa-certificate"></i></div>
+          <div>
+            <div class="cert-name">Business Analytics</div>
+            <div class="cert-body">10Alytics</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon"><i class="fa fa-certificate"></i></div>
+          <div>
+            <div class="cert-name">Entrepreneurship Development Training</div>
+            <div class="cert-body">Entrepreneurship Development Centre · Aug 2004 – Aug 2005</div>
+          </div>
+        </div>
       </div>
     </div>
-    
-    <div class="cert-item">
-      <div class="cert-icon"><i class="fa fa-graduation-cap"></i></div>
-      <div>
-        <div class="cert-name">BSc (Hons) Business with Logistics and Supply Chain Management</div>
-        <div class="cert-body">University of Huddersfield · Graduated June 2025</div>
-      </div>
-    </div>
-    
-    <div class="cert-item">
-      <div class="cert-icon"><i class="fa fa-graduation-cap"></i></div>
-      <div>
-        <div class="cert-name">Diploma in Social Development and Administration</div>
-        <div class="cert-body">University of Lagos, Nigeria · Feb 2002 – July 2004</div>
-      </div>
-    </div>
-    
-    <div class="cert-item">
-      <div class="cert-icon"><i class="fa fa-certificate"></i></div>
-      <div>
-        <div class="cert-name">Business Analytics</div>
-        <div class="cert-body">10Alytics</div>
-      </div>
-    </div>
-    
-    <div class="cert-item">
-      <div class="cert-icon"><i class="fa fa-certificate"></i></div>
-      <div>
-        <div class="cert-name">Entrepreneurship Development Training</div>
-        <div class="cert-body">Entrepreneurship Development Centre · Aug 2004 – Aug 2005</div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- SKILLS -->
   <section id="skills">
@@ -981,7 +994,6 @@
       <h2 class="section-title">Professional <em>Experience</em></h2>
     </div>
     <div class="timeline">
-
       <div class="timeline-item fade-up">
         <div class="timeline-header">
           <div class="timeline-role">Business Analyst</div>
@@ -997,7 +1009,6 @@
           <li>Enhanced team accountability across 5+ cross-functional teams by developing RACI Matrices in Excel and Confluence</li>
         </ul>
       </div>
-
       <div class="timeline-item fade-up">
         <div class="timeline-header">
           <div class="timeline-role">Support Worker</div>
@@ -1012,7 +1023,6 @@
           <li>Implemented and followed care plans, documenting progress and changes to inform ongoing support strategies</li>
         </ul>
       </div>
-
       <div class="timeline-item fade-up">
         <div class="timeline-header">
           <div class="timeline-role">Healthcare Assistant</div>
@@ -1026,7 +1036,6 @@
           <li>Supported patient mobility through transfers, walking, and exercise routines to promote independence</li>
         </ul>
       </div>
-
       <div class="timeline-item fade-up">
         <div class="timeline-header">
           <div class="timeline-role">Warehouse Operative (Part-time)</div>
@@ -1040,7 +1049,6 @@
           <li>Collaborated with team members to streamline workflows and maintain organised storage areas</li>
         </ul>
       </div>
-
       <div class="timeline-item fade-up">
         <div class="timeline-header">
           <div class="timeline-role">Production Operative</div>
@@ -1053,7 +1061,6 @@
           <li>Assisted in equipment setup, calibration, and basic maintenance, contributing to reduced machine downtime</li>
         </ul>
       </div>
-
       <div class="timeline-item fade-up">
         <div class="timeline-header">
           <div class="timeline-role">Order Picker</div>
@@ -1066,7 +1073,6 @@
           <li>Followed strict stock-placement and inventory procedures to maintain organised storage and improve workflow</li>
         </ul>
       </div>
-
       <div class="timeline-item fade-up">
         <div class="timeline-header">
           <div class="timeline-role">Volunteer Support Worker</div>
@@ -1079,7 +1085,6 @@
           <li>Guided individuals to access healthcare, education, employment, and social services</li>
         </ul>
       </div>
-
     </div>
   </section>
 
@@ -1094,11 +1099,11 @@
         <div class="form-row">
           <div class="form-group">
             <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Oluwafunmilayo Animashaun"/>
+            <input type="text" id="name" name="name" placeholder="Your full name"/>
           </div>
           <div class="form-group">
             <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="olufunmianimashaun2020@gmail.com"/>
+            <input type="email" id="email" name="email" placeholder="your@email.com"/>
           </div>
         </div>
         <div class="form-group form-full">
@@ -1109,9 +1114,11 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or inquiry..."></textarea>
         </div>
-        <button class="btn-primary" style="width:100%; justify-content:center;">
-          <i class="fa fa-paper-plane"></i> Send Message
+        <button id="send-btn" class="btn-primary" style="width:100%; justify-content:center;" onclick="sendEmail()">
+          <i class="fa fa-paper-plane" id="btn-icon"></i>
+          <span id="btn-text">Send Message</span>
         </button>
+        <p id="form-status"></p>
       </div>
       <div class="contact-info fade-up">
         <p class="contact-text">Available for full-time engagements, project-based contracts, and consulting arrangements. Open to remote and hybrid arrangements.</p>
@@ -1119,7 +1126,7 @@
           <div class="contact-detail-icon"><i class="fa fa-envelope"></i></div>
           <div>
             <div class="contact-detail-label">Email</div>
-            <div class="contact-detail-value">olufunmianimashaun2020@gmail.com</div>
+            <div class="contact-detail-value">oluwafunmilayoanimashaun60@gmail.com</div>
           </div>
         </div>
         <div class="contact-detail">
@@ -1150,7 +1157,79 @@
   </footer>
 
   <script>
-    /* ─── Scroll animations ─── */
+    /* ══════════════════════════════════════════════
+       EMAILJS CONFIGURATION
+       ── Replace the two placeholders below ──────
+    ══════════════════════════════════════════════ */
+    const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // Account → General → Public Key
+    const EMAILJS_SERVICE_ID  = 'service_d4t805k';   // ✅ already set
+    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // Email Templates → your template ID
+
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+
+    /* ─── Send email ─────────────────────────────── */
+    function sendEmail() {
+      const btn     = document.getElementById('send-btn');
+      const btnText = document.getElementById('btn-text');
+      const btnIcon = document.getElementById('btn-icon');
+      const status  = document.getElementById('form-status');
+
+      const name    = document.getElementById('name').value.trim();
+      const email   = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      // Clear previous status
+      status.textContent = '';
+      status.className   = '';
+
+      // Basic validation
+      if (!name || !email || !subject || !message) {
+        status.textContent = '⚠ Please fill in all fields before sending.';
+        status.className   = 'error';
+        return;
+      }
+
+      // Simple email format check
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        status.textContent = '⚠ Please enter a valid email address.';
+        status.className   = 'error';
+        return;
+      }
+
+      // Loading state
+      btn.disabled       = true;
+      btnIcon.className  = 'fa fa-circle-notch fa-spin';
+      btnText.textContent = 'Sending…';
+
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        from_name:  name,
+        from_email: email,
+        subject:    subject,
+        message:    message,
+        to_email:   'oluwafunmilayoanimashaun60@gmail.com'
+      })
+      .then(() => {
+        status.textContent = '✓ Message sent! I\'ll be in touch soon.';
+        status.className   = 'success';
+        // Clear fields
+        ['name', 'email', 'subject', 'message'].forEach(id => {
+          document.getElementById(id).value = '';
+        });
+      })
+      .catch(err => {
+        console.error('EmailJS error:', err);
+        status.textContent = '✗ Something went wrong. Please email me directly.';
+        status.className   = 'error';
+      })
+      .finally(() => {
+        btn.disabled        = false;
+        btnIcon.className   = 'fa fa-paper-plane';
+        btnText.textContent = 'Send Message';
+      });
+    }
+
+    /* ─── Scroll animations ─────────────────────── */
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((e, i) => {
         if (e.isIntersecting) {
@@ -1160,7 +1239,7 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    /* ─── Skill bars ─── */
+    /* ─── Skill bars ────────────────────────────── */
     const barObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1178,8 +1257,8 @@
     const skillSection = document.querySelector('#skills');
     if (skillSection) barObserver.observe(skillSection);
 
-    /* ─── Mobile menu ─── */
-    const hamburger = document.getElementById('hamburger');
+    /* ─── Mobile menu ───────────────────────────── */
+    const hamburger  = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('open');
