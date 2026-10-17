@@ -363,6 +363,71 @@ nav { background: rgba(242,247,255,0.94); }
   .hero-eyebrow, .section-label { font-size: 0.85rem; letter-spacing: 0.15em; }
   .highlight-chip { font-size: 0.9rem; }
 }
+
+/* Much darker background behind the text */
+.project-card { background: #050b16 !important; }
+.project-card-overlay,
+.project-card:hover .project-card-overlay {
+  background: linear-gradient(to top,
+    rgba(3,8,18,0.99) 0%,
+    rgba(3,8,18,0.96) 60%,
+    rgba(3,8,18,0.88) 85%,
+    rgba(3,8,18,0.75) 100%) !important;
+}
+
+/* Every text element in the card = white */
+.project-card .project-title,
+.project-card .project-desc,
+.project-card .project-year,
+.project-card .project-impact,
+.project-card .project-impact strong,
+.project-card .project-badge,
+.project-card .tech-dot,
+.project-card .project-link,
+.project-card .project-link i {
+  color: #ffffff !important;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.9);
+}
+
+/* Slightly bigger, bolder text so it's easy to read */
+.project-card .project-title { font-size: 1.25rem; font-weight: 700; }
+.project-card .project-desc {
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.7;
+}
+.project-card .project-impact {
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.65;
+  background: rgba(255,255,255,0.12);
+  border-left: 3px solid #ffffff;
+}
+.project-card .project-impact strong { font-weight: 700; }
+.project-card .project-badge {
+  font-weight: 600;
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.7);
+}
+.project-card .tech-dot {
+  font-size: 0.7rem;
+  font-weight: 500;
+  border-color: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.1);
+}
+.project-card .project-link { font-weight: 700; font-size: 0.78rem; }
+.project-card .project-divider { background: rgba(255,255,255,0.3); }
+
+/* Show the FULL text (no more cut-off after 2 lines)
+   and let each card grow to fit it */
+.project-card { height: auto !important; min-height: 340px; }
+.project-card .project-desc,
+.project-card .project-impact {
+  display: block !important;
+  -webkit-line-clamp: unset !important;
+  overflow: visible !important;
+}
+.project-card .project-card-top { padding-top: 6rem; }
 </style>
 </head>
 <body>
