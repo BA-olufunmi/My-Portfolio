@@ -246,6 +246,85 @@ nav { background: rgba(242,247,255,0.94); }
   --gold-light: #f5dc94;
   --gold-pale: #f5e9c8;
 }
+
+/* Darker gold + stronger muted text for small fonts */
+:root {
+  --gold: #7a5709;
+  --gold-light: #946a0f;
+  --white-muted: rgba(10,22,40,0.82);
+  --white-dim: rgba(10,22,40,0.55);
+}
+
+/* Small labels were too faint, so make them bolder */
+.stat-label, .cert-body, .contact-detail-value,
+.skill-row-pct, .timeline-period, .tool-group-label,
+.form-group label, .contact-detail-label {
+  font-weight: 500;
+}
+.timeline-desc, .timeline-achievements li,
+.about-text p, .contact-text, .section-desc,
+.hero-tagline, .cert-body {
+  color: rgba(10,22,40,0.85);
+}
+.timeline-achievements li { font-weight: 400; }
+.tool-chip, .highlight-chip, .social-btn {
+  color: #0a1628;
+  background: rgba(255,255,255,0.7);
+}
+.form-group input, .form-group textarea {
+  background: #fff;
+  color: #0a1628;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: rgba(10,22,40,0.5); }
+
+/* ───── PROJECT CARDS: always readable, whatever the photo ───── */
+.project-card {
+  background: #0a1628;               /* dark fallback if the photo fails to load */
+  --gold: #f0cf7a;
+  --gold-light: #ffe29a;
+  --gold-pale: #fff3d0;
+}
+.project-card-overlay,
+.project-card:hover .project-card-overlay {
+  background: linear-gradient(to top,
+    rgba(4,10,22,0.98) 0%,
+    rgba(4,10,22,0.93) 55%,
+    rgba(4,10,22,0.82) 80%,
+    rgba(4,10,22,0.6) 100%);
+}
+.project-title {
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+.project-desc {
+  color: #f0f4ff;
+  font-weight: 400;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.8);
+}
+.project-year { color: #ffffff; font-weight: 500; }
+.project-badge {
+  color: #ffe29a;
+  background: rgba(240,207,122,0.2);
+  border-color: rgba(240,207,122,0.7);
+}
+.project-impact {
+  color: #fff3d0;
+  background: rgba(240,207,122,0.16);
+  font-weight: 400;
+}
+.project-impact strong { color: #ffe29a; }
+.tech-dot {
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.45);
+  background: rgba(255,255,255,0.08);
+}
+.project-link { color: #ffe29a; font-weight: 500; }
+.project-link:hover { color: #ffffff; }
+
+/* "Want to see more" box */
+.projects-cta-label { color: #0a1628; }
+.projects-cta-sub { color: rgba(10,22,40,0.85); }
 </style>
 </head>
 <body>
