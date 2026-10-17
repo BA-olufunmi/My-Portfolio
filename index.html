@@ -325,6 +325,44 @@ nav { background: rgba(242,247,255,0.94); }
 /* "Want to see more" box */
 .projects-cta-label { color: #0a1628; }
 .projects-cta-sub { color: rgba(10,22,40,0.85); }
+
+/* "Business Analyst" in the hero */
+.hero-eyebrow {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #7a5709;
+}
+.hero-eyebrow::before { width: 44px; height: 2px; }
+
+/* About Me / Skills & Tools / Selected Work /
+   Career History / Get In Touch */
+.section-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #7a5709;
+}
+.section-label::before { width: 32px; height: 2px; }
+
+/* The buttons under About (Requirements Analysis,
+   Process Improvement, Data & Business Insights...) */
+.highlight-chip {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #0a1628;
+  padding: 0.9rem 1.2rem;
+  border: 1px solid #8fa8d4;
+  background: #ffffff;
+}
+.highlight-chip i { font-size: 0.95rem; color: #7a5709; }
+.highlight-chip:hover { border-color: #7a5709; }
+
+/* Slightly smaller on phones so nothing overflows */
+@media (max-width: 480px) {
+  .hero-eyebrow, .section-label { font-size: 0.85rem; letter-spacing: 0.15em; }
+  .highlight-chip { font-size: 0.9rem; }
+}
 </style>
 </head>
 <body>
