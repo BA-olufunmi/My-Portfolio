@@ -192,6 +192,64 @@ section{padding:4rem 1.5rem}.section-header{margin-bottom:2.5rem}
 footer{padding:1.5rem;flex-direction:column;text-align:center}}
 @media (max-width:768px){.about-highlights,.projects-grid{grid-template-columns:1fr}.projects-cta-inner{flex-direction:column;align-items:flex-start}.form-row{grid-template-columns:1fr;gap:0}.form-row .form-group{margin-bottom:1rem}}
 @media (max-width:480px){#hero{padding:5.5rem 1.2rem 3rem}.hero-name{font-size:2.1rem}.hero-portrait-wrap{width:220px}.portrait-frame{width:220px;height:280px}.portrait-badge{left:-10px;bottom:-10px}section{padding:3rem 1.2rem}.about-card,.contact-form-card{padding:1.3rem}.timeline{padding-left:1.5rem}.timeline-item::before{left:-1.5rem}.hero-cta{flex-direction:column;width:100%}.btn-primary,.btn-ghost{width:100%}.projects-cta-btn{width:100%;justify-content:center}footer{padding:1.2rem}}
+/* ═══════════════════════════════════════════════
+   BRIGHT THEME OVERRIDE (paste just before </style>)
+   Variable names are kept, only the values change:
+   --navy* = light backgrounds, --white* = dark text
+═══════════════════════════════════════════════ */
+:root {
+  --navy: #f2f7ff;          /* main page background (bright) */
+  --navy-mid: #dfeaff;      /* alternate sections */
+  --navy-light: #cfdffc;
+  --navy-border: #b4c8ea;
+  --gold: #8a6410;          /* darker gold so it's readable on light */
+  --gold-light: #a87a14;
+  --gold-pale: #6b4e0c;
+  --gold-dim: rgba(138,100,16,0.12);
+  --white: #0a1628;         /* main text (dark) */
+  --white-muted: rgba(10,22,40,0.72);
+  --white-dim: rgba(10,22,40,0.4);
+}
+
+/* Nav + mobile menu */
+nav { background: rgba(242,247,255,0.94); }
+.nav-mobile-menu { background: rgba(242,247,255,0.98); }
+
+/* Hero */
+.hero-bg {
+  background:
+    radial-gradient(ellipse 60% 50% at 70% 50%, rgba(138,100,16,0.10) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(180,200,234,0.8) 0%, transparent 60%);
+}
+.hero-grid-lines { opacity: 0.07; }
+
+/* Buttons (light text on the darker gold) */
+.btn-primary { color: #fff; }
+.btn-primary:hover { background: var(--gold-light); }
+
+/* Portrait */
+.portrait-badge { box-shadow: 0 8px 24px rgba(10,22,40,0.15); }
+.portrait-years { box-shadow: 0 8px 24px rgba(138,100,16,0.3); }
+.portrait-years-num { color: #fff; }
+.portrait-years-label { color: rgba(255,255,255,0.9); }
+.portrait-img::after {
+  background: linear-gradient(to top, rgba(10,22,40,0.25) 0%, transparent 50%);
+}
+
+/* Skills / tools */
+.tool-chip:hover { color: var(--gold); }
+
+/* Form status messages */
+#form-status.success { color: #1c7a49; }
+#form-status.error   { color: #c0392b; }
+
+/* Project cards keep their dark photo overlay, so give
+   their text the original light-gold colours back */
+.project-card {
+  --gold: #e2c06e;
+  --gold-light: #f5dc94;
+  --gold-pale: #f5e9c8;
+}
 </style>
 </head>
 <body>
