@@ -428,6 +428,66 @@ nav { background: rgba(242,247,255,0.94); }
   overflow: visible !important;
 }
 .project-card .project-card-top { padding-top: 6rem; }
+/* ───── FIX: project card "facts" text was dark-on-dark ───── */
+.project-card .project-facts dt {
+  color: #ffe29a !important;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  margin-top: 1rem;
+}
+.project-card .project-facts dd {
+  color: #ffffff !important;
+  font-size: 0.92rem;
+  font-weight: 400;
+  line-height: 1.7;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.9);
+}
+
+/* ───── MOBILE: bigger, easier-to-read text ───── */
+@media (max-width: 768px) {
+  body { font-size: 16px; }
+
+  .hero-tagline,
+  .about-text p,
+  .contact-text,
+  .section-desc { font-size: 1rem; line-height: 1.8; }
+
+  .project-card { padding: 1.4rem; }
+  .project-card .project-title { font-size: 1.4rem; }
+  .project-card .project-desc { font-size: 1rem; line-height: 1.75; }
+  .project-card .project-facts dt { font-size: 0.82rem; }
+  .project-card .project-facts dd { font-size: 1rem; line-height: 1.7; }
+  .project-card .project-badge { font-size: 0.78rem; }
+  .project-card .project-year { font-size: 0.9rem; }
+  .project-card .tech-dot { font-size: 0.8rem; padding: 0.25rem 0.65rem; }
+  .project-card .project-link { font-size: 0.88rem; }
+
+  .tool-chip { font-size: 0.92rem; }
+  .skill-group h3 { font-size: 1.35rem; }
+  .cert-name { font-size: 1rem; }
+  .cert-body { font-size: 0.9rem; }
+  .highlight-chip { font-size: 1rem; }
+
+  .timeline-role { font-size: 1.4rem; }
+  .timeline-company { font-size: 1rem; }
+  .timeline-period { font-size: 0.85rem; }
+  .timeline-desc,
+  .timeline-achievements li { font-size: 1rem; }
+
+  .contact-detail-label { font-size: 0.8rem; }
+  .contact-detail-value { font-size: 1rem; }
+  .form-group label { font-size: 0.8rem; }
+  .form-group input,
+  .form-group textarea { font-size: 1rem; }
+  .footer-copy { font-size: 0.9rem; }
+}
+
+@media (max-width: 480px) {
+  .section-label,
+  .hero-eyebrow { font-size: 0.95rem; }
+  .hero-focus li { font-size: 0.85rem; }
+}
 </style>
 </head>
 <body>
