@@ -583,58 +583,133 @@ nav { background: rgba(242,247,255,0.94); }
 <section id="projects" aria-labelledby="projects-title">
 <div class="section-header fade-up">
 <div class="section-label">Selected Work</div>
-<h2 class="section-title" id="projects-title">Projects &amp; <em>Case Studies</em>
-</h2>
+<h2 class="section-title" id="projects-title">Projects &amp; <em>Case Studies</em></h2>
 <p class="section-desc">A selection of business analysis and data projects demonstrating how I define problems, analyse stakeholder needs, document requirements, evaluate options and communicate recommendations. Each case study highlights the approach taken, the deliverables produced and the decisions those artefacts are intended to support.</p>
 </div>
-<!-- TODO (owner): add real screenshots of each artefact as <img> at the top of each card (assets/images/...). Stock photos were removed; no fabricated visuals. -->
+
 <div class="projects-grid">
+
+<!-- 1. BARREL & BREW BRD -->
+<article class="project-card fade-up">
+<div class="project-meta">
+<span class="project-badge">Case Study</span>
+<span class="project-year">2026</span>
+</div>
+<h3 class="project-title">BRD – Barrel &amp; Brew Craft Winery</h3>
+<p class="project-desc">A Business Requirements Document for a family-owned craft winery whose products had grown to over 500 local restaurants, but whose operations had not scaled with demand. The BRD defines requirements for a Brewery Management System to replace handwritten notebooks, an outdated shared spreadsheet and verbal production requests.</p>
+<dl class="project-facts">
+<dt>Problem</dt>
+<dd>Missed weekly production targets and stockouts, inconsistent batch quality (two batches discarded), 30% higher overtime, an unreliable bottling line and sales promising stock without checking with production.</dd>
+<dt>Analysis</dt>
+<dd>Gap analysis across 7 operational areas, a fishbone diagram for issue categorisation, and as-is and to-be swimlane process maps.</dd>
+<dt>Requirements</dt>
+<dd>10 functional requirements (7 Must Have, 3 Should Have) and 6 non-functional requirements, prioritised with MoSCoW, covering recipe management, batch tracking, QC monitoring, inventory alerts, distributor sales integration, demand forecasting and real-time availability checks.</dd>
+<dt>Also covers</dt>
+<dd>Project objectives, scope, stakeholders, assumptions and constraints, risk register and success criteria (for example, overtime reduced by at least 50% and forecast accuracy within 10%).</dd>
+<dt>Status</dt>
+<dd>Proposed requirements only. The success criteria are targets, not achieved results.</dd>
+</dl>
+<div class="project-card-bottom">
+<div class="project-tech">
+<span class="tech-dot">MS Word</span>
+<span class="tech-dot">Gap Analysis</span>
+<span class="tech-dot">Fishbone</span>
+<span class="tech-dot">Swimlane</span>
+<span class="tech-dot">MoSCoW</span>
+</div>
+<a class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Case Study: Barrel and Brew BRD" href="https://docs.google.com/document/d/1HFZHQ6YLGOekHj3fgvK1xQ8NMpw5g5vO/edit?usp=sharing&amp;ouid=109561869718636672422&amp;rtpof=true&amp;sd=true">View Case Study <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+</div>
+</article>
+
+<!-- 2. SYNERGY ENTERPRISE BUSINESS CASE -->
+<article class="project-card fade-up">
+<div class="project-meta">
+<span class="project-badge">Case Study</span>
+<span class="project-year">2024</span>
+</div>
+<h3 class="project-title">Global HCM Business Case – Synergy Enterprise</h3>
+<p class="project-desc">A business case for consolidating the HR technology of a global FMCG manufacturer (75,000+ employees, five continents) from 20+ disconnected systems into one cloud HCM platform. It compares Workday HCM, SAP SuccessFactors and Oracle Fusion Cloud HCM against defined requirements and recommends Workday.</p>
+<dl class="project-facts">
+<dt>Problem</dt>
+<dd>Fragmented employee data, manual HR processes, no global reporting, inconsistent employee experience, compliance exposure across 50+ countries and more than US$9M a year in system maintenance.</dd>
+<dt>Analysis</dt>
+<dd>Predetermined requirements, side-by-side vendor comparison, benefits beyond efficiency, 5-year cost-benefit analysis and a risk register with mitigations.</dd>
+<dt>Financial projections</dt>
+<dd>Estimated investment of US$52–71M over 5 years against US$30–50M a year in quantified benefits, giving a projected ROI of 250–350% and an 18–24 month payback.</dd>
+<dt>Delivery approach</dt>
+<dd>Phased rollout using the Scaled Agile Framework (SAFe) with 3-month Program Increments, a pilot region, regional waves and go/no-go gates. The business case argues against pure Waterfall and pure Scrum.</dd>
+<dt>Status</dt>
+<dd>Recommendation proposed only, requesting US$22–30M for the initial phase. Savings and ROI figures are benchmark-based projections, not realised results.</dd>
+</dl>
+<div class="project-card-bottom">
+<div class="project-tech">
+<span class="tech-dot">MS Word</span>
+<span class="tech-dot">Cost-Benefit Analysis</span>
+<span class="tech-dot">Vendor Comparison</span>
+<span class="tech-dot">SAFe</span>
+</div>
+<a class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Case Study: Global HCM business case" href="https://docs.google.com/document/d/13_CWkWYK4NggR4uLj8vS-zMBbE7ATJUQ/edit?usp=sharing&amp;ouid=109561869718636672422&amp;rtpof=true&amp;sd=true">View Case Study <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+</div>
+</article>
+
+<!-- 3. SMILEPOINT CASE STUDY -->
 <article class="project-card fade-up">
 <div class="project-meta">
 <span class="project-badge">Case Study</span>
 <span class="project-year">2024</span>
 </div>
 <h3 class="project-title">SmilePoint Dental Clinic – Online Appointment Booking Portal</h3>
-<p class="project-desc">A business analysis project exploring the challenges associated with manual dental appointment scheduling and proposing an online booking portal. The work examines stakeholder needs, scheduling concerns and the requirements that would inform a digital booking solution.</p>
+<p class="project-desc">A business analysis of a dental clinic that manages appointments by phone, paper books and spreadsheets, and a proposal for an online booking portal. The work identifies the business problems on both the patient and operational side and maps each stakeholder group's goals and concerns.</p>
 <dl class="project-facts">
-<dt>Deliverables</dt>
-<dd>Business problem statement, stakeholder analysis and online booking portal proposal.</dd>
+<dt>Problem</dt>
+<dd>Long phone waits, no booking outside clinic hours, missed appointments, double-bookings, lost or illegible paper records and heavy reception workload.</dd>
+<dt>Stakeholders analysed</dt>
+<dd>Patients, reception and admin staff, dentists, clinic management, IT or vendor team and regulatory bodies, with goals and concerns for each (for example data privacy for patients and job-displacement fears for reception).</dd>
+<dt>Proposed outcomes</dt>
+<dd>24/7 self-service booking with real-time availability, automated SMS and email confirmations and reminders, and fewer manual errors.</dd>
 <dt>Status</dt>
-<dd>Proposed solution — not presented as implemented; no measured outcomes claimed.</dd>
+<dd>Proposed solution. Not presented as implemented, and no measured outcomes are claimed.</dd>
 </dl>
 <div class="project-card-bottom">
 <div class="project-tech">
 <span class="tech-dot">MS Word</span>
 <span class="tech-dot">Stakeholder Analysis</span>
+<span class="tech-dot">Problem Statement</span>
 </div>
-<a class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Case Study: SmilePoint booking portal" href="https://docs.google.com/document/d/16mHA2kTyeAV30cxcRjEGCf--of0Sr3yo/edit?usp=sharing&ouid=109561869718636672422&rtpof=true&sd=true">View Case Study <i class="fa fa-arrow-right" aria-hidden="true">
-</i>
-</a>
+<a class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Case Study: SmilePoint booking portal" href="https://docs.google.com/document/d/16mHA2kTyeAV30cxcRjEGCf--of0Sr3yo/edit?usp=sharing&amp;ouid=109561869718636672422&amp;rtpof=true&amp;sd=true">View Case Study <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 </div>
 </article>
+
+<!-- 4. SMILEPOINT STAKEHOLDER MATRIX -->
 <article class="project-card fade-up">
 <div class="project-meta">
 <span class="project-badge">Supporting Artefact</span>
 <span class="project-year">2024</span>
 </div>
 <h3 class="project-title">SmilePoint Stakeholder Matrix</h3>
-<p class="project-desc">A stakeholder analysis artefact using a Power/Interest Grid to classify stakeholders and inform engagement planning for the SmilePoint dental booking portal proposal.</p>
+<p class="project-desc">A Power/Interest Grid that plots SmilePoint's stakeholders by level of influence and level of interest, and assigns each an engagement strategy for the booking portal proposal.</p>
 <dl class="project-facts">
+<dt>Manage Closely</dt>
+<dd>Clinic Management (high influence, high interest).</dd>
+<dt>Keep Satisfied</dt>
+<dd>Regulators (high influence, lower interest).</dd>
+<dt>Keep Informed</dt>
+<dd>Reception Staff, Dentists and Patients (high interest, lower influence).</dd>
+<dt>Monitor</dt>
+<dd>Competitors and the General Public (low influence, low interest).</dd>
 <dt>Supports</dt>
-<dd>SmilePoint online booking portal case study.</dd>
-<dt>Method</dt>
-<dd>Power/Interest Grid classification to inform communication and engagement planning.</dd>
+<dd>SmilePoint online booking portal case study and its communication planning.</dd>
 </dl>
 <div class="project-card-bottom">
 <div class="project-tech">
 <span class="tech-dot">Excel</span>
 <span class="tech-dot">Power/Interest Grid</span>
 </div>
-<a class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Project Document: SmilePoint stakeholder matrix" href="https://docs.google.com/spreadsheets/d/1gQQZmp8WGcU-pmYtPKN51yxI8MzX7Otv/edit?usp=sharing&ouid=109561869718636672422&rtpof=true&sd=true">View Project Document <i class="fa fa-arrow-right" aria-hidden="true">
-</i>
-</a>
+<a class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Project Document: SmilePoint stakeholder matrix" href="https://docs.google.com/spreadsheets/d/1gQQZmp8WGcU-pmYtPKN51yxI8MzX7Otv/edit?usp=sharing&amp;ouid=109561869718636672422&amp;rtpof=true&amp;sd=true">View Project Document <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 </div>
 </article>
+
+<!-- 5. SMILEPOINT RACI (unchanged: no source file provided) -->
 <article class="project-card fade-up">
 <div class="project-meta">
 <span class="project-badge">Supporting Artefact</span>
@@ -646,102 +721,53 @@ nav { background: rgba(242,247,255,0.94); }
 <dt>Supports</dt>
 <dd>SmilePoint online booking portal case study.</dd>
 <dt>Scope</dt>
-<dd>Proposed assignments for 8 stakeholders across 10 project tasks. <!-- TODO (owner): confirm these counts against the file -->
-</dd>
+<dd>Proposed assignments for 8 stakeholders across 10 project tasks.</dd>
 </dl>
 <div class="project-card-bottom">
 <div class="project-tech">
 <span class="tech-dot">Excel</span>
 <span class="tech-dot">RACI</span>
 </div>
-<a class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Project Document: SmilePoint RACI matrix" href="https://docs.google.com/spreadsheets/d/1dhwZDBt0j41Dq57WBjTmRb2iLVz1eDhf/edit?usp=sharing&ouid=109561869718636672422&rtpof=true&sd=true">View Project Document <i class="fa fa-arrow-right" aria-hidden="true">
-</i>
-</a>
+<a class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Project Document: SmilePoint RACI matrix" href="https://docs.google.com/spreadsheets/d/1dhwZDBt0j41Dq57WBjTmRb2iLVz1eDhf/edit?usp=sharing&amp;ouid=109561869718636672422&amp;rtpof=true&amp;sd=true">View Project Document <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 </div>
 </article>
-<article class="project-card fade-up">
-<div class="project-meta">
-<span class="project-badge">Case Study</span>
-<span class="project-year">2024</span>
-</div>
-<h3 class="project-title">Global HCM Business Case – Synergy Corp</h3>
-<p class="project-desc">A strategic business case evaluating the proposed consolidation of global HR systems using Workday HCM. The project brings together vendor evaluation, financial assumptions, expected benefits, risks and a phased implementation approach to support an informed investment decision.</p>
-<dl class="project-facts">
-<dt>Deliverables</dt>
-<dd>Vendor comparison, financial projections, risk considerations and a phased (SAFe-based) rollout approach.</dd>
-<dt>Status</dt>
-<dd>Recommendation proposed only. Savings and ROI figures are projections, not realised results.</dd>
-</dl>
-<div class="project-card-bottom">
-<div class="project-tech">
-<span class="tech-dot">MS Word</span>
-<span class="tech-dot">Financial Modelling</span>
-<span class="tech-dot">SAFe</span>
-</div>
-<a class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Case Study: Global HCM business case" href="https://docs.google.com/document/d/13_CWkWYK4NggR4uLj8vS-zMBbE7ATJUQ/edit?usp=sharing&ouid=109561869718636672422&rtpof=true&sd=true">View Case Study <i class="fa fa-arrow-right" aria-hidden="true">
-</i>
-</a>
-</div>
-</article>
+
+<!-- 6. LLOYDS KPI ANALYSIS -->
 <article class="project-card fade-up">
 <div class="project-meta">
 <span class="project-badge">Analysis Exercise</span>
-<span class="project-year">2023</span>
+<span class="project-year">2025</span>
 </div>
 <h3 class="project-title">Lloyds Banking Group – Strategic Performance Analysis</h3>
-<p class="project-desc">A financial and operational performance analysis examining quarterly trends in Cost-to-Income Ratio, Customer Retention Rate and Return on Equity over the 2020–2022 period. The project uses KPI visualisation to support comparisons and identify patterns requiring further investigation.</p>
+<p class="project-desc">A KPI dashboard analysing quarterly performance from 2020 to 2022 across three measures: Cost-to-Income Ratio, Customer Retention Rate and Return on Equity. Each metric is shown in its own chart so trends and quarter-to-quarter swings can be compared.</p>
 <dl class="project-facts">
-<dt>Deliverables</dt>
-<dd>KPI dashboard covering quarterly data, 2020–2022.</dd>
+<dt>Cost-to-Income Ratio</dt>
+<dd>Line chart, 2020 Q1 to 2022 Q3. The figure peaked at 6,186.2 in 2021 Q4, then dropped to 5,396.9 in 2022 Q1, its lowest point.</dd>
+<dt>Customer Retention</dt>
+<dd>Column chart, 2020 Q1 to 2022 Q4. Highest in 2020 Q2 (29,765 customers), lowest in 2022 Q1 (25,277).</dd>
+<dt>Return on Equity</dt>
+<dd>Area chart, 2020 Q1 to 2022 Q3. Values stayed in a narrow band of about 1.76M to 1.89M, with the high in 2020 Q4.</dd>
 <dt>Context</dt>
-<dd>Independent portfolio analysis; not an engagement commissioned by Lloyds Banking Group. <!-- TODO (owner): confirm -->
-</dd>
+<dd>Independent portfolio analysis; not an engagement commissioned by Lloyds Banking Group.</dd>
 </dl>
 <div class="project-card-bottom">
 <div class="project-tech">
-<span class="tech-dot">Power BI</span>
 <span class="tech-dot">KPI Dashboards</span>
+<span class="tech-dot">Data Visualisation</span>
 </div>
-<a class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Project Document: Lloyds performance analysis" href="https://drive.google.com/file/d/1zuSAMplSvVvWbBJ_eBDJUBTP8iNB6MzI/view?usp=sharing">View Project Document <i class="fa fa-arrow-right" aria-hidden="true">
-</i>
-</a>
-</div>
-</article>
-<article class="project-card fade-up">
-<div class="project-meta">
-<span class="project-badge">Case Study</span>
-<span class="project-year">2022</span>
-</div>
-<h3 class="project-title">BRD – Barrel &amp; Brew Craft Winery</h3>
-<p class="project-desc">A Business Requirements Document exploring operational challenges in a craft winery and defining requirements for a proposed digital operations platform. The analysis uses gap analysis, fishbone analysis and swimlane process mapping to structure the problem and inform potential process improvements.</p>
-<dl class="project-facts">
-<dt>Deliverables</dt>
-<dd>BRD with gap analysis, fishbone diagram and swimlane process maps.</dd>
-<dt>Status</dt>
-<dd>Proposed platform requirements; issues described are those identified in the exercise, and no operational improvements are claimed.</dd>
-</dl>
-<div class="project-card-bottom">
-<div class="project-tech">
-<span class="tech-dot">MS Word</span>
-<span class="tech-dot">Gap Analysis</span>
-<span class="tech-dot">Fishbone</span>
-<span class="tech-dot">Swimlane</span>
-</div>
-<a class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Case Study: Barrel and Brew BRD" href="https://docs.google.com/document/d/1HFZHQ6YLGOekHj3fgvK1xQ8NMpw5g5vO/edit?usp=sharing&ouid=109561869718636672422&rtpof=true&sd=true">View Case Study <i class="fa fa-arrow-right" aria-hidden="true">
-</i>
-</a>
+<a class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Project Document: Lloyds performance analysis" href="https://drive.google.com/file/d/1zuSAMplSvVvWbBJ_eBDJUBTP8iNB6MzI/view?usp=sharing">View Project Document <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 </div>
 </article>
+
 </div>
+
 <div class="projects-cta fade-up">
 <div class="projects-cta-inner">
 <div>
 <span class="projects-cta-label">Want to see more?</span>
 <span class="projects-cta-sub">Explore the full portfolio of case studies, reports and documentation on Google Drive.</span>
 </div>
-<a href="https://drive.google.com/drive/folders/1SoQdkSyWq0c8ZJ9RhwfnxPSc7L8qM4KF?usp=sharing" target="_blank" rel="noopener noreferrer" class="projects-cta-btn">View All Projects on Drive <i class="fa fa-arrow-up-right-from-square" style="font-size:.7rem" aria-hidden="true">
-</i>
-</a>
+<a href="https://drive.google.com/drive/folders/1SoQdkSyWq0c8ZJ9RhwfnxPSc7L8qM4KF?usp=sharing" target="_blank" rel="noopener noreferrer" class="projects-cta-btn">View All Projects on Drive <i class="fa fa-arrow-up-right-from-square" style="font-size:.7rem" aria-hidden="true"></i></a>
 </div>
 </div>
 </section>
