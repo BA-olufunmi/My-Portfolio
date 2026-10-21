@@ -548,6 +548,46 @@ h1,h2,h3,p,dd,li{overflow-wrap:anywhere}
 @media (hover:none){
   .project-card:hover,.btn-primary:hover,.btn-ghost:hover{transform:none}
 }
+/* ───── PROJECT GROUPS (reverse chronological) ───── */
+.project-group{margin-top:3.5rem}
+.project-group:first-of-type{margin-top:0}
+.group-head{padding:.2rem 0 .2rem 1.2rem;border-left:4px solid var(--gold);margin-bottom:1.6rem}
+.group-title{font-family:var(--font-display);font-size:clamp(1.4rem,3vw,1.9rem);font-weight:600;color:var(--white);line-height:1.25}
+.group-meta{font-size:.9rem;font-weight:500;color:var(--gold);margin-top:.2rem}
+.project-card .project-org{font-size:.85rem;font-weight:500;color:#ffe29a !important;margin:-.2rem 0 .8rem}
+.project-card .project-todo{color:#ffe29a !important;font-style:italic}
+.project-card .tool-line{margin-bottom:1rem}
+ 
+/* ───── EXPERIENCE / RESUME: aligned on every device ───── */
+#experience{background:var(--navy)}
+.timeline{max-width:900px;padding-left:2rem;margin:0}
+.timeline::before{left:4px;top:.6rem}
+.timeline-item{padding-bottom:.2rem;margin-bottom:2.4rem}
+.timeline-item:last-child{margin-bottom:0}
+.timeline-item::before{left:calc(-2rem + 4px);top:.55rem;transform:translateX(-50%)}
+.timeline-header{align-items:baseline}
+.timeline-role{flex:1 1 260px;min-width:0;line-height:1.3}
+.timeline-period{flex:0 0 auto;max-width:100%}
+.timeline-company{font-weight:500}
+.timeline-achievements li{align-items:flex-start}
+.timeline-achievements li::before{flex:0 0 1.2em}
+.timeline-desc,.timeline-achievements li{max-width:none}
+ 
+@media (max-width:768px){
+  .timeline{padding-left:1.6rem}
+  .timeline-item::before{left:calc(-1.6rem + 4px)}
+}
+@media (max-width:600px){
+  .timeline-header{flex-direction:column;align-items:flex-start;gap:.35rem}
+  .timeline-role{flex:none;width:100%}
+  .timeline-achievements li{gap:.5rem}
+}
+@media (max-width:480px){
+  .timeline{padding-left:1.3rem}
+  .timeline-item::before{left:calc(-1.3rem + 4px)}
+  .project-group{margin-top:2.5rem}
+  .group-head{padding-left:.9rem}
+}
 </style>
 </head>
 <body>
@@ -644,183 +684,188 @@ h1,h2,h3,p,dd,li{overflow-wrap:anywhere}
 <div class="section-header fade-up">
 <div class="section-label">Selected Work</div>
 <h2 class="section-title" id="projects-title">Projects &amp; <em>Case Studies</em></h2>
-<p class="section-desc">A selection of business analysis and data projects demonstrating how I define problems, analyse stakeholder needs, document requirements, evaluate options and communicate recommendations. Each case study highlights the approach taken, the deliverables produced and the decisions those artefacts are intended to support.</p>
+<p class="section-desc">Business analysis and data projects, most recent first. Each entry shows the problem, what I produced, the methods and tools used, and the result.</p>
 </div>
-
+ 
+<!-- ============ 1. AMDARI ============ -->
+<div class="project-group">
+<div class="group-head fade-up">
+<h3 class="group-title">Amdari — Business Analysis Internship</h3>
+<p class="group-meta">July – September 2026</p>
+</div>
 <div class="projects-grid">
-
-<!-- 1. BARREL & BREW BRD -->
+ 
 <article class="project-card fade-up">
-<div class="project-meta">
-<span class="project-badge">Case Study</span>
-<span class="project-year">2026</span>
-</div>
-<h3 class="project-title">BRD – Barrel &amp; Brew Craft Winery</h3>
+<div class="project-meta"><span class="project-badge">Internship Project</span></div>
+<h4 class="project-title">BRD – Barrel &amp; Brew Craft Winery</h4>
+<p class="project-org">Amdari Business Analysis Internship | 2026</p>
+<!-- TODO (owner): CONFIRM this project belongs to Amdari (vs 10Alytics), add the month, and describe your exact role. -->
 <p class="project-desc">A Business Requirements Document for a family-owned craft winery whose products had grown to over 500 local restaurants, but whose operations had not scaled with demand. The BRD defines requirements for a Brewery Management System to replace handwritten notebooks, an outdated shared spreadsheet and verbal production requests.</p>
 <dl class="project-facts">
 <dt>Problem</dt>
 <dd>Missed weekly production targets and stockouts, inconsistent batch quality (two batches discarded), 30% higher overtime, an unreliable bottling line and sales promising stock without checking with production.</dd>
-<dt>Analysis</dt>
-<dd>Gap analysis across 7 operational areas, a fishbone diagram for issue categorisation, and as-is and to-be swimlane process maps.</dd>
-<dt>Requirements</dt>
-<dd>10 functional requirements (7 Must Have, 3 Should Have) and 6 non-functional requirements, prioritised with MoSCoW, covering recipe management, batch tracking, QC monitoring, inventory alerts, distributor sales integration, demand forecasting and real-time availability checks.</dd>
-<dt>Also covers</dt>
-<dd>Project objectives, scope, stakeholders, assumptions and constraints, risk register and success criteria (for example, overtime reduced by at least 50% and forecast accuracy within 10%).</dd>
-<dt>Status</dt>
-<dd>Proposed requirements only. The success criteria are targets, not achieved results.</dd>
+<dt>My contribution</dt>
+<dd>Gap analysis across 7 operational areas, a fishbone diagram, as-is and to-be swimlane process maps, and 10 functional (7 Must Have, 3 Should Have) and 6 non-functional requirements prioritised with MoSCoW. Also scope, stakeholders, assumptions, constraints, risk register and success criteria.</dd>
+<dt>Result</dt>
+<dd>Proposed requirements only. Success criteria (for example overtime reduced by at least 50%, forecast accuracy within 10%) are targets, not achieved results.</dd>
 </dl>
 <div class="project-card-bottom">
-<div class="project-tech">
-<span class="tech-dot">MS Word</span>
-<span class="tech-dot">Gap Analysis</span>
-<span class="tech-dot">Fishbone</span>
-<span class="tech-dot">Swimlane</span>
-<span class="tech-dot">MoSCoW</span>
-</div>
+<div class="project-tech"><span class="tech-dot">MS Word</span><span class="tech-dot">Gap Analysis</span><span class="tech-dot">Fishbone</span><span class="tech-dot">Swimlane</span><span class="tech-dot">MoSCoW</span></div>
 <a class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Case Study: Barrel and Brew BRD" href="https://docs.google.com/document/d/1HFZHQ6YLGOekHj3fgvK1xQ8NMpw5g5vO/edit?usp=sharing&amp;ouid=109561869718636672422&amp;rtpof=true&amp;sd=true">View Case Study <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 </div>
 </article>
-
-<!-- 2. SYNERGY ENTERPRISE BUSINESS CASE -->
-<article class="project-card fade-up">
-<div class="project-meta">
-<span class="project-badge">Case Study</span>
-<span class="project-year">2024</span>
+ 
+<!-- TODO (owner): add any other Amdari projects as extra cards, copying the card above. -->
 </div>
-<h3 class="project-title">Global HCM Business Case – Synergy Enterprise</h3>
-<p class="project-desc">A business case for consolidating the HR technology of a global FMCG manufacturer (75,000+ employees, five continents) from 20+ disconnected systems into one cloud HCM platform. It compares Workday HCM, SAP SuccessFactors and Oracle Fusion Cloud HCM against defined requirements and recommends Workday.</p>
+</div>
+ 
+<!-- ============ 2. 10ALYTICS ============ -->
+<div class="project-group">
+<div class="group-head fade-up">
+<h3 class="group-title">10Alytics — Business Analysis Projects</h3>
+<p class="group-meta">November 2025 – June 2026 (programme dates, not individual project dates)</p>
+</div>
+<div class="projects-grid">
+ 
+<article class="project-card fade-up">
+<div class="project-meta"><span class="project-badge">Course Project</span></div>
+<h4 class="project-title">Project Zenith: Apex Global Bank Instant Loan</h4>
+<p class="project-org">10Alytics Business Analysis Programme | [add date if known]</p>
+<!-- TODO (owner): replace the bracketed text below with real details; add a link if you have one. -->
+<p class="project-desc project-todo">[Add: the problem the bank faced, e.g. the loan process being solved.]</p>
 <dl class="project-facts">
-<dt>Problem</dt>
-<dd>Fragmented employee data, manual HR processes, no global reporting, inconsistent employee experience, compliance exposure across 50+ countries and more than US$9M a year in system maintenance.</dd>
-<dt>Analysis</dt>
-<dd>Predetermined requirements, side-by-side vendor comparison, benefits beyond efficiency, 5-year cost-benefit analysis and a risk register with mitigations.</dd>
-<dt>Financial projections</dt>
-<dd>Estimated investment of US$52–71M over 5 years against US$30–50M a year in quantified benefits, giving a projected ROI of 250–350% and an 18–24 month payback.</dd>
-<dt>Delivery approach</dt>
-<dd>Phased rollout using the Scaled Agile Framework (SAFe) with 3-month Program Increments, a pilot region, regional waves and go/no-go gates. The business case argues against pure Waterfall and pure Scrum.</dd>
-<dt>Status</dt>
-<dd>Recommendation proposed only, requesting US$22–30M for the initial phase. Savings and ROI figures are benchmark-based projections, not realised results.</dd>
+<dt>My contribution</dt><dd class="project-todo">[Add: the artefacts you personally produced.]</dd>
+<dt>Methods &amp; tools</dt><dd class="project-todo">[Add: e.g. Jira, Confluence, process maps.]</dd>
+<dt>Result</dt><dd class="project-todo">[Add: the deliverable or outcome. Do not claim results you did not measure.]</dd>
 </dl>
-<div class="project-card-bottom">
-<div class="project-tech">
-<span class="tech-dot">MS Word</span>
-<span class="tech-dot">Cost-Benefit Analysis</span>
-<span class="tech-dot">Vendor Comparison</span>
-<span class="tech-dot">SAFe</span>
-</div>
-<a class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Case Study: Global HCM business case" href="https://docs.google.com/document/d/13_CWkWYK4NggR4uLj8vS-zMBbE7ATJUQ/edit?usp=sharing&amp;ouid=109561869718636672422&amp;rtpof=true&amp;sd=true">View Case Study <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-</div>
 </article>
-
-<!-- 3. SMILEPOINT CASE STUDY -->
+ 
 <article class="project-card fade-up">
-<div class="project-meta">
-<span class="project-badge">Case Study</span>
-<span class="project-year">2024</span>
-</div>
-<h3 class="project-title">SmilePoint Dental Clinic – Online Appointment Booking Portal</h3>
-<p class="project-desc">A business analysis of a dental clinic that manages appointments by phone, paper books and spreadsheets, and a proposal for an online booking portal. The work identifies the business problems on both the patient and operational side and maps each stakeholder group's goals and concerns.</p>
+<div class="project-meta"><span class="project-badge">Course Project</span></div>
+<h4 class="project-title">Canteen Ordering System</h4>
+<p class="project-org">10Alytics Business Analysis Programme | [add date if known]</p>
+<p class="project-desc project-todo">[Add: the problem the canteen ordering system addresses.]</p>
 <dl class="project-facts">
-<dt>Problem</dt>
-<dd>Long phone waits, no booking outside clinic hours, missed appointments, double-bookings, lost or illegible paper records and heavy reception workload.</dd>
-<dt>Stakeholders analysed</dt>
-<dd>Patients, reception and admin staff, dentists, clinic management, IT or vendor team and regulatory bodies, with goals and concerns for each (for example data privacy for patients and job-displacement fears for reception).</dd>
-<dt>Proposed outcomes</dt>
-<dd>24/7 self-service booking with real-time availability, automated SMS and email confirmations and reminders, and fewer manual errors.</dd>
-<dt>Status</dt>
-<dd>Proposed solution. Not presented as implemented, and no measured outcomes are claimed.</dd>
+<dt>My contribution</dt><dd class="project-todo">[Add: the artefacts you personally produced.]</dd>
+<dt>Methods &amp; tools</dt><dd class="project-todo">[Add: tools and techniques used.]</dd>
+<dt>Result</dt><dd class="project-todo">[Add: the deliverable or outcome.]</dd>
 </dl>
-<div class="project-card-bottom">
-<div class="project-tech">
-<span class="tech-dot">MS Word</span>
-<span class="tech-dot">Stakeholder Analysis</span>
-<span class="tech-dot">Problem Statement</span>
-</div>
-<a class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Case Study: SmilePoint booking portal" href="https://docs.google.com/document/d/16mHA2kTyeAV30cxcRjEGCf--of0Sr3yo/edit?usp=sharing&amp;ouid=109561869718636672422&amp;rtpof=true&amp;sd=true">View Case Study <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-</div>
 </article>
-
-<!-- 4. SMILEPOINT STAKEHOLDER MATRIX -->
+ 
 <article class="project-card fade-up">
-<div class="project-meta">
-<span class="project-badge">Supporting Artefact</span>
-<span class="project-year">2024</span>
-</div>
-<h3 class="project-title">SmilePoint Stakeholder Matrix</h3>
-<p class="project-desc">A Power/Interest Grid that plots SmilePoint's stakeholders by level of influence and level of interest, and assigns each an engagement strategy for the booking portal proposal.</p>
+<div class="project-meta"><span class="project-badge">Course Project</span></div>
+<h4 class="project-title">GreenLeaf</h4>
+<p class="project-org">10Alytics Business Analysis Programme | [add date if known]</p>
+<p class="project-desc project-todo">[Add: what GreenLeaf is and the problem it addresses.]</p>
 <dl class="project-facts">
-<dt>Manage Closely</dt>
-<dd>Clinic Management (high influence, high interest).</dd>
-<dt>Keep Satisfied</dt>
-<dd>Regulators (high influence, lower interest).</dd>
-<dt>Keep Informed</dt>
-<dd>Reception Staff, Dentists and Patients (high interest, lower influence).</dd>
-<dt>Monitor</dt>
-<dd>Competitors and the General Public (low influence, low interest).</dd>
-<dt>Supports</dt>
-<dd>SmilePoint online booking portal case study and its communication planning.</dd>
+<dt>My contribution</dt><dd class="project-todo">[Add: the artefacts you personally produced.]</dd>
+<dt>Methods &amp; tools</dt><dd class="project-todo">[Add: tools and techniques used.]</dd>
+<dt>Result</dt><dd class="project-todo">[Add: the deliverable or outcome.]</dd>
 </dl>
-<div class="project-card-bottom">
-<div class="project-tech">
-<span class="tech-dot">Excel</span>
-<span class="tech-dot">Power/Interest Grid</span>
-</div>
-<a class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Project Document: SmilePoint stakeholder matrix" href="https://docs.google.com/spreadsheets/d/1gQQZmp8WGcU-pmYtPKN51yxI8MzX7Otv/edit?usp=sharing&amp;ouid=109561869718636672422&amp;rtpof=true&amp;sd=true">View Project Document <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-</div>
 </article>
-
-<!-- 5. SMILEPOINT RACI (unchanged: no source file provided) -->
+ 
+</div>
+</div>
+ 
+<!-- ============ 3. UNIVERSITY OF HUDDERSFIELD ============ -->
+<div class="project-group">
+<div class="group-head fade-up">
+<h3 class="group-title">University of Huddersfield — Academic Projects</h3>
+<p class="group-meta">BSc (Hons) Business with Logistics and Supply Chain Management · September 2022 – June 2025 (degree dates, not individual project dates)</p>
+</div>
+<div class="projects-grid">
+ 
+<!-- TODO (owner): CONFIRM the three projects below were done during your degree and add academic years (e.g. 2024/25). -->
 <article class="project-card fade-up">
-<div class="project-meta">
-<span class="project-badge">Supporting Artefact</span>
-<span class="project-year">2024</span>
-</div>
-<h3 class="project-title">SmilePoint RACI Matrix</h3>
-<p class="project-desc">A responsibility-assignment matrix defining proposed roles for key project activities. The RACI framework clarifies who is Responsible, Accountable, Consulted and Informed, helping stakeholders understand ownership and decision-making responsibilities.</p>
-<dl class="project-facts">
-<dt>Supports</dt>
-<dd>SmilePoint online booking portal case study.</dd>
-<dt>Scope</dt>
-<dd>Proposed assignments for 8 stakeholders across 10 project tasks.</dd>
-</dl>
-<div class="project-card-bottom">
-<div class="project-tech">
-<span class="tech-dot">Excel</span>
-<span class="tech-dot">RACI</span>
-</div>
-<a class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Project Document: SmilePoint RACI matrix" href="https://docs.google.com/spreadsheets/d/1dhwZDBt0j41Dq57WBjTmRb2iLVz1eDhf/edit?usp=sharing&amp;ouid=109561869718636672422&amp;rtpof=true&amp;sd=true">View Project Document <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-</div>
-</article>
-
-<!-- 6. LLOYDS KPI ANALYSIS -->
-<article class="project-card fade-up">
-<div class="project-meta">
-<span class="project-badge">Analysis Exercise</span>
-<span class="project-year">2025</span>
-</div>
-<h3 class="project-title">Lloyds Banking Group – Strategic Performance Analysis</h3>
-<p class="project-desc">A KPI dashboard analysing quarterly performance from 2020 to 2022 across three measures: Cost-to-Income Ratio, Customer Retention Rate and Return on Equity. Each metric is shown in its own chart so trends and quarter-to-quarter swings can be compared.</p>
+<div class="project-meta"><span class="project-badge">Analysis Exercise</span></div>
+<h4 class="project-title">Lloyds Banking Group – Strategic Performance Analysis</h4>
+<p class="project-org">University of Huddersfield | 2025</p>
+<p class="project-desc">A KPI dashboard analysing quarterly performance from 2020 to 2022 across Cost-to-Income Ratio, Customer Retention Rate and Return on Equity, with a separate chart for each so trends and quarter-to-quarter swings can be compared. Independent analysis; not commissioned by Lloyds Banking Group.</p>
 <dl class="project-facts">
 <dt>Cost-to-Income Ratio</dt>
-<dd>Line chart, 2020 Q1 to 2022 Q3. The figure peaked at 6,186.2 in 2021 Q4, then dropped to 5,396.9 in 2022 Q1, its lowest point.</dd>
+<dd>Line chart, 2020 Q1 to 2022 Q3. Peaked at 6,186.2 in 2021 Q4, lowest at 5,396.9 in 2022 Q1.</dd>
 <dt>Customer Retention</dt>
-<dd>Column chart, 2020 Q1 to 2022 Q4. Highest in 2020 Q2 (29,765 customers), lowest in 2022 Q1 (25,277).</dd>
+<dd>Column chart, 2020 Q1 to 2022 Q4. Highest in 2020 Q2 (29,765), lowest in 2022 Q1 (25,277).</dd>
 <dt>Return on Equity</dt>
-<dd>Area chart, 2020 Q1 to 2022 Q3. Values stayed in a narrow band of about 1.76M to 1.89M, with the high in 2020 Q4.</dd>
-<dt>Context</dt>
-<dd>Independent portfolio analysis; not an engagement commissioned by Lloyds Banking Group.</dd>
+<dd>Area chart, 2020 Q1 to 2022 Q3. Stayed between about 1.76M and 1.89M, high in 2020 Q4.</dd>
 </dl>
 <div class="project-card-bottom">
-<div class="project-tech">
-<span class="tech-dot">KPI Dashboards</span>
-<span class="tech-dot">Data Visualisation</span>
-</div>
+<div class="project-tech"><span class="tech-dot">KPI Dashboards</span><span class="tech-dot">Data Visualisation</span></div>
 <a class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Project Document: Lloyds performance analysis" href="https://drive.google.com/file/d/1zuSAMplSvVvWbBJ_eBDJUBTP8iNB6MzI/view?usp=sharing">View Project Document <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 </div>
 </article>
-
+ 
+<article class="project-card fade-up">
+<div class="project-meta"><span class="project-badge">Case Study</span></div>
+<h4 class="project-title">Global HCM Business Case – Synergy Enterprise</h4>
+<p class="project-org">University of Huddersfield | 2024</p>
+<p class="project-desc">A business case for consolidating the HR technology of a global FMCG manufacturer (75,000+ employees, five continents) from 20+ disconnected systems into one cloud HCM platform. It compares Workday HCM, SAP SuccessFactors and Oracle Fusion Cloud HCM against defined requirements and recommends Workday.</p>
+<dl class="project-facts">
+<dt>Problem</dt>
+<dd>Fragmented employee data, manual HR processes, no global reporting, compliance exposure across 50+ countries and more than US$9M a year in system maintenance.</dd>
+<dt>My contribution</dt>
+<dd>Requirements, side-by-side vendor comparison, 5-year cost-benefit analysis, risk register, and a phased SAFe delivery approach (3-month Program Increments, pilot region, go/no-go gates).</dd>
+<dt>Result</dt>
+<dd>Recommendation proposed only, requesting US$22–30M for the initial phase. Projected ROI of 250–350% and 18–24 month payback are benchmark-based projections, not realised results.</dd>
+</dl>
+<div class="project-card-bottom">
+<div class="project-tech"><span class="tech-dot">MS Word</span><span class="tech-dot">Cost-Benefit Analysis</span><span class="tech-dot">Vendor Comparison</span><span class="tech-dot">SAFe</span></div>
+<a class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Case Study: Global HCM business case" href="https://docs.google.com/document/d/13_CWkWYK4NggR4uLj8vS-zMBbE7ATJUQ/edit?usp=sharing&amp;ouid=109561869718636672422&amp;rtpof=true&amp;sd=true">View Case Study <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 </div>
-
+</article>
+ 
+<article class="project-card fade-up">
+<div class="project-meta"><span class="project-badge">Case Study</span></div>
+<h4 class="project-title">SmilePoint Dental Clinic – Online Appointment Booking Portal</h4>
+<p class="project-org">University of Huddersfield | 2024</p>
+<p class="project-desc">A business analysis of a dental clinic that manages appointments by phone, paper books and spreadsheets, with a proposal for an online booking portal.</p>
+<dl class="project-facts">
+<dt>Problem</dt>
+<dd>Long phone waits, no booking outside clinic hours, missed appointments, double-bookings, lost or illegible paper records and heavy reception workload.</dd>
+<dt>My contribution</dt>
+<dd>Problem statement and stakeholder analysis covering patients, reception, dentists, management, IT/vendor and regulators, with goals and concerns for each.</dd>
+<dt>Result</dt>
+<dd>Proposed 24/7 self-service booking, real-time availability and automated reminders. Not implemented; no measured outcomes are claimed.</dd>
+</dl>
+<div class="project-card-bottom">
+<div class="project-tech"><span class="tech-dot">MS Word</span><span class="tech-dot">Stakeholder Analysis</span><span class="tech-dot">Problem Statement</span></div>
+<a class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Case Study: SmilePoint booking portal" href="https://docs.google.com/document/d/16mHA2kTyeAV30cxcRjEGCf--of0Sr3yo/edit?usp=sharing&amp;ouid=109561869718636672422&amp;rtpof=true&amp;sd=true">View Case Study <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+</div>
+</article>
+ 
+<article class="project-card fade-up">
+<div class="project-meta"><span class="project-badge">Supporting Artefact</span></div>
+<h4 class="project-title">SmilePoint Stakeholder Matrix</h4>
+<p class="project-org">University of Huddersfield | 2024</p>
+<p class="project-desc">A Power/Interest Grid plotting SmilePoint's stakeholders by influence and interest, with an engagement strategy for each. Supports the booking portal case study.</p>
+<dl class="project-facts">
+<dt>Result</dt>
+<dd>Manage Closely: Clinic Management. Keep Satisfied: Regulators. Keep Informed: Reception, Dentists, Patients. Monitor: Competitors and General Public.</dd>
+</dl>
+<div class="project-card-bottom">
+<div class="project-tech"><span class="tech-dot">Excel</span><span class="tech-dot">Power/Interest Grid</span></div>
+<a class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Project Document: SmilePoint stakeholder matrix" href="https://docs.google.com/spreadsheets/d/1gQQZmp8WGcU-pmYtPKN51yxI8MzX7Otv/edit?usp=sharing&amp;ouid=109561869718636672422&amp;rtpof=true&amp;sd=true">View Project Document <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+</div>
+</article>
+ 
+<article class="project-card fade-up">
+<div class="project-meta"><span class="project-badge">Supporting Artefact</span></div>
+<h4 class="project-title">SmilePoint RACI Matrix</h4>
+<p class="project-org">University of Huddersfield | 2024</p>
+<p class="project-desc">A responsibility-assignment matrix clarifying who is Responsible, Accountable, Consulted and Informed for key project activities. Supports the booking portal case study.</p>
+<dl class="project-facts">
+<dt>Result</dt>
+<dd>Proposed assignments for 8 stakeholders across 10 project tasks.</dd>
+</dl>
+<div class="project-card-bottom">
+<div class="project-tech"><span class="tech-dot">Excel</span><span class="tech-dot">RACI</span></div>
+<a class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Project Document: SmilePoint RACI matrix" href="https://docs.google.com/spreadsheets/d/1dhwZDBt0j41Dq57WBjTmRb2iLVz1eDhf/edit?usp=sharing&amp;ouid=109561869718636672422&amp;rtpof=true&amp;sd=true">View Project Document <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+</div>
+</article>
+ 
+</div>
+</div>
+ 
 <div class="projects-cta fade-up">
 <div class="projects-cta-inner">
 <div>
@@ -831,79 +876,88 @@ h1,h2,h3,p,dd,li{overflow-wrap:anywhere}
 </div>
 </div>
 </section>
-
-<div class="timeline">
-  <div class="timeline-item fade-up">
-    <div class="timeline-header"><h3 class="timeline-role">Business Analyst Consultant</h3><div class="timeline-period">July 2026 — Present</div></div>
-    <div class="timeline-company">Amdari Inc. · UK</div>
-    <ul class="timeline-achievements">
-      <li>Improved requirements traceability and reduced project rework by 30% by eliciting, analysing and documenting business and functional requirements in BRDs and PRDs using Confluence</li>
-      <li>Reduced sprint delays by 20% by managing project tracking, issue resolution and product backlogs in Jira</li>
-      <li>Strengthened accountability and collaboration across more than five cross-functional teams by developing RACI matrices in Excel and Confluence</li>
-      <li>Increased operational efficiency by 25% by designing and optimising business process flows and supporting enterprise process improvements</li>
-      <li>Reduced post-launch defects by 35% by leading UAT activities in Jira, creating detailed test cases and tracking defects through deployment</li>
-      <li>Improved project transparency and decision-making by presenting progress, requirements updates, workflows, risks and KPIs through Power BI, Confluence, Jira dashboards and Excel</li>
-    </ul>
-  </div>
-
-  <div class="timeline-item fade-up">
-    <div class="timeline-header"><h3 class="timeline-role">Project Consultant, Business Analysis</h3><div class="timeline-period">November 2025 — June 2026</div></div>
-    <div class="timeline-company">10Alytics</div>
-    <ul class="timeline-achievements">
-      <li>Completed a professional engagement covering the Software Development Life Cycle, Jira and Confluence, requirements elicitation and enterprise process optimisation</li>
-      <li>Demonstrated the ability to align technical architecture with high-level strategic business objectives</li>
-    </ul>
-  </div>
-
-  <div class="timeline-item fade-up">
-    <div class="timeline-header"><h3 class="timeline-role">Warehouse Operative (Part-time)</h3><div class="timeline-period">April 2023 — June 2024</div></div>
-    <div class="timeline-company">PPG Paints · UK</div>
-    <ul class="timeline-achievements">
-      <li>Contributed to a 30% reduction in stock discrepancies and a 25% reduction in workflow errors by applying structured stock-control, barcode-checking and cycle-counting procedures alongside university studies</li>
-    </ul>
-  </div>
-
-  <div class="timeline-item fade-up">
-    <div class="timeline-header"><h3 class="timeline-role">Production Operative</h3><div class="timeline-period">January 2022 — March 2023</div></div>
-    <div class="timeline-company">Fox's Biscuits · UK</div>
-    <ul class="timeline-achievements">
-      <li>Followed production schedules, completed quality checks and maintained hygiene and safety standards while supporting daily output targets</li>
-    </ul>
-  </div>
-
-  <div class="timeline-item fade-up">
-    <div class="timeline-header"><h3 class="timeline-role">Order Picker</h3><div class="timeline-period">March 2020 — December 2021</div></div>
-    <div class="timeline-company">Marks &amp; Spencer · UK</div>
-    <ul class="timeline-achievements">
-      <li>Contributed to a 40% improvement in picking accuracy by completing orders carefully, improving stock arrangement, applying priority labelling and coordinating with the warehouse team</li>
-    </ul>
-  </div>
-
-  <div class="timeline-item fade-up">
-    <div class="timeline-header"><h3 class="timeline-role">Volunteer Support Worker</h3><div class="timeline-period">April 2017 — February 2020</div></div>
-    <div class="timeline-company">DASH · Huddersfield</div>
-    <ul class="timeline-achievements">
-      <li>Maintained attendance records, supported transport-fare reimbursement, provided orientation and translation, and helped attendees access services and integrate into the community</li>
-    </ul>
-  </div>
-
-  <div class="timeline-item fade-up">
-    <div class="timeline-header"><h3 class="timeline-role">Supply Chain and Sales Assistant</h3><div class="timeline-period">January 2009 — March 2017</div></div>
-    <div class="timeline-company">Buffalo Fisheries Ltd · Nigeria</div>
-    <ul class="timeline-achievements">
-      <li>Supported supplier communication, orders, deliveries, customer enquiries, sales activities and basic stock functions across supply and sales operations</li>
-    </ul>
-  </div>
-
-  <div class="timeline-item fade-up">
-    <div class="timeline-header"><h3 class="timeline-role">Sales and Supply Representative</h3><div class="timeline-period">September 2005 — December 2008</div></div>
-    <div class="timeline-company">Azzy Egg Poultry Products · Nigeria</div>
-    <ul class="timeline-achievements">
-      <li>Sold and supplied poultry products, maintained customer relationships, resolved enquiries and supported stock and delivery activities</li>
-    </ul>
-  </div>
+<!-- ============ EXPERIENCE (resume), now a proper section ============ -->
+<section id="experience" aria-labelledby="experience-title">
+<div class="section-header fade-up">
+<div class="section-label">Career History</div>
+<h2 class="section-title" id="experience-title">Work <em>Experience</em></h2>
 </div>
-
+<div class="timeline">
+ 
+<div class="timeline-item fade-up">
+<div class="timeline-header"><h3 class="timeline-role">Business Analysis Intern</h3><div class="timeline-period">July 2026 — September 2026</div></div>
+<div class="timeline-company">Amdari Inc. · UK</div>
+<!-- TODO (owner): your old entry said "Business Analyst Consultant, July 2026 — Present". I changed it to match your internship brief; confirm the job title. -->
+<ul class="timeline-achievements">
+<li>Improved requirements traceability and reduced project rework by 30% by eliciting, analysing and documenting business and functional requirements in BRDs and PRDs using Confluence</li>
+<li>Reduced sprint delays by 20% by managing project tracking, issue resolution and product backlogs in Jira</li>
+<li>Strengthened accountability and collaboration across more than five cross-functional teams by developing RACI matrices in Excel and Confluence</li>
+<li>Increased operational efficiency by 25% by designing and optimising business process flows and supporting enterprise process improvements</li>
+<li>Reduced post-launch defects by 35% by leading UAT activities in Jira, creating detailed test cases and tracking defects through deployment</li>
+<li>Improved project transparency and decision-making by presenting progress, requirements updates, workflows, risks and KPIs through Power BI, Confluence, Jira dashboards and Excel</li>
+</ul>
+</div>
+ 
+<div class="timeline-item fade-up">
+<div class="timeline-header"><h3 class="timeline-role">Project Consultant, Business Analysis</h3><div class="timeline-period">November 2025 — June 2026</div></div>
+<div class="timeline-company">10Alytics</div>
+<ul class="timeline-achievements">
+<li>Completed a professional engagement covering the Software Development Life Cycle, Jira and Confluence, requirements elicitation and enterprise process optimisation</li>
+<li>Demonstrated the ability to align technical architecture with high-level strategic business objectives</li>
+</ul>
+</div>
+ 
+<div class="timeline-item fade-up">
+<div class="timeline-header"><h3 class="timeline-role">Warehouse Operative (Part-time)</h3><div class="timeline-period">April 2023 — June 2024</div></div>
+<div class="timeline-company">PPG Paints · UK</div>
+<ul class="timeline-achievements">
+<li>Contributed to a 30% reduction in stock discrepancies and a 25% reduction in workflow errors by applying structured stock-control, barcode-checking and cycle-counting procedures alongside university studies</li>
+</ul>
+</div>
+ 
+<div class="timeline-item fade-up">
+<div class="timeline-header"><h3 class="timeline-role">Production Operative</h3><div class="timeline-period">January 2022 — March 2023</div></div>
+<div class="timeline-company">Fox's Biscuits · UK</div>
+<ul class="timeline-achievements">
+<li>Followed production schedules, completed quality checks and maintained hygiene and safety standards while supporting daily output targets</li>
+</ul>
+</div>
+ 
+<div class="timeline-item fade-up">
+<div class="timeline-header"><h3 class="timeline-role">Order Picker</h3><div class="timeline-period">March 2020 — December 2021</div></div>
+<div class="timeline-company">Marks &amp; Spencer · UK</div>
+<ul class="timeline-achievements">
+<li>Contributed to a 40% improvement in picking accuracy by completing orders carefully, improving stock arrangement, applying priority labelling and coordinating with the warehouse team</li>
+</ul>
+</div>
+ 
+<div class="timeline-item fade-up">
+<div class="timeline-header"><h3 class="timeline-role">Volunteer Support Worker</h3><div class="timeline-period">April 2017 — February 2020</div></div>
+<div class="timeline-company">DASH · Huddersfield</div>
+<ul class="timeline-achievements">
+<li>Maintained attendance records, supported transport-fare reimbursement, provided orientation and translation, and helped attendees access services and integrate into the community</li>
+</ul>
+</div>
+ 
+<div class="timeline-item fade-up">
+<div class="timeline-header"><h3 class="timeline-role">Supply Chain and Sales Assistant</h3><div class="timeline-period">January 2009 — March 2017</div></div>
+<div class="timeline-company">Buffalo Fisheries Ltd · Nigeria</div>
+<ul class="timeline-achievements">
+<li>Supported supplier communication, orders, deliveries, customer enquiries, sales activities and basic stock functions across supply and sales operations</li>
+</ul>
+</div>
+ 
+<div class="timeline-item fade-up">
+<div class="timeline-header"><h3 class="timeline-role">Sales and Supply Representative</h3><div class="timeline-period">September 2005 — December 2008</div></div>
+<div class="timeline-company">Azzy Egg Poultry Products · Nigeria</div>
+<ul class="timeline-achievements">
+<li>Sold and supplied poultry products, maintained customer relationships, resolved enquiries and supported stock and delivery activities</li>
+</ul>
+</div>
+ 
+</div>
+</section>
+ 
 <section id="contact" aria-labelledby="contact-title">
   <div class="section-header fade-up">
     <div class="section-label">Get In Touch</div>
