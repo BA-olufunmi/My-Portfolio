@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -8,142 +7,154 @@
 <meta content="Business Analyst portfolio: requirements analysis, process improvement and data-informed recommendations." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&amp;family=DM+Sans:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.4.1/dist/email.min.js"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--navy:#0a1628;--navy-mid:#112240;--navy-light:#1a3360;--navy-border:#2d4670;--gold:#c9a84c;--gold-light:#e2c06e;--gold-pale:#f5e9c8;--gold-dim:rgba(201,168,76,.15);--white:#f0f4ff;--white-muted:rgba(240,244,255,.78);--white-dim:rgba(240,244,255,.45);--font-display:'Cormorant Garamond',serif;--font-body:'DM Sans',sans-serif;--transition:all .35s cubic-bezier(.4,0,.2,1);--nav-h:72px}
+:root{--navy:#f2f7ff;--navy-mid:#dfeaff;--navy-light:#cfdffc;--navy-border:#b4c8ea;--gold:#123f50;--gold-light:#18566a;--gold-pale:#123f50;--gold-dim:rgba(18,63,80,.10);--white:#0a1628;--white-muted:rgba(10,22,40,.82);--white-dim:rgba(10,22,40,.55);--font-display:'Cormorant Garamond',serif;--font-body:'DM Sans',sans-serif;--transition:all .35s cubic-bezier(.4,0,.2,1);--nav-h:72px}
 html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h)}
 body{background:var(--navy);color:var(--white);font-family:var(--font-body);font-weight:300;line-height:1.75;overflow-x:hidden}
 section{scroll-margin-top:var(--nav-h)}
 :focus-visible{outline:2px solid var(--gold-light);outline-offset:3px}
-.skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--navy);padding:.6rem 1rem;z-index:300}
+.skip{position:absolute;left:-999px;top:0;background:var(--gold);color:#fff;padding:.6rem 1rem;z-index:300}
 .skip:focus{left:0}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--navy)}::-webkit-scrollbar-thumb{background:var(--navy-border);border-radius:10px}
+img,svg{max-width:100%;height:auto}
+h1,h2,h3,h4,h5,p,dd,li{overflow-wrap:anywhere}
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;min-height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:.9rem 4rem;background:rgba(10,22,40,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:.5px solid var(--navy-border)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;min-height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:.9rem 4rem;background:rgba(242,247,255,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:.5px solid var(--navy-border)}
 .nav-logo{font-family:var(--font-display);font-size:1.4rem;font-weight:600;color:var(--gold);letter-spacing:.05em;text-decoration:none}
 .nav-links{display:flex;gap:2.5rem;list-style:none}
 .nav-links a{color:var(--white-muted);text-decoration:none;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-weight:400;transition:var(--transition);position:relative;padding:.4rem 0}
 .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:var(--transition)}
-.nav-links a:hover,.nav-links a:focus-visible{color:var(--gold-light)}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--gold)}
 .nav-links a:hover::after{width:100%}
 .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;width:44px;height:44px;align-items:center;background:none;border:none;z-index:200}
 .nav-hamburger span{display:block;width:24px;height:1.5px;background:var(--gold);transition:var(--transition)}
 .nav-hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
 .nav-hamburger.open span:nth-child(2){opacity:0}
 .nav-hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-.nav-mobile-menu{display:none;position:fixed;inset:0;background:rgba(10,22,40,.98);z-index:150;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem}
+.nav-mobile-menu{display:none;position:fixed;inset:0;background:rgba(242,247,255,.98);z-index:150;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;overflow-y:auto}
 .nav-mobile-menu.open{display:flex}
 .nav-mobile-menu a{color:var(--white-muted);text-decoration:none;font-size:1.3rem;letter-spacing:.15em;text-transform:uppercase;font-weight:400;padding:.6rem 1.5rem;min-height:44px}
 .nav-mobile-menu a:hover{color:var(--gold)}
 /* HERO */
-#hero{min-height:100vh;display:flex;align-items:center;padding:7rem 4rem 4rem;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 70% 50%,rgba(201,168,76,.07),transparent 70%),radial-gradient(ellipse 40% 60% at 20% 80%,rgba(17,34,64,.8),transparent 60%)}
-.hero-grid-lines{position:absolute;inset:0;opacity:.04;background-image:linear-gradient(var(--gold) 1px,transparent 1px),linear-gradient(90deg,var(--gold) 1px,transparent 1px);background-size:60px 60px}
+#hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:7rem 4rem 4rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 70% 50%,rgba(18,63,80,.10) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 20% 80%,rgba(180,200,234,.8) 0%,transparent 60%)}
+.hero-grid-lines{position:absolute;inset:0;opacity:.07;background-image:linear-gradient(#123f50 1px,transparent 1px),linear-gradient(90deg,#123f50 1px,transparent 1px);background-size:60px 60px}
 .hero-layout{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:5rem;align-items:center;width:100%;max-width:1100px}
 .hero-inner{max-width:640px}
-.hero-eyebrow{font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);color:var(--gold);font-weight:400;letter-spacing:.04em;margin-bottom:.6rem}
+.hero-eyebrow{font-family:var(--font-display);font-size:clamp(1.3rem,5vw,2.95rem);font-weight:700;letter-spacing:clamp(.08em,.8vw,.2em);color:var(--gold);margin-bottom:.6rem}
 .hero-name{font-family:var(--font-display);font-size:clamp(2.4rem,6vw,5.2rem);font-weight:300;line-height:1.05;margin-bottom:1.4rem}
 .hero-name em{font-style:italic;color:var(--gold)}
-.hero-tagline{font-size:clamp(.92rem,1.8vw,1.05rem);color:var(--white-muted);max-width:580px;margin-bottom:2.2rem;line-height:1.85}
+.hero-tagline{font-size:clamp(.92rem,1.8vw,1.05rem);color:rgba(10,22,40,.85);max-width:580px;margin-bottom:2.2rem;line-height:1.85}
 .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
 .btn-primary,.btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:46px;padding:.85rem 2rem;font-family:var(--font-body);font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:var(--transition);white-space:nowrap}
-.btn-primary{background:var(--gold);color:var(--navy);font-weight:500;border:1px solid var(--gold)}
-.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px)}
+.btn-primary{background:var(--gold);color:#fff;font-weight:500;border:1px solid var(--gold)}
+.btn-primary:hover{background:var(--gold-light);border-color:var(--gold-light);transform:translateY(-2px)}
 .btn-primary:disabled{opacity:.65;cursor:not-allowed;transform:none}
 .btn-ghost{background:transparent;color:var(--white);font-weight:400;border:1px solid var(--navy-border)}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
 .hero-focus{display:flex;gap:.7rem;flex-wrap:wrap;list-style:none;margin-top:3rem;padding-top:2rem;border-top:.5px solid var(--navy-border)}
-.hero-focus li{padding:.45rem 1rem;border:.5px solid rgba(201,168,76,.45);color:var(--gold-pale);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+.hero-focus li{padding:.45rem 1rem;border:.5px solid rgba(18,63,80,.35);color:var(--gold);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
 /* PORTRAIT */
 .hero-portrait-wrap{position:relative;width:300px;flex-shrink:0}
 .portrait-frame{position:relative;width:300px;height:380px}
 .portrait-ring{position:absolute;inset:-10px;border:1.5px solid transparent;border-top-color:var(--gold);border-right-color:var(--gold);animation:ringRotate 8s linear infinite;pointer-events:none}
-.portrait-ring-2{position:absolute;inset:-18px;border:.5px solid transparent;border-bottom-color:rgba(201,168,76,.35);border-left-color:rgba(201,168,76,.35);animation:ringRotate 12s linear infinite reverse;pointer-events:none}
+.portrait-ring-2{position:absolute;inset:-18px;border:.5px solid transparent;border-bottom-color:rgba(18,63,80,.35);border-left-color:rgba(18,63,80,.35);animation:ringRotate 12s linear infinite reverse;pointer-events:none}
 @keyframes ringRotate{to{transform:rotate(360deg)}}
 .portrait-corner{position:absolute;width:18px;height:18px;border-color:var(--gold);border-style:solid;z-index:4}
 .portrait-corner.tl{top:0;left:0;border-width:2px 0 0 2px}.portrait-corner.tr{top:0;right:0;border-width:2px 2px 0 0}.portrait-corner.bl{bottom:0;left:0;border-width:0 0 2px 2px}.portrait-corner.br{bottom:0;right:0;border-width:0 2px 2px 0}
 .portrait-img{position:absolute;inset:0;overflow:hidden;background:var(--navy-light)}
 .portrait-img img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:grayscale(15%) contrast(1.05);transition:filter .4s}
 .portrait-frame:hover .portrait-img img{filter:none}
-.portrait-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,.55),transparent 50%);pointer-events:none}
+.portrait-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,.25) 0%,transparent 50%);pointer-events:none}
 .portrait-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;background:linear-gradient(135deg,var(--navy-mid),var(--navy-light))}
-.portrait-placeholder i{font-size:3rem;color:rgba(201,168,76,.4)}
-.portrait-badge{position:absolute;bottom:-14px;left:-20px;display:flex;align-items:center;gap:.6rem;padding:.6rem 1rem;background:var(--navy);border:.5px solid var(--navy-border);z-index:5;box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.portrait-placeholder i{font-size:3rem;color:rgba(18,63,80,.4)}
+.portrait-badge{position:absolute;bottom:-14px;left:-20px;display:flex;align-items:center;gap:.6rem;padding:.6rem 1rem;background:var(--navy);border:.5px solid var(--navy-border);z-index:5;box-shadow:0 8px 24px rgba(10,22,40,.15)}
 .portrait-badge-dot{width:7px;height:7px;border-radius:50%;background:#4caf7d;box-shadow:0 0 0 3px rgba(76,175,125,.2);animation:pulse 2s ease-in-out infinite}
 @keyframes pulse{50%{box-shadow:0 0 0 6px rgba(76,175,125,.08)}}
 .portrait-badge-text{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--white-muted)}
 /* SECTIONS */
 section{padding:6rem 4rem}
 .section-header{margin-bottom:3.5rem}
-.section-label{display:inline-flex;align-items:center;gap:.7rem;font-size:.74rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-weight:400;margin-bottom:.75rem}
-.section-label::before{content:'';width:24px;height:1px;background:var(--gold)}
+.section-label{display:inline-flex;align-items:center;gap:.7rem;font-size:.95rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:.75rem}
+.section-label::before{content:'';width:32px;height:2px;background:var(--gold)}
 .section-title{font-family:var(--font-display);font-size:clamp(1.8rem,4vw,3rem);font-weight:300;line-height:1.15}
 .section-title em{font-style:italic;color:var(--gold)}
-.section-desc{margin-top:1rem;color:var(--white-muted);max-width:720px;font-size:.95rem;line-height:1.9}
+.section-desc{margin-top:1rem;color:rgba(10,22,40,.85);max-width:720px;font-size:.95rem;line-height:1.9}
 /* ABOUT */
 #about{background:var(--navy-mid)}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
-.about-text p{color:var(--white-muted);font-size:.95rem;line-height:1.95;margin-bottom:1.2rem}
+.about-text p{color:rgba(10,22,40,.85);font-size:.95rem;line-height:1.95;margin-bottom:1.2rem}
 .about-highlights{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem;list-style:none}
-.highlight-chip{display:flex;align-items:center;gap:.6rem;padding:.7rem 1rem;border:.5px solid var(--navy-border);font-size:.82rem;color:var(--white-muted)}
-.highlight-chip i{color:var(--gold);font-size:.75rem}
+.highlight-chip{display:flex;align-items:center;gap:.6rem;padding:.9rem 1.2rem;border:1px solid #8fa8d4;background:#fff;font-size:.98rem;font-weight:600;color:#0a1628}
+.highlight-chip i{color:var(--gold);font-size:.95rem}
+.highlight-chip:hover{border-color:var(--gold)}
 .about-card{background:var(--navy);border:.5px solid var(--navy-border);padding:2rem;position:relative}
 .about-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:var(--gold)}
 .about-card-title{font-family:var(--font-display);font-size:1.25rem;font-weight:600;color:var(--gold);margin-bottom:.4rem}
 .edu-sub{font-size:.68rem;text-transform:uppercase;letter-spacing:.18em;color:var(--white-dim);margin:1.2rem 0 .2rem}
 .cert-item{display:flex;gap:1rem;align-items:flex-start;padding:.9rem 0;border-bottom:.5px solid var(--navy-border)}
 .cert-item:last-child{border-bottom:none}
-.cert-icon{width:36px;height:36px;flex-shrink:0;background:var(--gold-dim);border:.5px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center}
+.cert-icon{width:36px;height:36px;flex-shrink:0;background:var(--gold-dim);border:.5px solid rgba(18,63,80,.3);display:flex;align-items:center;justify-content:center}
 .cert-icon i{color:var(--gold);font-size:.8rem}
 .cert-name{font-size:.9rem;color:var(--white);font-weight:400}
-.cert-body{font-size:.8rem;color:var(--white-muted);margin-top:.15rem}
+.cert-body{font-size:.8rem;color:rgba(10,22,40,.85);margin-top:.15rem;font-weight:500}
 /* SKILLS */
 #skills{background:var(--navy)}
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
 .skill-group{background:var(--navy-mid);border:.5px solid var(--navy-border);padding:1.5rem;border-top:2px solid var(--gold)}
 .skill-group h3{font-family:var(--font-display);font-size:1.2rem;font-weight:600;color:var(--white);margin-bottom:.8rem}
 .tool-chips{display:flex;flex-wrap:wrap;gap:.45rem;list-style:none}
-.tool-chip{padding:.35rem .8rem;background:var(--navy);border:.5px solid var(--navy-border);font-size:.8rem;color:var(--white-muted)}
+.tool-chip{padding:.35rem .8rem;background:rgba(255,255,255,.7);border:.5px solid var(--navy-border);font-size:.8rem;color:#0a1628}
+.tool-chip:hover{color:var(--gold)}
 /* PROJECTS */
 #projects{background:var(--navy-mid)}
-.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
-.project-card{display:flex;flex-direction:column;background:var(--navy);border:.5px solid var(--navy-border);border-top:2px solid var(--gold);padding:1.5rem;transition:var(--transition)}
-.project-card:hover{transform:translateY(-4px);border-color:rgba(201,168,76,.6)}
+.project-group{margin-top:3.5rem}
+.section-header + .project-group{margin-top:0}
+.group-head{padding:.2rem 0 .2rem 1.2rem;border-left:4px solid var(--gold);margin-bottom:1.6rem}
+.projects-grid + .group-head{margin-top:2.5rem}
+.group-title{font-family:var(--font-display);font-size:clamp(1.4rem,3vw,1.9rem);font-weight:600;color:var(--white);line-height:1.25}
+.group-meta{font-size:.9rem;font-weight:500;color:var(--gold);margin-top:.2rem}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:1.4rem}
+.project-card{--gold:#f0cf7a;--gold-light:#ffe29a;--gold-pale:#fff3d0;display:flex;flex-direction:column;min-width:0;height:auto;min-height:340px;background:#050b16;border:.5px solid var(--navy-border);border-top:2px solid var(--gold);padding:1.5rem;transition:var(--transition)}
+.project-card:hover{transform:translateY(-4px);border-color:rgba(240,207,122,.6)}
 .project-meta{display:flex;align-items:center;justify-content:space-between;gap:.5rem;flex-wrap:wrap;margin-bottom:.8rem}
-.project-badge{padding:.2rem .65rem;background:rgba(201,168,76,.18);border:.5px solid rgba(201,168,76,.5);font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-light)}
-.project-year{font-size:.75rem;color:var(--white-muted)}
-.project-title{font-family:var(--font-display);font-size:1.3rem;font-weight:600;line-height:1.25;margin-bottom:.6rem}
-.project-desc{font-size:.85rem;color:var(--white-muted);line-height:1.75;margin-bottom:1rem}
+.project-badge{padding:.2rem .65rem;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#fff;background:rgba(255,255,255,.15);border:.5px solid rgba(255,255,255,.7)}
+.project-title{font-family:var(--font-display);font-size:1.25rem;font-weight:700;line-height:1.25;margin-bottom:.6rem;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.9)}
+.project-org{font-size:.85rem;font-weight:500;color:#ffe29a;margin:-.2rem 0 .8rem}
+.project-desc{font-size:.9rem;font-weight:400;line-height:1.7;margin-bottom:1rem;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.9)}
 .project-facts{font-size:.8rem;margin-bottom:1.2rem}
-.project-facts dt{color:var(--gold);font-size:.68rem;text-transform:uppercase;letter-spacing:.14em;margin-top:.7rem}
-.project-facts dd{color:var(--white-muted);line-height:1.65}
-.project-card-bottom{margin-top:auto;padding-top:1rem;border-top:.5px solid var(--navy-border);display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap}
+.project-facts dt{color:#ffe29a;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;margin-top:1rem}
+.project-facts dd{color:#fff;font-size:.92rem;font-weight:400;line-height:1.7;text-shadow:0 1px 6px rgba(0,0,0,.9)}
+.project-card-bottom{margin-top:auto;padding-top:1rem;border-top:.5px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap}
 .project-tech{display:flex;gap:.35rem;flex-wrap:wrap}
-.tech-dot{padding:.15rem .55rem;font-size:.68rem;color:var(--white-muted);border:.5px solid var(--navy-border)}
-.project-link{display:inline-flex;align-items:center;gap:.4rem;min-height:44px;font-size:.78rem;color:var(--gold);text-decoration:none;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
-.project-link:hover{color:var(--gold-light)}
-.projects-cta{margin-top:2.5rem}
+.tech-dot{padding:.15rem .55rem;font-size:.7rem;font-weight:500;color:#fff;border:.5px solid rgba(255,255,255,.6);background:rgba(255,255,255,.1)}
+.project-link{display:inline-flex;align-items:center;gap:.4rem;min-height:44px;font-size:.78rem;font-weight:700;color:#fff;text-decoration:none;text-transform:uppercase;letter-spacing:.08em}
+.project-link:hover{color:#ffe29a}
+.projects-cta{margin-top:3.5rem}
 .projects-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;padding:1.6rem 2rem;border:.5px solid var(--navy-border);background:var(--navy);border-left:4px solid var(--gold)}
-.projects-cta-label{display:block;font-family:var(--font-display);font-size:1.2rem;font-weight:600}
-.projects-cta-sub{font-size:.85rem;color:var(--white-muted);max-width:480px}
+.projects-cta-label{display:block;font-family:var(--font-display);font-size:1.2rem;font-weight:600;color:#0a1628}
+.projects-cta-sub{font-size:.85rem;color:rgba(10,22,40,.85);max-width:480px}
 .projects-cta-btn{display:inline-flex;align-items:center;gap:.7rem;min-height:46px;padding:.8rem 1.8rem;border:1px solid var(--gold);color:var(--gold);font-size:.8rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:var(--transition)}
-.projects-cta-btn:hover{background:var(--gold);color:var(--navy)}
+.projects-cta-btn:hover{background:var(--gold);color:#fff}
 /* EXPERIENCE */
-.timeline{position:relative;padding-left:2rem}
-.timeline::before{content:'';position:absolute;left:0;top:.4rem;bottom:0;width:1px;background:var(--navy-border)}
-.timeline-item{position:relative;margin-bottom:3rem}
-.timeline-item::before{content:'';position:absolute;left:-2rem;top:.45rem;width:9px;height:9px;background:var(--gold);border-radius:50%;transform:translateX(-4px);box-shadow:0 0 0 3px var(--navy),0 0 0 4px rgba(201,168,76,.3)}
-.timeline-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.5rem;flex-wrap:wrap}
-.timeline-role{font-family:var(--font-display);font-size:1.3rem;font-weight:600}
-.timeline-period{padding:.2rem .7rem;border:.5px solid var(--navy-border);font-size:.75rem;color:var(--gold);letter-spacing:.08em;white-space:nowrap}
-.timeline-company{font-size:.88rem;color:var(--gold);margin-bottom:.8rem}
-.timeline-desc{font-size:.9rem;color:var(--white-muted);line-height:1.85;margin-bottom:.8rem;max-width:820px}
+#experience{background:var(--navy)}
+.timeline{position:relative;max-width:900px;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:4px;top:.6rem;bottom:0;width:1px;background:var(--navy-border)}
+.timeline-item{position:relative;padding-bottom:.2rem;margin-bottom:2.4rem}
+.timeline-item:last-child{margin-bottom:0}
+.timeline-item::before{content:'';position:absolute;left:calc(-2rem + 4px);top:.55rem;width:9px;height:9px;background:var(--gold);border-radius:50%;transform:translateX(-50%);box-shadow:0 0 0 3px var(--navy),0 0 0 4px rgba(18,63,80,.3)}
+.timeline-header{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:.5rem;flex-wrap:wrap}
+.timeline-header>*{min-width:0}
+.timeline-role{flex:1 1 260px;font-family:var(--font-display);font-size:1.3rem;font-weight:600;line-height:1.3}
+.timeline-period{flex:0 0 auto;max-width:100%;padding:.2rem .7rem;border:.5px solid var(--navy-border);font-size:.75rem;font-weight:500;color:var(--gold);letter-spacing:.08em}
+.timeline-company{font-size:.88rem;font-weight:500;color:var(--gold);margin-bottom:.8rem}
 .timeline-achievements{list-style:none}
-.timeline-achievements li{display:flex;gap:.6rem;font-size:.88rem;color:var(--white-muted);margin-bottom:.4rem;line-height:1.75;max-width:820px}
-.timeline-achievements li::before{content:'—';color:var(--gold);flex-shrink:0}
+.timeline-achievements li{display:flex;align-items:flex-start;gap:.6rem;font-size:.88rem;font-weight:400;color:rgba(10,22,40,.85);margin-bottom:.4rem;line-height:1.75}
+.timeline-achievements li::before{content:'—';color:var(--gold);flex:0 0 1.2em}
 /* CONTACT */
 #contact{background:var(--navy-mid)}
 .contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
@@ -152,26 +163,26 @@ section{padding:6rem 4rem}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
 .form-group{display:flex;flex-direction:column;gap:.4rem}
 .form-full{margin-bottom:1rem}
-.form-group label{font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;color:var(--gold)}
-.form-group input,.form-group textarea{background:var(--navy-mid);border:.5px solid var(--navy-border);color:var(--white);font-family:var(--font-body);font-size:.95rem;font-weight:300;padding:.85rem 1rem;transition:var(--transition);resize:vertical;width:100%}
-.form-group input::placeholder,.form-group textarea::placeholder{color:var(--white-dim)}
+.form-group label{font-size:.72rem;font-weight:500;text-transform:uppercase;letter-spacing:.14em;color:var(--gold)}
+.form-group input,.form-group textarea{background:#fff;border:.5px solid var(--navy-border);color:#0a1628;font-family:var(--font-body);font-size:16px;font-weight:300;padding:.85rem 1rem;transition:var(--transition);resize:vertical;width:100%}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(10,22,40,.5)}
 .form-group input:focus,.form-group textarea:focus{border-color:var(--gold);outline:2px solid var(--gold-light);outline-offset:1px}
-.form-group [aria-invalid="true"]{border-color:#e06c6c}
+.form-group [aria-invalid="true"]{border-color:#c0392b}
 #form-status{margin-top:.9rem;font-size:.88rem;text-align:center;min-height:1.4em}
-#form-status.success{color:#6fd39f}#form-status.error{color:#ff9b9b}
+#form-status.success{color:#1c7a49}#form-status.error{color:#c0392b}
 .form-fallback{margin-top:.8rem;font-size:.82rem;text-align:center;color:var(--white-muted)}
-.form-fallback a,.contact-detail-value a{color:var(--gold-light)}
-.contact-text{font-size:.95rem;color:var(--white-muted);line-height:1.9;margin-bottom:2rem}
+.form-fallback a,.contact-detail-value a{color:var(--gold)}
+.contact-text{font-size:.95rem;color:rgba(10,22,40,.85);line-height:1.9;margin-bottom:2rem}
 .contact-detail{display:flex;align-items:center;gap:1rem;padding:1.2rem 0;border-bottom:.5px solid var(--navy-border)}
 .contact-detail:first-of-type{border-top:.5px solid var(--navy-border)}
-.contact-detail-icon{width:38px;height:38px;flex-shrink:0;background:var(--gold-dim);border:.5px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center}
+.contact-detail-icon{width:38px;height:38px;flex-shrink:0;background:var(--gold-dim);border:.5px solid rgba(18,63,80,.3);display:flex;align-items:center;justify-content:center}
 .contact-detail-icon i{color:var(--gold);font-size:.8rem}
-.contact-detail-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold)}
-.contact-detail-value{font-size:.9rem;color:var(--white-muted);word-break:break-word}
+.contact-detail-label{font-size:.72rem;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--gold)}
+.contact-detail-value{font-size:.9rem;font-weight:500;color:var(--white-muted);word-break:break-word}
 .social-row{display:flex;gap:.8rem;margin-top:2rem;flex-wrap:wrap}
-.social-btn{display:flex;align-items:center;gap:.6rem;min-height:44px;padding:.65rem 1.2rem;border:.5px solid var(--navy-border);color:var(--white-muted);text-decoration:none;font-size:.82rem;transition:var(--transition)}
+.social-btn{display:flex;align-items:center;gap:.6rem;min-height:44px;padding:.65rem 1.2rem;border:.5px solid var(--navy-border);background:rgba(255,255,255,.7);color:#0a1628;text-decoration:none;font-size:.82rem;transition:var(--transition)}
 .social-btn i{color:var(--gold)}
-.social-btn:hover{border-color:var(--gold);color:var(--white)}
+.social-btn:hover{border-color:var(--gold)}
 footer{padding:2rem 4rem;border-top:.5px solid var(--navy-border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
 .footer-copy{font-size:.8rem;color:var(--white-muted)}.footer-copy span{color:var(--gold)}
 .footer-links{display:flex;gap:.4rem}
@@ -181,517 +192,44 @@ footer{padding:2rem 4rem;border-top:.5px solid var(--navy-border);display:flex;a
 .fade-up.visible{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.fade-up{opacity:1;transform:none}}
 /* RESPONSIVE */
-@media (max-width:1200px){nav{padding:.9rem 2.5rem}section{padding:6rem 2.5rem}#hero{padding:7rem 2.5rem 4rem}footer{padding:2rem 2.5rem}.projects-grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1201px){nav,footer,section,#hero{padding-left:max(4rem,calc((100% - 1200px)/2));padding-right:max(4rem,calc((100% - 1200px)/2))}}
+@media (min-width:961px) and (max-width:1100px){.nav-links{gap:1.4rem}}
+@media (max-width:1200px){nav{padding:.9rem 2.5rem}section{padding:6rem 2.5rem}#hero{padding:7rem 2.5rem 4rem}footer{padding:2rem 2.5rem}}
 @media (max-width:960px){
 nav{padding:.6rem 1.5rem}.nav-links{display:none}.nav-hamburger{display:flex}
 #hero{padding:6rem 1.5rem 4rem;min-height:auto}
 .hero-layout{grid-template-columns:1fr;gap:3rem;text-align:center}.hero-inner{max-width:100%}
 .hero-tagline{margin:0 auto 2.2rem}.hero-cta,.hero-focus{justify-content:center}
-.hero-portrait-wrap{margin:0 auto;width:260px}.portrait-frame{width:260px;height:330px}
+.hero-portrait-wrap{margin:0 auto;width:260px}.portrait-frame{width:260px;height:330px}.portrait-badge{left:0}
 section{padding:4rem 1.5rem}.section-header{margin-bottom:2.5rem}
 .about-grid,.contact-inner{grid-template-columns:1fr;gap:2.5rem}.contact-form-card{padding:1.8rem}
 footer{padding:1.5rem;flex-direction:column;text-align:center}}
-@media (max-width:768px){.about-highlights,.projects-grid{grid-template-columns:1fr}.projects-cta-inner{flex-direction:column;align-items:flex-start}.form-row{grid-template-columns:1fr;gap:0}.form-row .form-group{margin-bottom:1rem}}
-@media (max-width:480px){#hero{padding:5.5rem 1.2rem 3rem}.hero-name{font-size:2.1rem}.hero-portrait-wrap{width:220px}.portrait-frame{width:220px;height:280px}.portrait-badge{left:-10px;bottom:-10px}section{padding:3rem 1.2rem}.about-card,.contact-form-card{padding:1.3rem}.timeline{padding-left:1.5rem}.timeline-item::before{left:-1.5rem}.hero-cta{flex-direction:column;width:100%}.btn-primary,.btn-ghost{width:100%}.projects-cta-btn{width:100%;justify-content:center}footer{padding:1.2rem}}
-
-:root {
-  --navy: #f2f7ff;          /* main page background (bright) */
-  --navy-mid: #dfeaff;      /* alternate sections */
-  --navy-light: #cfdffc;
-  --navy-border: #b4c8ea;
-  --gold: #8a6410;          /* darker gold so it's readable on light */
-  --gold-light: #a87a14;
-  --gold-pale: #6b4e0c;
-  --gold-dim: rgba(138,100,16,0.12);
-  --white: #0a1628;         /* main text (dark) */
-  --white-muted: rgba(10,22,40,0.72);
-  --white-dim: rgba(10,22,40,0.4);
-}
-
-/* Nav + mobile menu */
-nav { background: rgba(242,247,255,0.94); }
-.nav-mobile-menu { background: rgba(242,247,255,0.98); }
-
-/* Hero */
-.hero-bg {
-  background:
-    radial-gradient(ellipse 60% 50% at 70% 50%, rgba(138,100,16,0.10) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(180,200,234,0.8) 0%, transparent 60%);
-}
-.hero-grid-lines { opacity: 0.07; }
-
-/* Buttons (light text on the darker gold) */
-.btn-primary { color: #fff; }
-.btn-primary:hover { background: var(--gold-light); }
-
-/* Portrait */
-.portrait-badge { box-shadow: 0 8px 24px rgba(10,22,40,0.15); }
-.portrait-years { box-shadow: 0 8px 24px rgba(138,100,16,0.3); }
-.portrait-years-num { color: #fff; }
-.portrait-years-label { color: rgba(255,255,255,0.9); }
-.portrait-img::after {
-  background: linear-gradient(to top, rgba(10,22,40,0.25) 0%, transparent 50%);
-}
-
-/* Skills / tools */
-.tool-chip:hover { color: var(--gold); }
-
-/* Form status messages */
-#form-status.success { color: #1c7a49; }
-#form-status.error   { color: #c0392b; }
-
-/* Project cards keep their dark photo overlay, so give
-   their text the original light-gold colours back */
-.project-card {
-  --gold: #e2c06e;
-  --gold-light: #f5dc94;
-  --gold-pale: #f5e9c8;
-}
-
-/* Darker gold + stronger muted text for small fonts */
-:root {
-  --gold: #7a5709;
-  --gold-light: #946a0f;
-  --white-muted: rgba(10,22,40,0.82);
-  --white-dim: rgba(10,22,40,0.55);
-}
-
-/* Small labels were too faint, so make them bolder */
-.stat-label, .cert-body, .contact-detail-value,
-.skill-row-pct, .timeline-period, .tool-group-label,
-.form-group label, .contact-detail-label {
-  font-weight: 500;
-}
-.timeline-desc, .timeline-achievements li,
-.about-text p, .contact-text, .section-desc,
-.hero-tagline, .cert-body {
-  color: rgba(10,22,40,0.85);
-}
-.timeline-achievements li { font-weight: 400; }
-.tool-chip, .highlight-chip, .social-btn {
-  color: #0a1628;
-  background: rgba(255,255,255,0.7);
-}
-.form-group input, .form-group textarea {
-  background: #fff;
-  color: #0a1628;
-}
-.form-group input::placeholder,
-.form-group textarea::placeholder { color: rgba(10,22,40,0.5); }
-
-/* ───── PROJECT CARDS: always readable, whatever the photo ───── */
-.project-card {
-  background: #0a1628;               /* dark fallback if the photo fails to load */
-  --gold: #f0cf7a;
-  --gold-light: #ffe29a;
-  --gold-pale: #fff3d0;
-}
-.project-card-overlay,
-.project-card:hover .project-card-overlay {
-  background: linear-gradient(to top,
-    rgba(4,10,22,0.98) 0%,
-    rgba(4,10,22,0.93) 55%,
-    rgba(4,10,22,0.82) 80%,
-    rgba(4,10,22,0.6) 100%);
-}
-.project-title {
-  color: #ffffff;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
-}
-.project-desc {
-  color: #f0f4ff;
-  font-weight: 400;
-  text-shadow: 0 1px 6px rgba(0,0,0,0.8);
-}
-.project-year { color: #ffffff; font-weight: 500; }
-.project-badge {
-  color: #ffe29a;
-  background: rgba(240,207,122,0.2);
-  border-color: rgba(240,207,122,0.7);
-}
-.project-impact {
-  color: #fff3d0;
-  background: rgba(240,207,122,0.16);
-  font-weight: 400;
-}
-.project-impact strong { color: #ffe29a; }
-.tech-dot {
-  color: #ffffff;
-  border-color: rgba(255,255,255,0.45);
-  background: rgba(255,255,255,0.08);
-}
-.project-link { color: #ffe29a; font-weight: 500; }
-.project-link:hover { color: #ffffff; }
-
-/* "Want to see more" box */
-.projects-cta-label { color: #0a1628; }
-.projects-cta-sub { color: rgba(10,22,40,0.85); }
-
-/* "Business Analyst" in the hero */
-.hero-eyebrow {
-  font-size: 2.95rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: #7a5709;
-}
-.hero-eyebrow::before { width: 44px; height: 2px; }
-
-/* About Me / Skills & Tools / Selected Work /
-   Career History / Get In Touch */
-.section-label {
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: #7a5709;
-}
-.section-label::before { width: 32px; height: 2px; }
-
-/* The buttons under About (Requirements Analysis,
-   Process Improvement, Data & Business Insights...) */
-.highlight-chip {
-  font-size: 0.98rem;
-  font-weight: 600;
-  color: #0a1628;
-  padding: 0.9rem 1.2rem;
-  border: 1px solid #8fa8d4;
-  background: #ffffff;
-}
-.highlight-chip i { font-size: 0.95rem; color: #7a5709; }
-.highlight-chip:hover { border-color: #7a5709; }
-
-/* Slightly smaller on phones so nothing overflows */
-@media (max-width: 480px) {
-  .hero-eyebrow, .section-label { font-size: 0.85rem; letter-spacing: 0.15em; }
-  .highlight-chip { font-size: 0.9rem; }
-}
-
-/* Much darker background behind the text */
-.project-card { background: #050b16 !important; }
-.project-card-overlay,
-.project-card:hover .project-card-overlay {
-  background: linear-gradient(to top,
-    rgba(3,8,18,0.99) 0%,
-    rgba(3,8,18,0.96) 60%,
-    rgba(3,8,18,0.88) 85%,
-    rgba(3,8,18,0.75) 100%) !important;
-}
-
-/* Every text element in the card = white */
-.project-card .project-title,
-.project-card .project-desc,
-.project-card .project-year,
-.project-card .project-impact,
-.project-card .project-impact strong,
-.project-card .project-badge,
-.project-card .tech-dot,
-.project-card .project-link,
-.project-card .project-link i {
-  color: #ffffff !important;
-  text-shadow: 0 1px 6px rgba(0,0,0,0.9);
-}
-
-/* Slightly bigger, bolder text so it's easy to read */
-.project-card .project-title { font-size: 1.25rem; font-weight: 700; }
-.project-card .project-desc {
-  font-size: 0.9rem;
-  font-weight: 400;
-  line-height: 1.7;
-}
-.project-card .project-impact {
-  font-size: 0.85rem;
-  font-weight: 400;
-  line-height: 1.65;
-  background: rgba(255,255,255,0.12);
-  border-left: 3px solid #ffffff;
-}
-.project-card .project-impact strong { font-weight: 700; }
-.project-card .project-badge {
-  font-weight: 600;
-  background: rgba(255,255,255,0.15);
-  border-color: rgba(255,255,255,0.7);
-}
-.project-card .tech-dot {
-  font-size: 0.7rem;
-  font-weight: 500;
-  border-color: rgba(255,255,255,0.6);
-  background: rgba(255,255,255,0.1);
-}
-.project-card .project-link { font-weight: 700; font-size: 0.78rem; }
-.project-card .project-divider { background: rgba(255,255,255,0.3); }
-
-/* Show the FULL text (no more cut-off after 2 lines)
-   and let each card grow to fit it */
-.project-card { height: auto !important; min-height: 340px; }
-.project-card .project-desc,
-.project-card .project-impact {
-  display: block !important;
-  -webkit-line-clamp: unset !important;
-  overflow: visible !important;
-}
-.project-card .project-card-top { padding-top: 6rem; }
-/* ───── FIX: project card "facts" text was dark-on-dark ───── */
-.project-card .project-facts dt {
-  color: #ffe29a !important;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  margin-top: 1rem;
-}
-.project-card .project-facts dd {
-  color: #ffffff !important;
-  font-size: 0.92rem;
-  font-weight: 400;
-  line-height: 1.7;
-  text-shadow: 0 1px 6px rgba(0,0,0,0.9);
-}
-
-/* ───── MOBILE: bigger, easier-to-read text ───── */
-@media (max-width: 768px) {
-  body { font-size: 16px; }
-
-  .hero-tagline,
-  .about-text p,
-  .contact-text,
-  .section-desc { font-size: 1rem; line-height: 1.8; }
-
-  .project-card { padding: 1.4rem; }
-  .project-card .project-title { font-size: 1.4rem; }
-  .project-card .project-desc { font-size: 1rem; line-height: 1.75; }
-  .project-card .project-facts dt { font-size: 0.82rem; }
-  .project-card .project-facts dd { font-size: 1rem; line-height: 1.7; }
-  .project-card .project-badge { font-size: 0.78rem; }
-  .project-card .project-year { font-size: 0.9rem; }
-  .project-card .tech-dot { font-size: 0.8rem; padding: 0.25rem 0.65rem; }
-  .project-card .project-link { font-size: 0.88rem; }
-
-  .tool-chip { font-size: 0.92rem; }
-  .skill-group h3 { font-size: 1.35rem; }
-  .cert-name { font-size: 1rem; }
-  .cert-body { font-size: 0.9rem; }
-  .highlight-chip { font-size: 1rem; }
-
-  .timeline-role { font-size: 1.4rem; }
-  .timeline-company { font-size: 1rem; }
-  .timeline-period { font-size: 0.85rem; }
-  .timeline-desc,
-  .timeline-achievements li { font-size: 1rem; }
-
-  .contact-detail-label { font-size: 0.8rem; }
-  .contact-detail-value { font-size: 1rem; }
-  .form-group label { font-size: 0.8rem; }
-  .form-group input,
-  .form-group textarea { font-size: 1rem; }
-  .footer-copy { font-size: 0.9rem; }
-}
-
-@media (max-width: 480px) {
-  .section-label,
-  .hero-eyebrow { font-size: 0.95rem; }
-  .hero-focus li { font-size: 0.85rem; }
-}
-/* ───── RESPONSIVE FIXES (all devices) ───── */
-img,svg{max-width:100%;height:auto}
-h1,h2,h3,p,dd,li{overflow-wrap:anywhere}
-#hero{min-height:100svh}
-
-/* Large screens: keep content centred and readable */
-@media (min-width:1201px){
-  nav,footer,section,#hero{padding-left:max(4rem,calc((100% - 1200px)/2));padding-right:max(4rem,calc((100% - 1200px)/2))}
-}
-
-/* Tablet landscape: stop nav links crowding */
-@media (min-width:961px) and (max-width:1100px){.nav-links{gap:1.4rem}}
-
-/* Fluid hero heading (was a fixed 2.95rem) */
-.hero-eyebrow{font-size:clamp(1.3rem,5vw,2.95rem);letter-spacing:clamp(.08em,.8vw,.2em)}
-
-/* Project grid adapts to any width: 3 / 2 / 1 columns automatically */
-.projects-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
-.project-card{min-width:0}
-
-/* Timeline */
-.timeline-header>*{min-width:0}
-.timeline-period{white-space:normal}
-
-/* Prevent iOS zoom on form focus */
-.form-group input,.form-group textarea{font-size:16px}
-
-@media (max-width:960px){
-  .portrait-badge{left:0}
-  .nav-mobile-menu{overflow-y:auto}
-}
-
-@media (max-width:600px){
-  .timeline-header{flex-direction:column;gap:.4rem}
-  .social-btn{flex:1 1 100%;justify-content:center}
-  .projects-cta-btn,.btn-primary,.btn-ghost{white-space:normal;text-align:center}
-}
-
-/* Very small phones (320–360px) */
-@media (max-width:360px){
-  #hero{padding:5rem 1rem 2.5rem}
-  section{padding:2.5rem 1rem}
-  nav{padding:.5rem 1rem}
-  .hero-name{font-size:1.9rem}
-  .hero-portrait-wrap,.portrait-frame{width:200px}
-  .portrait-frame{height:255px}
-  .hero-focus li{font-size:.78rem;padding:.4rem .7rem}
-  .project-card{padding:1.1rem}
-}
-
-/* Short landscape phones: menu must scroll, not clip */
-@media (max-height:500px) and (orientation:landscape){
-  .nav-mobile-menu{justify-content:flex-start;padding-top:4.5rem}
-  #hero{min-height:auto}
-}
-
-/* Touch devices: no sticky hover lift */
-@media (hover:none){
-  .project-card:hover,.btn-primary:hover,.btn-ghost:hover{transform:none}
-}
-/* ───── PROJECT GROUPS (reverse chronological) ───── */
-.project-group{margin-top:3.5rem}
-.project-group:first-of-type{margin-top:0}
-.group-head{padding:.2rem 0 .2rem 1.2rem;border-left:4px solid var(--gold);margin-bottom:1.6rem}
-.group-title{font-family:var(--font-display);font-size:clamp(1.4rem,3vw,1.9rem);font-weight:600;color:var(--white);line-height:1.25}
-.group-meta{font-size:.9rem;font-weight:500;color:var(--gold);margin-top:.2rem}
-.project-card .project-org{font-size:.85rem;font-weight:500;color:#ffe29a !important;margin:-.2rem 0 .8rem}
-.project-card .project-todo{color:#ffe29a !important;font-style:italic}
-.project-card .tool-line{margin-bottom:1rem}
- 
-/* ───── EXPERIENCE / RESUME: aligned on every device ───── */
-#experience{background:var(--navy)}
-.timeline{max-width:900px;padding-left:2rem;margin:0}
-.timeline::before{left:4px;top:.6rem}
-.timeline-item{padding-bottom:.2rem;margin-bottom:2.4rem}
-.timeline-item:last-child{margin-bottom:0}
-.timeline-item::before{left:calc(-2rem + 4px);top:.55rem;transform:translateX(-50%)}
-.timeline-header{align-items:baseline}
-.timeline-role{flex:1 1 260px;min-width:0;line-height:1.3}
-.timeline-period{flex:0 0 auto;max-width:100%}
-.timeline-company{font-weight:500}
-.timeline-achievements li{align-items:flex-start}
-.timeline-achievements li::before{flex:0 0 1.2em}
-.timeline-desc,.timeline-achievements li{max-width:none}
- 
 @media (max-width:768px){
-  .timeline{padding-left:1.6rem}
-  .timeline-item::before{left:calc(-1.6rem + 4px)}
-}
+body{font-size:16px}
+.about-highlights{grid-template-columns:1fr}.projects-cta-inner{flex-direction:column;align-items:flex-start}.form-row{grid-template-columns:1fr;gap:0}.form-row .form-group{margin-bottom:1rem}
+.hero-tagline,.about-text p,.contact-text,.section-desc{font-size:1rem;line-height:1.8}
+.project-card{padding:1.4rem}.project-title{font-size:1.4rem}.project-desc{font-size:1rem;line-height:1.75}
+.project-facts dt{font-size:.82rem}.project-facts dd{font-size:1rem}.project-badge{font-size:.78rem}.tech-dot{font-size:.8rem;padding:.25rem .65rem}.project-link{font-size:.88rem}
+.tool-chip{font-size:.92rem}.skill-group h3{font-size:1.35rem}.cert-name{font-size:1rem}.cert-body{font-size:.9rem}.highlight-chip{font-size:1rem}
+.timeline{padding-left:1.6rem}.timeline-item::before{left:calc(-1.6rem + 4px)}
+.timeline-role{font-size:1.4rem}.timeline-company{font-size:1rem}.timeline-period{font-size:.85rem}.timeline-achievements li{font-size:1rem}
+.contact-detail-label{font-size:.8rem}.contact-detail-value{font-size:1rem}.form-group label{font-size:.8rem}.footer-copy{font-size:.9rem}}
 @media (max-width:600px){
-  .timeline-header{flex-direction:column;align-items:flex-start;gap:.35rem}
-  .timeline-role{flex:none;width:100%}
-  .timeline-achievements li{gap:.5rem}
-}
+.timeline-header{flex-direction:column;align-items:flex-start;gap:.35rem}.timeline-role{flex:none;width:100%}.timeline-achievements li{gap:.5rem}
+.social-btn{flex:1 1 100%;justify-content:center}
+.projects-cta-btn,.btn-primary,.btn-ghost{white-space:normal;text-align:center}}
 @media (max-width:480px){
-  .timeline{padding-left:1.3rem}
-  .timeline-item::before{left:calc(-1.3rem + 4px)}
-  .project-group{margin-top:2.5rem}
-  .group-head{padding-left:.9rem}
-}
-
-/* ───── HIGH-CONTRAST ACCENT FOR THE BRIGHT PAGE BACKGROUND ─────
-   Replace gold text on pale sections with deep teal/navy.
-   Gold remains reserved for dark project cards, where it is readable.
-*/
-:root {
-  --gold: #123f50;
-  --gold-light: #18566a;
-  --gold-pale: #123f50;
-  --gold-dim: rgba(18, 63, 80, 0.10);
-}
-
-/* Explicit hard-coded gold text used on the light page */
-.nav-logo,
-.nav-links a:hover,
-.nav-links a:focus-visible,
-.nav-mobile-menu a:hover,
-.hero-eyebrow,
-.hero-name em,
-.section-label,
-.section-title em,
-.about-card-title,
-.highlight-chip i,
-.cert-icon i,
-.project-facts dt,
-.project-link,
-.timeline-period,
-.timeline-company,
-.timeline-achievements li::before,
-.form-group label,
-.form-fallback a,
-.contact-detail-value a,
-.contact-detail-icon i,
-.contact-detail-label,
-.social-btn i,
-.footer-copy span,
-.footer-links a,
-.group-meta {
-  color: #123f50;
-}
-
-.section-label::before,
-.nav-links a::after {
-  background: #123f50;
-}
-
-.hero-grid-lines {
-  background-image:
-    linear-gradient(#123f50 1px, transparent 1px),
-    linear-gradient(90deg, #123f50 1px, transparent 1px);
-}
-
-.hero-focus li {
-  border-color: rgba(18, 63, 80, 0.35);
-  color: #123f50;
-}
-
-.portrait-ring {
-  border-top-color: #123f50;
-  border-right-color: #123f50;
-}
-
-.portrait-corner {
-  border-color: #123f50;
-}
-
-.btn-primary {
-  background: #123f50;
-  border-color: #123f50;
-  color: #ffffff;
-}
-
-.btn-primary:hover {
-  background: #18566a;
-  border-color: #18566a;
-}
-
-.btn-ghost:hover,
-.projects-cta-btn:hover {
-  border-color: #123f50;
-  color: #123f50;
-}
-
-.projects-cta-btn {
-  border-color: #123f50;
-  color: #123f50;
-}
-
-.highlight-chip:hover,
-.social-btn:hover {
-  border-color: #123f50;
-}
-
-/* Keep warm gold typography on dark project cards for contrast */
-.project-card {
-  --gold: #f0cf7a;
-  --gold-light: #ffe29a;
-  --gold-pale: #fff3d0;
-}
-.project-card .project-facts dt {
-  color: #ffe29a !important;
-}
-
+#hero{padding:5.5rem 1.2rem 3rem}.hero-name{font-size:2.1rem}.hero-eyebrow,.section-label{font-size:.95rem;letter-spacing:.15em}
+.hero-portrait-wrap{width:220px}.portrait-frame{width:220px;height:280px}.portrait-badge{left:-10px;bottom:-10px}
+section{padding:3rem 1.2rem}.about-card,.contact-form-card{padding:1.3rem}.timeline{padding-left:1.3rem}.timeline-item::before{left:calc(-1.3rem + 4px)}
+.hero-cta{flex-direction:column;width:100%}.btn-primary,.btn-ghost{width:100%}.projects-cta-btn{width:100%;justify-content:center}
+.hero-focus li{font-size:.85rem}.project-group{margin-top:2.5rem}.group-head{padding-left:.9rem}footer{padding:1.2rem}}
+@media (max-width:360px){
+#hero{padding:5rem 1rem 2.5rem}section{padding:2.5rem 1rem}nav{padding:.5rem 1rem}.hero-name{font-size:1.9rem}
+.hero-portrait-wrap,.portrait-frame{width:200px}.portrait-frame{height:255px}
+.hero-focus li{font-size:.78rem;padding:.4rem .7rem}.project-card{padding:1.1rem}}
+@media (max-height:500px) and (orientation:landscape){.nav-mobile-menu{justify-content:flex-start;padding-top:4.5rem}#hero{min-height:auto}}
+@media (hover:none){.project-card:hover,.btn-primary:hover,.btn-ghost:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -713,7 +251,7 @@ h1,h2,h3,p,dd,li{overflow-wrap:anywhere}
 <div class="hero-inner">
 <p class="hero-eyebrow">Business Analyst</p>
 <h1 class="hero-name" id="hero-name">Oluwafunmilayo<br/><em>Animashaun</em></h1>
-<p class="hero-tagline">I'm a Business Analyst focused on understanding business needs, translating requirements into practical solutions, and improving processes through structured analysis. My work includes requirements documentation, stakeholder analysis, process mapping, business case development and data-informed recommendations.</p>
+<p class="hero-tagline">I’m a Business Analyst focused on understanding business needs, translating requirements into practical solutions, and improving processes through structured analysis. My work includes requirements documentation, stakeholder analysis, process mapping, business case development and data-informed recommendations.</p>
 <div class="hero-cta">
 <a class="btn-primary" href="#projects"><i aria-hidden="true" class="fa fa-briefcase"></i> View My Work</a>
 <a class="btn-ghost" href="#contact"><i aria-hidden="true" class="fa fa-paper-plane"></i> Get in Touch</a>
@@ -753,11 +291,8 @@ h1,h2,h3,p,dd,li{overflow-wrap:anywhere}
 </div>
 <div class="about-card fade-up">
 <h3 class="about-card-title">Education &amp; Professional Development</h3>
-<p class="edu-sub">In progress</p>
-<div class="cert-item"><div class="cert-icon"><i aria-hidden="true" class="fa fa-graduation-cap"></i></div><div><div class="cert-name">MSc Adult Nursing (Pre-Registration)</div><div class="cert-body">University of Huddersfield &middot; January 2026 &ndash; Present (ongoing)</div></div></div>
-<p class="edu-sub">Completed</p>
-<div class="cert-item"><div class="cert-icon"><i aria-hidden="true" class="fa fa-graduation-cap"></i></div><div><div class="cert-name">BSc (Hons) Business with Logistics and Supply Chain Management</div><div class="cert-body">University of Huddersfield &middot; Sept 2022 &ndash; June 2025 &middot; Upper second class (2:1)</div></div></div>
-<div class="cert-item"><div class="cert-icon"><i aria-hidden="true" class="fa fa-graduation-cap"></i></div><div><div class="cert-name">Diploma in Social Development and Administration</div><div class="cert-body">University of Lagos, Nigeria &middot; Feb 2002 &ndash; July 2004</div></div></div>
+<p class="edu-sub">Education</p>
+<div class="cert-item"><div class="cert-icon"><i aria-hidden="true" class="fa fa-graduation-cap"></i></div><div><div class="cert-name">BSc (Hons) Business with Logistics and Supply Chain Management</div><div class="cert-body">University of Huddersfield &middot; Sept 2022 &ndash; June 2025 &middot; Upper second class (2:1)</div><div class="cert-body">Relevant modules: Business Analytics; Data Analytics and Creating Value; Supply Chain Systems and Modelling; Procurement and Strategy; Planning and Control; Sustainable Logistics and Supply Chain; Business Transformation; Operations Management; Business Research Skills</div></div></div>
 <p class="edu-sub">Professional development</p>
 <!-- TODO (owner): confirm completion status/date and add a certificate link for 10Alytics if you have one -->
 <div class="cert-item"><div class="cert-icon"><i aria-hidden="true" class="fa fa-certificate"></i></div><div><div class="cert-name">Business Analytics</div><div class="cert-body">10Alytics</div></div></div>
@@ -772,10 +307,10 @@ h1,h2,h3,p,dd,li{overflow-wrap:anywhere}
 <p class="section-desc">The methods and tools I use across business analysis work, grouped by purpose.</p>
 </div>
 <div class="skills-grid">
-<div class="skill-group fade-up"><h3>Business Analysis</h3><ul class="tool-chips"><li class="tool-chip">Requirements elicitation</li><li class="tool-chip">Functional &amp; non-functional requirements</li><li class="tool-chip">BRD &amp; PRD development</li><li class="tool-chip">User stories &amp; acceptance criteria</li><li class="tool-chip">SDLC</li><li class="tool-chip">Strategic business &amp; technical alignment</li></ul></div>
+<div class="skill-group fade-up"><h3>Business Analysis</h3><ul class="tool-chips"><li class="tool-chip">Requirements elicitation</li><li class="tool-chip">Functional &amp; non-functional requirements</li><li class="tool-chip">BRD &amp; PRD development</li><li class="tool-chip">User stories &amp; acceptance criteria</li><li class="tool-chip">Software Development Life Cycle (SDLC)</li><li class="tool-chip">Strategic business &amp; technical alignment</li></ul></div>
 <div class="skill-group fade-up"><h3>Process &amp; Stakeholder Management</h3><ul class="tool-chips"><li class="tool-chip">Business process mapping &amp; improvement</li><li class="tool-chip">As-is / to-be analysis</li><li class="tool-chip">Enterprise process optimisation</li><li class="tool-chip">Stakeholder management</li><li class="tool-chip">RACI matrices</li></ul></div>
 <div class="skill-group fade-up"><h3>Data &amp; Reporting</h3><ul class="tool-chips"><li class="tool-chip">Microsoft Excel</li><li class="tool-chip">Microsoft SQL</li><li class="tool-chip">Power BI</li><li class="tool-chip">Tableau</li><li class="tool-chip">KPI definition &amp; reporting</li><li class="tool-chip">Data analysis &amp; visualisation</li></ul></div>
-<div class="skill-group fade-up"><h3>Delivery &amp; Collaboration</h3><ul class="tool-chips"><li class="tool-chip">Agile &amp; Scrum delivery</li><li class="tool-chip">Jira</li><li class="tool-chip">Confluence</li><li class="tool-chip">Microsoft Word</li><li class="tool-chip">Microsoft PowerPoint</li></ul></div>
+<div class="skill-group fade-up"><h3>Delivery &amp; Collaboration</h3><ul class="tool-chips"><li class="tool-chip">Agile &amp; Scrum delivery</li><li class="tool-chip">Jira</li><li class="tool-chip">Microsoft Word</li><li class="tool-chip">Microsoft PowerPoint</li></ul></div>
 <div class="skill-group fade-up"><h3>Process &amp; Design Tools</h3><ul class="tool-chips"><li class="tool-chip">Microsoft Visio</li><li class="tool-chip">Lucidchart</li><li class="tool-chip">draw.io</li></ul></div>
 </div>
 </section>
@@ -785,6 +320,7 @@ h1,h2,h3,p,dd,li{overflow-wrap:anywhere}
 <h2 class="section-title" id="projects-title">Projects &amp; <em>Case Studies</em></h2>
 <p class="section-desc">Business analysis and data projects, most recent first. Each entry shows the problem, what I produced, the methods and tools used, and the result.</p>
 </div>
+
 <!-- ============ 1. AMDARI ============ -->
 <div class="project-group">
 <div class="group-head fade-up">
@@ -794,13 +330,13 @@ h1,h2,h3,p,dd,li{overflow-wrap:anywhere}
 <div class="projects-grid">
 <article class="project-card fade-up">
 <div class="project-meta"><span class="project-badge">Business Analysis Case</span></div>
-<h4 class="project-title">Largence Platform Recommendation</h4>
+<h5 class="project-title">Largence &mdash; Legal Technology Platform Improvement</h5>
 <p class="project-org">Amdari &middot; Largence</p>
-<p class="project-desc">Analysed the Largence platform recommendation across seven work areas, bringing together stakeholder interview findings, workflow and compliance analysis, and requirements to support a clear solution decision.</p>
+<p class="project-desc">Analysed legal drafting, jurisdictional compliance and platform user journeys across seven project objectives, bringing together stakeholder interview findings, workflow and compliance analysis, and requirements to support a clear solution decision.</p>
 <dl class="project-facts">
-<dt>Project artefacts</dt><dd>BA Discovery Plan; stakeholder interview analysis; As-Is and Future-State workflow maps; business rules and compliance requirements; Business Requirements Document (BRD); requirements catalogue and prioritisation matrix; user stories and acceptance criteria; stakeholder register and RACI model; KPI framework; user journey; and final recommendations.</dd>
+<dt>Project artefacts</dt><dd>BA Discovery Plan; stakeholder interview analysis; As-Is and Future-State workflow maps; business rules and compliance requirements; Business Requirements Document (BRD); requirements catalogue and prioritisation matrix; user stories and acceptance criteria; stakeholder register and RACI model; KPI framework; user journey map; and final recommendations.</dd>
 <dt>Additional material</dt><dd>KPI dashboard concept and supporting stakeholder, business-rules and requirements documentation.</dd>
-<dt>Outcome</dt><dd>Structured recommendation and requirements documentation. The dashboard concept is presented as a concept, not a deployed dashboard.</dd>
+<dt>Outcome</dt><dd>Structured recommendations and requirements documentation. The KPI dashboard is presented as a concept rather than a deployed dashboard.</dd>
 </dl>
 <div class="project-card-bottom">
 <div class="project-tech"><span class="tech-dot">Requirements</span><span class="tech-dot">Process Mapping</span><span class="tech-dot">Stakeholder Analysis</span><span class="tech-dot">KPIs</span></div>
@@ -809,63 +345,41 @@ h1,h2,h3,p,dd,li{overflow-wrap:anywhere}
 </article>
 <article class="project-card fade-up">
 <div class="project-meta"><span class="project-badge">Data &amp; Process Analysis</span></div>
-<h4 class="project-title">Medsure &mdash; Appointment Analysis</h4>
-<p class="project-org">Amdari &middot; Medsure</p>
-<p class="project-desc">Analysed the appointment-booking process to identify operational pain points and patterns in appointment demand and no-shows, then developed proposed process improvements and recommendations.</p>
+<h5 class="project-title">MedSure Health Systems &mdash; Appointment Scheduling &amp; Care Coordination</h5>
+<p class="project-org">Amdari &middot; MedSure Health Systems</p>
+<p class="project-desc">Analysed appointment processes to identify delays, duplicated work, missed appointments and hand-off gaps, then designed an improved workflow and developed recommendations.</p>
 <dl class="project-facts">
-<dt>Project artefacts</dt><dd>Project kickoff; AS-IS and TO-BE appointment-process maps; pain-point analysis and pain point register; stakeholder needs and requirements; Excel analysis of appointment trends and no-shows; user stories and MVP definition; dashboard visualisation; and recommendations.</dd>
-<dt>Visualisation</dt><dd>Excel and Power BI used to analyse appointment trends and no-shows; dashboards produced.</dd>
-<dt>Outcome</dt><dd>Analysis and proposed improvements; no unverified implementation or performance results are claimed.</dd>
+<dt>Project artefacts</dt><dd>Project kickoff; AS-IS and TO-BE appointment-process maps; pain point register; stakeholder needs and requirements; Excel analysis of appointment trends and no-shows; user stories and MVP definition; dashboards; and recommendations.</dd>
+<dt>Tools</dt><dd>Microsoft Excel and Power BI used to analyse appointment trends, including no-shows.</dd>
+<dt>Outcome</dt><dd>Process analysis, dashboards and proposed improvements for the appointment process.</dd>
 </dl>
 <div class="project-card-bottom">
 <div class="project-tech"><span class="tech-dot">Excel</span><span class="tech-dot">Power BI</span><span class="tech-dot">Trend Analysis</span><span class="tech-dot">MVP</span><span class="tech-dot">User Stories</span></div>
 <a class="project-link" href="https://drive.google.com/drive/folders/1esIBt74TNU-_KhyVpHt36sfw8XgbmreK" rel="noopener noreferrer" target="_blank">View Full Project <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
 </div>
 </article>
+<!-- TODO (owner): VeriSphere is not on your CV. Add it to the CV or remove this card so both match. -->
 <article class="project-card fade-up">
-<div class="project-meta">
-<span class="project-badge">Business Analysis &amp; Project Management</span>
-</div>
-<h4 class="project-title">VeriSphere &mdash; Cross-Border Digital Identity &amp; AML Onboarding MVP</h4>
-<p class="project-org">Amdari Inc. &middot; Client: VeriSphere Compliance Technologies Ltd.</p>
-<p class="project-desc">
-        Supporting the definition and planned delivery of a cross-border digital identity
-        verification and Anti-Money Laundering (AML) onboarding MVP for the UK and Canada.
-        The engagement focuses on translating compliance and operational needs into clear
-        requirements, future-state workflows, delivery plans and validation activities.
-      </p>
+<div class="project-meta"><span class="project-badge">Business Analysis &amp; Project Management</span></div>
+<h5 class="project-title">VeriSphere &mdash; Cross-Border Digital Identity &amp; AML Onboarding MVP</h5>
+<p class="project-org">Amdari &middot; Client: VeriSphere Compliance Technologies Ltd.</p>
+<p class="project-desc">Supporting the definition and planned delivery of a cross-border digital identity verification and Anti-Money Laundering (AML) onboarding MVP for the UK and Canada. The engagement focuses on translating compliance and operational needs into clear requirements, future-state workflows, delivery plans and validation activities.</p>
 <dl class="project-facts">
 <dt>My BA / project contribution</dt>
-<dd>Business discovery and requirements analysis; current-state pain-point assessment;
-        future-state process and user-journey definition; functional and non-functional
-        requirements; business rules for UK and Canada; user stories and acceptance criteria;
-        requirements traceability; and support for testing and user acceptance testing (UAT).</dd>
+<dd>Business discovery and requirements analysis; current-state pain-point assessment; future-state process and user-journey definition; functional and non-functional requirements; business rules for the UK and Canada; user stories and acceptance criteria; requirements traceability; and support for testing and user acceptance testing (UAT).</dd>
 <dt>Project management and deliverables</dt>
-<dd>Project charter; stakeholder and communication planning; Agile delivery and sprint
-        planning; risk, issue and change control; requirements baseline; test documentation;
-        final requirements pack; user guide; and project closure documentation.</dd>
+<dd>Project charter; stakeholder and communication planning; Agile delivery and sprint planning; risk, issue and change control; requirements baseline; test documentation; final requirements pack; user guide; and project closure documentation.</dd>
 <dt>MVP scope and status</dt>
-<dd>Planned capabilities include applicant identity submission, identity-information
-        capture, document collection, UK/Canada onboarding variations, country-specific
-        validation, AML risk scoring, compliance review workflows and automated status
-        notifications. The project charter is marked DRAFT and not approved; implementation,
-        testing and final outcomes are therefore not presented as completed.</dd>
+<dd>Planned capabilities include applicant identity submission, identity-information capture, document collection, UK/Canada onboarding variations, country-specific validation, AML risk scoring, compliance review workflows and automated status notifications. Status: in progress, with the project charter still in draft; implementation, testing and final outcomes are not presented as completed.</dd>
 </dl>
 <div class="project-card-bottom">
-<div class="project-tech">
-<span class="tech-dot">Requirements</span>
-<span class="tech-dot">Process Mapping</span>
-<span class="tech-dot">AML Compliance</span>
-<span class="tech-dot">Agile/Scrum</span>
-<span class="tech-dot">UAT</span>
+<div class="project-tech"><span class="tech-dot">Requirements</span><span class="tech-dot">Process Mapping</span><span class="tech-dot">AML Compliance</span><span class="tech-dot">Agile/Scrum</span><span class="tech-dot">UAT</span></div>
+<a class="project-link" href="https://drive.google.com/drive/folders/1G73m5RE2n4Q0CM4xj_pHk1cOzGyf0JvF" rel="noopener noreferrer" target="_blank">View Project Documents <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
 </div>
-<a class="project-link" href="https://drive.google.com/drive/folders/1G73m5RE2n4Q0CM4xj_pHk1cOzGyf0JvF" rel="noopener noreferrer" target="_blank">
-          View Project Documents
-          <i aria-hidden="true" class="fa fa-arrow-right"></i>
-</a>
+</article>
 </div>
-</article></div>
 </div>
+
 <!-- ============ 2. 10ALYTICS ============ -->
 <div class="project-group">
 <div class="group-head fade-up">
@@ -875,7 +389,7 @@ h1,h2,h3,p,dd,li{overflow-wrap:anywhere}
 <div class="projects-grid">
 <article class="project-card fade-up">
 <div class="project-meta"><span class="project-badge">Capstone Project</span></div>
-<h4 class="project-title">GreenLeaf Capstone &mdash; Data Analysis &amp; Dashboard</h4>
+<h5 class="project-title">GreenLeaf Stores &mdash; Sales Analytics Capstone</h5>
 <p class="project-org">10Alytics &middot; Business Analysis Training Project</p>
 <p class="project-desc">In a group project, I led the data analysis work on retail sales data, then presented insights and recommendations to support pricing, promotion and inventory decisions.</p>
 <dl class="project-facts">
@@ -889,9 +403,9 @@ h1,h2,h3,p,dd,li{overflow-wrap:anywhere}
 </article>
 <article class="project-card fade-up">
 <div class="project-meta"><span class="project-badge">Business Analysis Case</span></div>
-<h4 class="project-title">Project Zenith &mdash; Apex Global Bank</h4>
+<h5 class="project-title">Project Zenith &mdash; Apex Global Bank</h5>
 <p class="project-org">10Alytics &middot; Business Analysis Training Project</p>
-<p class="project-desc">Apex Global Bank's manual personal-loan process took 7&ndash;10 business days and had a 40% abandonment rate. I analysed the requirements for a proposed mobile instant loan service and produced a BRD to support it.</p>
+<p class="project-desc">Apex Global Bank’s manual personal-loan process took 7&ndash;10 business days and had a 40% abandonment rate. I analysed the requirements for a proposed mobile instant loan service and produced a BRD to support it.</p>
 <dl class="project-facts">
 <dt>My contribution</dt><dd>Analysed eight initial requirements, classified functional and non-functional requirements, and identified ambiguity and potential conflicts.</dd>
 <dt>Methods</dt><dd>SMART objectives and MoSCoW prioritisation.</dd>
@@ -904,7 +418,7 @@ h1,h2,h3,p,dd,li{overflow-wrap:anywhere}
 </article>
 <article class="project-card fade-up">
 <div class="project-meta"><span class="project-badge">Data Analysis</span></div>
-<h4 class="project-title">Maple Gate Bank &mdash; Customer, Account &amp; Transaction Analytics</h4>
+<h5 class="project-title">Maple Gate Bank &mdash; Customer, Account &amp; Transaction Analytics</h5>
 <p class="project-org">10Alytics &middot; Business Analysis Training Project</p>
 <p class="project-desc">Analysed four relational datasets using Microsoft SQL to answer seven business questions on deposits, accounts, branch activity, customer transactions, loan eligibility and transfers flagged for review.</p>
 <dl class="project-facts">
@@ -916,28 +430,27 @@ h1,h2,h3,p,dd,li{overflow-wrap:anywhere}
 <a class="project-link" href="https://drive.google.com/drive/folders/1YQCMI1SyaqQrJrpFkJskq9NIW9PE75JJ" rel="noopener noreferrer" target="_blank">View Case Study <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
 </div>
 </article>
+<!-- TODO (owner): Reign College and SmilePoint are not named on your CV. Add details from the project files, or remove them, so the site and CV match. -->
 <article class="project-card fade-up">
 <div class="project-meta"><span class="project-badge">Business Analysis Training Project</span></div>
-<h4 class="project-title">Reign College</h4>
+<h5 class="project-title">Reign College</h5>
 <p class="project-org">10Alytics &middot; Business Analysis Training Project</p>
-<p class="project-desc">A business analysis training case included in the 10Alytics project portfolio. The full project write-up and supporting artefacts should be used to confirm the specific business problem, analysis performed and recommendations before adding detailed claims.</p>
+<p class="project-desc">A business analysis training case completed as part of the 10Alytics project portfolio. The full project documents are available through the link below.</p>
 <dl class="project-facts">
-<dt>Project coverage</dt><dd>Training case study; consult the project source documents for the confirmed requirements, methods, deliverables and findings.</dd>
-<dt>Evidence</dt><dd>Use the full project archive to review the supporting files. No unverified outcome or tool claim is made here.</dd>
+<dt>Project coverage</dt><dd>Training case study with supporting project files.</dd>
 </dl>
 <div class="project-card-bottom">
 <div class="project-tech"><span class="tech-dot">Business Analysis</span><span class="tech-dot">Case Study</span></div>
-<a class="project-link" href="https://drive.google.com/drive/folders/1M1jYuBqkxxVEjTVtBGMSV7oEB6wIfum6" rel="noopener noreferrer" target="_blank">Find in Project Archive <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
+<a class="project-link" href="https://drive.google.com/drive/folders/1M1jYuBqkxxVEjTVtBGMSV7oEB6wIfum6" rel="noopener noreferrer" target="_blank">View Project Files <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
 </div>
 </article>
-
 <article class="project-card fade-up">
 <div class="project-meta"><span class="project-badge">Business Analysis Case</span></div>
-<h4 class="project-title">SmilePoint Dental Clinic</h4>
+<h5 class="project-title">SmilePoint Dental Clinic</h5>
 <p class="project-org">10Alytics &middot; Business Analysis Training Project</p>
-<p class="project-desc">A dental-clinic business analysis project supported by the SmilePoint BA document and related stakeholder / RACI artefacts.</p>
+<p class="project-desc">A dental-clinic business analysis project covering business analysis documentation, project planning and stakeholder responsibilities.</p>
 <dl class="project-facts">
-<dt>Project files</dt><dd>SmilePoint Dental Clinic BA, SmilePoint Dental Clinic, SmilePoint Dental Project Content Charter, RACI Matrix and stakeholder communication materials.</dd>
+<dt>Project files</dt><dd>Business analysis document, project charter, RACI matrix and stakeholder communication materials.</dd>
 <dt>Focus</dt><dd>Business analysis documentation, project planning and stakeholder responsibilities.</dd>
 </dl>
 <div class="project-card-bottom">
@@ -946,19 +459,10 @@ h1,h2,h3,p,dd,li{overflow-wrap:anywhere}
 </div>
 </article>
 <article class="project-card fade-up">
-<div class="project-meta">
-<span class="project-badge">Business Analysis</span>
-</div>
-<h4 class="project-title">Unilever Canteen Ordering System</h4>
+<div class="project-meta"><span class="project-badge">Business Analysis</span></div>
+<h5 class="project-title">Unilever &mdash; Canteen Ordering System</h5>
 <p class="project-org">10Alytics &middot; Business Analysis Training Project &middot; June 2026</p>
-<p class="project-desc">
-    Developed a business analysis solution for Unilever UK's proposed digital
-    canteen ordering system to address long lunch queues, food waste and limited
-    meal availability. Defined the proposed future state, analysed stakeholder
-    needs, documented system requirements and translated business needs into
-    user stories and acceptance criteria. The project also covered delivery
-    planning and backlog management using Jira.
-  </p>
+<p class="project-desc">Long lunch queues, food shortages and waste created a need for an online ordering process. I analysed the requirements for a proposed online canteen ordering and desk delivery system, defined the proposed future state, analysed stakeholder needs, and translated business needs into user stories and acceptance criteria. The project also covered delivery planning and backlog management using Jira.</p>
 <dl class="project-facts">
 <dt>My contribution</dt>
 <dd>Identified and analysed stakeholders, developed the business case and RACI matrix, documented key system features, and translated requirements into user stories with acceptance criteria.</dd>
@@ -968,163 +472,88 @@ h1,h2,h3,p,dd,li{overflow-wrap:anywhere}
 <dd>Business case, stakeholder analysis matrix, RACI matrix, To-Be process maps in draw.io, user stories, acceptance criteria and Jira backlog documentation. Jira project set up, product backlog populated, and at least three sprints planned.</dd>
 </dl>
 <div class="project-card-bottom">
-<div class="project-tech">
-<span class="tech-dot">Business Analysis</span>
-<span class="tech-dot">Requirements</span>
-<span class="tech-dot">User Stories</span>
-<span class="tech-dot">Jira</span>
-<span class="tech-dot">draw.io</span>
-<span class="tech-dot">Agile/Scrum</span>
-</div>
-<a class="project-link" href="https://drive.google.com/drive/folders/1f59cCdyFa2jJmzFOesTnwSrRnnkTkS75" rel="noopener noreferrer" target="_blank">
-      View Project Report
-      <i aria-hidden="true" class="fa fa-arrow-right"></i>
-</a>
+<div class="project-tech"><span class="tech-dot">Business Analysis</span><span class="tech-dot">Requirements</span><span class="tech-dot">User Stories</span><span class="tech-dot">Jira</span><span class="tech-dot">draw.io</span><span class="tech-dot">Agile/Scrum</span></div>
+<a class="project-link" href="https://drive.google.com/drive/folders/1f59cCdyFa2jJmzFOesTnwSrRnnkTkS75" rel="noopener noreferrer" target="_blank">View Project Report <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
 </div>
 </article>
 </div>
 </div>
+
 <!-- ============ 3. UNIVERSITY OF HUDDERSFIELD ============ -->
 <div class="project-group">
 <div class="group-head fade-up">
 <h3 class="group-title">University of Huddersfield &mdash; Selected Academic Projects</h3>
-<p class="group-meta">BSc (Hons) Business with Logistics and Supply Chain Management | Completed June 2025 &middot; Graduated July 2025</p>
+<p class="group-meta">BSc (Hons) Business with Logistics and Supply Chain Management &middot; Completed June 2025 &middot; Graduated July 2025</p>
 </div>
-<!-- 2024–2025 -->
 <div class="group-head fade-up">
 <h4 class="group-title">2024&ndash;2025</h4>
 </div>
 <div class="projects-grid">
 <article class="project-card fade-up">
-<div class="project-meta">
-<span class="project-badge">Data Analytics</span>
-</div>
-<h4 class="project-title">Data Analytics and Creating Value: Lloyds Banking Group</h4>
+<div class="project-meta"><span class="project-badge">Data Analytics</span></div>
+<h5 class="project-title">Data Analytics and Creating Value: Lloyds Banking Group</h5>
 <p class="project-org">University of Huddersfield &middot; April 2025</p>
-<p class="project-desc">
-        Evaluated how Lloyds Banking Group uses data and digital transformation
-        to support business performance and customer experience. Analysed a
-        sample UK financial-firm dataset because internal company data was
-        unavailable, and reviewed performance using KPIs including return on
-        equity, cost-to-income ratio and customer retention. Developed
-        evidence-based recommendations focused on operational efficiency,
-        customer retention, data governance and responsible data use.
-      </p>
+<p class="project-desc">Evaluated how Lloyds Banking Group uses data and digital transformation to support business performance and customer experience. Analysed a sample UK financial-firm dataset because internal company data was unavailable, and reviewed performance using KPIs including return on equity, cost-to-income ratio and customer retention. Developed evidence-based recommendations focused on operational efficiency, customer retention, data governance and responsible data use.</p>
 <dl class="project-facts">
-<dt>My contribution</dt>
-<dd>Produced an individual analytical report, interpreted data and KPI trends, and developed recommendations from the findings.</dd>
-<dt>Methods</dt>
-<dd>Data analysis, KPI evaluation, trend interpretation and evidence-based recommendations.</dd>
-<dt>Tools</dt>
-<dd>Sample financial dataset and data visualisation/analysis methods described in the report.</dd>
+<dt>My contribution</dt><dd>Produced an individual analytical report, interpreted data and KPI trends, and developed recommendations from the findings.</dd>
+<dt>Methods</dt><dd>Data analysis, KPI evaluation, trend interpretation and evidence-based recommendations.</dd>
+<dt>Tools</dt><dd>Sample financial dataset and data visualisation/analysis methods described in the report.</dd>
 </dl>
 <div class="project-card-bottom">
-<div class="project-tech">
-<span class="tech-dot">Data Analysis</span>
-<span class="tech-dot">KPIs</span>
-<span class="tech-dot">Recommendations</span>
-</div>
-<a class="project-link" href="https://drive.google.com/drive/folders/18ptZRrJPhiRxOnR2BaTa8heQyOI93zM-" rel="noopener noreferrer" target="_blank">
-          View Project Report
-          <i aria-hidden="true" class="fa fa-arrow-right"></i>
-</a>
+<div class="project-tech"><span class="tech-dot">Data Analysis</span><span class="tech-dot">KPIs</span><span class="tech-dot">Recommendations</span></div>
+<a class="project-link" href="https://drive.google.com/drive/folders/18ptZRrJPhiRxOnR2BaTa8heQyOI93zM-" rel="noopener noreferrer" target="_blank">View Project Report <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
 </div>
 </article>
 </div>
-<!-- 2022–2023 -->
 <div class="group-head fade-up">
 <h4 class="group-title">2022&ndash;2023</h4>
 </div>
 <div class="projects-grid">
-<!-- Taylor Wimpey -->
 <article class="project-card fade-up">
-<div class="project-meta">
-<span class="project-badge">Business Analytics</span>
-</div>
-<h4 class="project-title">Taylor Wimpey: Share Price and Financial Performance Analysis</h4>
+<div class="project-meta"><span class="project-badge">Business Analytics</span></div>
+<h5 class="project-title">Taylor Wimpey: Share Price and Financial Performance Analysis</h5>
 <p class="project-org">University of Huddersfield &middot; 2023</p>
-<p class="project-desc">
-        Analysed Taylor Wimpey&rsquo;s share-price movements and financial position,
-        including changes around the COVID-19 period. Examined daily and weekly
-        share returns, descriptive statistics, and the relationship between
-        Taylor Wimpey and the FTSE 100. Compared regression analyses and
-        developed an example investment portfolio designed to target the
-        FTSE 100&rsquo;s return.
-      </p>
+<p class="project-desc">Analysed Taylor Wimpey’s share-price movements and financial position, including changes around the COVID-19 period. Examined daily and weekly share returns, descriptive statistics, and the relationship between Taylor Wimpey and the FTSE 100. Compared regression analyses and developed an example investment portfolio designed to target the FTSE 100’s return.</p>
 <dl class="project-facts">
-<dt>My contribution</dt>
-<dd>Completed an individual analytical report interpreting share-price and financial-report data.</dd>
-<dt>Methods</dt>
-<dd>Descriptive, predictive and prescriptive analytics; charts, descriptive statistics, scatter plots, regression analysis and portfolio calculations.</dd>
-<dt>Tools</dt>
-<dd>Microsoft Excel, Tableau and Microsoft Word.</dd>
+<dt>My contribution</dt><dd>Completed an individual analytical report interpreting share-price and financial-report data.</dd>
+<dt>Methods</dt><dd>Descriptive, predictive and prescriptive analytics; charts, descriptive statistics, scatter plots, regression analysis and portfolio calculations.</dd>
+<dt>Tools</dt><dd>Microsoft Excel, Tableau and Microsoft Word.</dd>
 </dl>
 <div class="project-card-bottom">
-<div class="project-tech">
-<span class="tech-dot">Excel</span>
-<span class="tech-dot">Tableau</span>
-<span class="tech-dot">Regression</span>
-<span class="tech-dot">Financial Analysis</span>
-</div>
-<a class="project-link" href="https://drive.google.com/drive/folders/16evMAXLM_p95cvM_LnDyUyalpILpZLCk" rel="noopener noreferrer" target="_blank">
-          View Analytical Report
-          <i aria-hidden="true" class="fa fa-arrow-right"></i>
-</a>
+<div class="project-tech"><span class="tech-dot">Excel</span><span class="tech-dot">Tableau</span><span class="tech-dot">Regression</span><span class="tech-dot">Financial Analysis</span></div>
+<a class="project-link" href="https://drive.google.com/drive/folders/16evMAXLM_p95cvM_LnDyUyalpILpZLCk" rel="noopener noreferrer" target="_blank">View Analytical Report <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
 </div>
 </article>
-<!-- Ryanair -->
 <article class="project-card fade-up">
-<div class="project-meta">
-<span class="project-badge">Project Management</span>
-</div>
-<h4 class="project-title">Ryanair&rsquo;s Carbon Emissions Reduction Targets</h4>
+<div class="project-meta"><span class="project-badge">Project Management</span></div>
+<h5 class="project-title">Ryanair’s Carbon Emissions Reduction Targets</h5>
 <p class="project-org">University of Huddersfield &middot; November 2022</p>
-<p class="project-desc">
-        Worked on a group poster presentation exploring project-management
-        challenges associated with Ryanair&rsquo;s carbon-emissions reduction
-        ambitions. The analysis used a PESTLE framework to consider political,
-        economic, social, technological, legal and environmental factors, and
-        proposed responses such as sustainable aviation fuel partnerships,
-        improved air-traffic management, fuel hedging and investment in more
-        efficient aircraft.
-      </p>
+<p class="project-desc">Worked on a group poster presentation exploring project-management challenges associated with Ryanair’s carbon-emissions reduction ambitions. The analysis used a PESTLE framework to consider political, economic, social, technological, legal and environmental factors, and proposed responses such as sustainable aviation fuel partnerships, improved air-traffic management, fuel hedging and investment in more efficient aircraft.</p>
 <dl class="project-facts">
-<dt>My contribution</dt>
-<dd>Contributed to a group poster presentation examining challenges, solutions and opportunities for a large-scale sustainability project.</dd>
-<dt>Methods</dt>
-<dd>PESTLE analysis, challenge and risk identification, solution evaluation and academic research.</dd>
-<dt>Format</dt>
-<dd>Group poster presentation.</dd>
+<dt>My contribution</dt><dd>Contributed to a group poster presentation examining challenges, solutions and opportunities for a large-scale sustainability project.</dd>
+<dt>Methods</dt><dd>PESTLE analysis, challenge and risk identification, solution evaluation and academic research.</dd>
+<dt>Format</dt><dd>Group poster presentation.</dd>
 </dl>
 <div class="project-card-bottom">
-<div class="project-tech">
-<span class="tech-dot">PESTLE</span>
-<span class="tech-dot">Project Management</span>
-<span class="tech-dot">Sustainability</span>
-<span class="tech-dot">Risk Analysis</span>
-</div>
-<a class="project-link" href="https://drive.google.com/drive/folders/1XyOjsTFAEG4oo4bTt3sDOwNYa3AjZVGf" rel="noopener noreferrer" target="_blank">
-          View Poster Presentation
-          <i aria-hidden="true" class="fa fa-arrow-right"></i>
-</a>
+<div class="project-tech"><span class="tech-dot">PESTLE</span><span class="tech-dot">Project Management</span><span class="tech-dot">Sustainability</span><span class="tech-dot">Risk Analysis</span></div>
+<a class="project-link" href="https://drive.google.com/drive/folders/1XyOjsTFAEG4oo4bTt3sDOwNYa3AjZVGf" rel="noopener noreferrer" target="_blank">View Poster Presentation <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
 </div>
 </article>
 </div>
 </div>
-<!-- View All Projects CTA -->
+
 <div class="projects-cta fade-up">
-<h3>Explore All My Projects</h3>
-<p>
-    Explore my complete collection of case studies, business analysis projects,
-    academic reports, and supporting documentation.
-  </p>
-<a class="btn btn-primary" href="https://drive.google.com/drive/folders/1SoQdkSyWq0c8ZJ9RhwfnxPSc7L8qM4KF" rel="noopener noreferrer" target="_blank">
-    View All Projects
-    <i aria-hidden="true" class="fa fa-arrow-right"></i>
-</a>
+<div class="projects-cta-inner">
+<div>
+<span class="projects-cta-label">Explore All My Projects</span>
+<p class="projects-cta-sub">Explore my complete collection of case studies, business analysis projects, academic reports, and supporting documentation.</p>
+</div>
+<a class="projects-cta-btn" href="https://drive.google.com/drive/folders/1SoQdkSyWq0c8ZJ9RhwfnxPSc7L8qM4KF" rel="noopener noreferrer" target="_blank">View All Projects <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
+</div>
 </div>
 </section>
-<!-- ============ EXPERIENCE (resume), now a proper section ============ -->
+
+<!-- ============ EXPERIENCE ============ -->
 <section aria-labelledby="experience-title" id="experience">
 <div class="section-header fade-up">
 <div class="section-label">Career History</div>
@@ -1132,73 +561,74 @@ h1,h2,h3,p,dd,li{overflow-wrap:anywhere}
 </div>
 <div class="timeline">
 <div class="timeline-item fade-up">
-<div class="timeline-header"><h3 class="timeline-role">Business Analyst Consultant</h3><div class="timeline-period">July 2026 &mdash; Present</div></div>
+<div class="timeline-header"><h3 class="timeline-role">Business Analyst Consultant</h3><div class="timeline-period">July 2026 &ndash; Present</div></div>
 <div class="timeline-company">Amdari Inc. &middot; UK</div>
 <ul class="timeline-achievements">
-<li>Authored Business Requirement Documents (BRDs) and Product Requirement Documents (PRDs) to translate business needs into structured requirements and support project and product decisions.</li>
-<li><strong>MedSure Health Systems (appointment scheduling and care coordination):</strong>&nbsp;analysed appointment processes to find delays, duplicated work, missed appointments and hand-off gaps; designed an improved workflow; wrote user stories; and analysed appointment data in Excel and Power BI. Produced AS-IS and TO-BE process maps, a pain point register, dashboards and recommendations.</li>
-<li><strong>Largence (legal technology platform improvement):</strong>&nbsp;analysed legal drafting, jurisdictional compliance and user journeys across seven project objectives. Ran stakeholder interviews, mapped workflows, documented business rules, and produced requirements, user stories, acceptance criteria, stakeholder and RACI models, a KPI framework, a user journey map and recommendations.</li>
+<li><span><strong>Business analysis documentation:</strong> authored Business Requirement Documents (BRDs) and Product Requirement Documents (PRDs) to translate business needs into structured requirements and support project and product decisions.</span></li>
+<li><span><strong>MedSure Health Systems (appointment scheduling and care coordination):</strong> analysed appointment processes to identify delays, duplicated work, missed appointments and hand-off gaps. Designed an improved workflow, translated requirements into user stories, and analysed appointment data in Microsoft Excel and Power BI to examine trends, including no-shows. Produced AS-IS and TO-BE process maps, a pain point register, dashboards and recommendations.</span></li>
+<li><span><strong>Largence (legal technology platform improvement):</strong> analysed legal drafting, jurisdictional compliance and platform user journeys across seven project objectives. Conducted stakeholder interviews, mapped workflows, documented business rules, and developed requirements, user stories and acceptance criteria. Produced stakeholder and RACI models, a KPI framework, a user journey map and product improvement recommendations.</span></li>
 </ul>
 </div>
 <div class="timeline-item fade-up">
-<div class="timeline-header"><h3 class="timeline-role">Project Consultant (Business Analysis)</h3><div class="timeline-period">November 2025 &mdash; June 2026</div></div>
-<div class="timeline-company">10Alytics</div>
+<div class="timeline-header"><h3 class="timeline-role">Project Consultant (Business Analysis)</h3><div class="timeline-period">November 2025 &ndash; June 2026</div></div>
+<div class="timeline-company">10Alytics &middot; Business Analysis Training and Practical Projects</div>
 <ul class="timeline-achievements">
-<li>Completed seven business analysis training projects covering project initiation, stakeholder analysis, business cases, requirement elicitation, project governance, data analytics, process modelling and Agile delivery.</li>
-<li><strong>Apex Global Bank (Project Zenith):</strong>&nbsp;BRD for a mobile instant loan service addressing a 7&ndash;10 day process and 40% abandonment rate, with SMART objectives and MoSCoW prioritisation.</li>
-<li><strong>Unilever (Canteen Ordering System):</strong>&nbsp;stakeholder analysis, business case, RACI, To-Be maps in draw.io and user stories; set up a Jira project, built the backlog and planned three or more sprints.</li>
-<li><strong>GreenLeaf Stores:</strong>&nbsp;led data analysis for a group capstone, covering Excel cleaning, KPIs, pivot tables, slicers and an interactive dashboard.</li>
-<li><strong>Maple Gate Bank:</strong>&nbsp;analysed four relational datasets in Microsoft SQL to answer seven business questions.</li>
+<li><span>Completed seven business analysis training projects covering project initiation, stakeholder analysis, business cases, requirement elicitation, project governance, data analytics, process modelling and Agile delivery.</span></li>
+<li><span><strong>Apex Global Bank (Project Zenith):</strong> the bank’s manual personal-loan process took 7&ndash;10 business days and had a 40% abandonment rate. Analysed eight initial requirements, classified functional and non-functional requirements, identified ambiguity and potential conflicts, defined SMART objectives, and prioritised requirements using MoSCoW. Produced a BRD to support the proposed mobile instant loan service.</span></li>
+<li><span><strong>Unilever (Canteen Ordering System):</strong> analysed requirements for a proposed online ordering and desk delivery system in response to long lunch queues and food availability issues. Produced stakeholder analysis, a business case, RACI matrix, To-Be process maps in draw.io and user stories. Set up a Jira project, populated the product backlog and planned at least three sprints.</span></li>
+<li><span><strong>GreenLeaf Stores (Sales Analytics Capstone):</strong> in a group project, led the data analysis work by cleaning and preparing retail sales data in Excel, calculating selected KPIs and creating pivot tables, charts, slicers and an interactive dashboard. Presented insights and recommendations to support pricing, promotion and inventory decisions.</span></li>
+<li><span><strong>Maple Gate Bank (Customer, Account and Transaction Analytics):</strong> analysed four relational datasets using Microsoft SQL, applying joins, filters, aggregations and CASE logic to answer seven business questions on deposits, accounts, branch activity, customer transactions, loan eligibility and transfers flagged for review. Produced findings to inform customer insights, risk management, branch performance and product strategy.</span></li>
 </ul>
 </div>
 <div class="timeline-item fade-up">
-<div class="timeline-header"><h3 class="timeline-role">Warehouse Operative (Part-time)</h3><div class="timeline-period">April 2023 &mdash; June 2024</div></div>
+<div class="timeline-header"><h3 class="timeline-role">Warehouse Operative (Part-time)</h3><div class="timeline-period">April 2023 &ndash; June 2024</div></div>
 <div class="timeline-company">PPG Paints &middot; UK</div>
 <ul class="timeline-achievements">
-<li>Contributed to a 30% reduction in stock discrepancies and a 25% reduction in workflow errors by applying structured stock-control, barcode-checking and cycle-counting procedures alongside university studies</li>
+<li><span>Contributed to a 30% reduction in stock discrepancies and a 25% reduction in workflow errors by applying structured stock-control, barcode-checking and cycle-counting procedures while working part-time alongside university studies.</span></li>
 </ul>
 </div>
 <div class="timeline-item fade-up">
-<div class="timeline-header"><h3 class="timeline-role">Production Operative</h3><div class="timeline-period">January 2022 &mdash; March 2023</div></div>
-<div class="timeline-company">Fox's Biscuits &middot; UK</div>
+<div class="timeline-header"><h3 class="timeline-role">Production Operative</h3><div class="timeline-period">January 2022 &ndash; March 2023</div></div>
+<div class="timeline-company">Fox’s Biscuits &middot; UK</div>
 <ul class="timeline-achievements">
-<li>Followed production schedules, completed quality checks and maintained hygiene and safety standards while supporting daily output targets</li>
+<li><span>Followed production schedules, completed quality checks and maintained hygiene and safety standards while supporting daily output targets.</span></li>
 </ul>
 </div>
 <div class="timeline-item fade-up">
-<div class="timeline-header"><h3 class="timeline-role">Order Picker</h3><div class="timeline-period">March 2020 &mdash; December 2021</div></div>
+<div class="timeline-header"><h3 class="timeline-role">Order Picker</h3><div class="timeline-period">March 2020 &ndash; December 2021</div></div>
 <div class="timeline-company">Marks &amp; Spencer &middot; UK</div>
 <ul class="timeline-achievements">
-<li>Contributed to a 40% improvement in picking accuracy by completing orders carefully, improving stock arrangement, applying priority labelling and coordinating with the warehouse team</li>
+<li><span>Contributed to a 40% improvement in picking accuracy by completing orders carefully, improving stock arrangement, applying priority labelling and coordinating effectively with the warehouse team.</span></li>
 </ul>
 </div>
 <div class="timeline-item fade-up">
-<div class="timeline-header"><h3 class="timeline-role">Volunteer Support Worker</h3><div class="timeline-period">April 2017 &mdash; February 2020</div></div>
-<div class="timeline-company">DASH &middot; Huddersfield</div>
+<div class="timeline-header"><h3 class="timeline-role">Volunteer Support Worker</h3><div class="timeline-period">April 2017 &ndash; February 2020</div></div>
+<div class="timeline-company">DASH (Destitute Asylum Seekers, Huddersfield)</div>
 <ul class="timeline-achievements">
-<li>Maintained attendance records, supported transport-fare reimbursement, provided orientation and translation, and helped attendees access services and integrate into the community</li>
+<li><span>Maintained attendance records, supported transport-fare reimbursement, provided orientation and translation, and helped attendees access services and integrate into the community.</span></li>
 </ul>
 </div>
 <div class="timeline-item fade-up">
-<div class="timeline-header"><h3 class="timeline-role">Supply Chain and Sales Assistant</h3><div class="timeline-period">January 2009 &mdash; March 2017</div></div>
+<div class="timeline-header"><h3 class="timeline-role">Supply Chain &amp; Sales Assistant</h3><div class="timeline-period">January 2009 &ndash; March 2017</div></div>
 <div class="timeline-company">Buffalo Fisheries Ltd &middot; Nigeria</div>
 <ul class="timeline-achievements">
-<li>Supported supplier communication, orders, deliveries, customer enquiries, sales activities and basic stock functions across supply and sales operations</li>
+<li><span>Supported supplier communication, orders, deliveries, customer enquiries, sales activities and basic stock functions across supply and sales operations.</span></li>
 </ul>
 </div>
 <div class="timeline-item fade-up">
-<div class="timeline-header"><h3 class="timeline-role">Sales and Supply Representative</h3><div class="timeline-period">September 2005 &mdash; December 2008</div></div>
+<div class="timeline-header"><h3 class="timeline-role">Sales &amp; Supply Representative</h3><div class="timeline-period">September 2005 &ndash; December 2008</div></div>
 <div class="timeline-company">Azzy Egg Poultry Products &middot; Nigeria</div>
 <ul class="timeline-achievements">
-<li>Sold and supplied poultry products, maintained customer relationships, resolved enquiries and supported stock and delivery activities</li>
+<li><span>Sold and supplied poultry products, maintained customer relationships, resolved enquiries and supported stock and delivery activities.</span></li>
 </ul>
 </div>
 </div>
 </section>
+
 <section aria-labelledby="contact-title" id="contact">
 <div class="section-header fade-up">
 <div class="section-label">Get In Touch</div>
-<h2 class="section-title" id="contact-title">Let's work <em>together</em></h2>
+<h2 class="section-title" id="contact-title">Let’s work <em>together</em></h2>
 </div>
 <div class="contact-inner">
 <div class="contact-form-card fade-up">
@@ -1215,12 +645,12 @@ h1,h2,h3,p,dd,li{overflow-wrap:anywhere}
 </form>
 </div>
 <div class="contact-info fade-up">
-<p class="contact-text">I welcome conversations about Business Analyst opportunities, business analysis projects and collaborative work involving requirements, process improvement and data-informed decision-making. Please use the form below or connect with me through LinkedIn.</p>
+<p class="contact-text">I welcome conversations about Business Analyst opportunities, business analysis projects and collaborative work involving requirements, process improvement and data-informed decision-making. Please use the contact form or connect with me through LinkedIn.</p>
 <div class="contact-detail"><div class="contact-detail-icon"><i aria-hidden="true" class="fa fa-envelope"></i></div><div><div class="contact-detail-label">Email</div><div class="contact-detail-value"><a href="mailto:Olufunmianimashaun2020@gmail.com">Olufunmianimashaun2020@gmail.com</a></div></div></div>
 <div class="contact-detail"><div class="contact-detail-icon"><i aria-hidden="true" class="fa fa-location-dot"></i></div><div><div class="contact-detail-label">Location</div><div class="contact-detail-value">United Kingdom &mdash; Open to Remote</div></div></div>
 <div class="contact-detail"><div class="contact-detail-icon"><i aria-hidden="true" class="fa fa-clock"></i></div><div><div class="contact-detail-label">Availability</div><div class="contact-detail-value">Open to new opportunities</div></div></div>
 <div class="social-row">
-<a class="social-btn" href="https://www.linkedin.com/in/oluwafunmilayo-animashaun-502b76300?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=ios_app" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-linkedin-in"></i> LinkedIn</a>
+<a class="social-btn" href="https://www.linkedin.com/in/oluwafunmilayo-animashaun-502b76300" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-linkedin-in"></i> LinkedIn</a>
 <a class="social-btn" href="https://github.com/BA-olufunmi" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-github"></i> GitHub</a>
 </div>
 </div>
@@ -1230,22 +660,22 @@ h1,h2,h3,p,dd,li{overflow-wrap:anywhere}
 <footer>
 <div class="footer-copy">&copy; <span id="year">2026</span> <span>Oluwafunmilayo Animashaun</span>. All rights reserved.</div>
 <div class="footer-links">
-<a aria-label="LinkedIn" href="https://www.linkedin.com/in/oluwafunmilayo-animashaun-502b76300?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=ios_app" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-linkedin-in"></i></a>
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/oluwafunmilayo-animashaun-502b76300" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-linkedin-in"></i></a>
 <a aria-label="GitHub" href="https://github.com/BA-olufunmi" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fab fa-github"></i></a>
 <a aria-label="Email" href="mailto:Olufunmianimashaun2020@gmail.com"><i aria-hidden="true" class="fa fa-envelope"></i></a>
 </div>
 </footer>
 <script>
-/* EmailJS — public key, service and template IDs kept as in your original file */
+/* EmailJS: public key, service and template IDs kept as in your original file */
 const EMAILJS_PUBLIC_KEY='GASRmTK-sYkMyPuh9', EMAILJS_SERVICE_ID='service_d4t805k', EMAILJS_TEMPLATE_ID='template_06kkoox';
-/* TODO (owner): the original sent to oluwafunmilayoanimashaun60@gmail.com but the page shows Olufunmianimashaun2020@gmail.com. Left unchanged; confirm which is correct. */
+/* TODO (owner): the form sends to oluwafunmilayoanimashaun60@gmail.com but the page shows Olufunmianimashaun2020@gmail.com. Confirm which is correct. */
 const RECIPIENT_EMAIL='oluwafunmilayoanimashaun60@gmail.com';
 const $=id=>document.getElementById(id);
 if(window.emailjs){emailjs.init({publicKey:EMAILJS_PUBLIC_KEY});}
 
-const form=$('contact-form'), btn=$('send-btn'), btnText=$('btn-text'), btnIcon=$('btn-icon'), status=$('form-status');
+const form=$('contact-form'), btn=$('send-btn'), btnText=$('btn-text'), btnIcon=$('btn-icon'), statusEl=$('form-status');
 let sending=false;
-function setStatus(msg,type){status.textContent=msg;status.className=type||'';}
+function setStatus(msg,type){statusEl.textContent=msg;statusEl.className=type||'';}
 form.addEventListener('submit',e=>{
   e.preventDefault();
   if(sending)return;
@@ -1259,7 +689,7 @@ form.addEventListener('submit',e=>{
   btnIcon.className='fa fa-circle-notch fa-spin';btnText.textContent='Sending…';setStatus('Sending your message…');
   emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_TEMPLATE_ID,{from_name:f[0].value.trim(),from_email:f[1].value.trim(),subject:f[2].value.trim(),message:f[3].value.trim(),to_email:RECIPIENT_EMAIL})
   .then(res=>{
-    if(res&&res.status===200){setStatus("Message sent. Thank you — I'll be in touch soon.",'success');form.reset();}
+    if(res&&res.status===200){setStatus('Message sent. Thank you — I’ll be in touch soon.','success');form.reset();}
     else throw new Error('Unexpected response');
   })
   .catch(err=>{console.error('EmailJS error:',err);setStatus('Something went wrong, and your message was not sent. Please email me directly using the link below.','error');})
