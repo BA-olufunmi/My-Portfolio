@@ -589,6 +589,109 @@ h1,h2,h3,p,dd,li{overflow-wrap:anywhere}
   .project-group{margin-top:2.5rem}
   .group-head{padding-left:.9rem}
 }
+
+/* ───── HIGH-CONTRAST ACCENT FOR THE BRIGHT PAGE BACKGROUND ─────
+   Replace gold text on pale sections with deep teal/navy.
+   Gold remains reserved for dark project cards, where it is readable.
+*/
+:root {
+  --gold: #123f50;
+  --gold-light: #18566a;
+  --gold-pale: #123f50;
+  --gold-dim: rgba(18, 63, 80, 0.10);
+}
+
+/* Explicit hard-coded gold text used on the light page */
+.nav-logo,
+.nav-links a:hover,
+.nav-links a:focus-visible,
+.nav-mobile-menu a:hover,
+.hero-eyebrow,
+.hero-name em,
+.section-label,
+.section-title em,
+.about-card-title,
+.highlight-chip i,
+.cert-icon i,
+.project-facts dt,
+.project-link,
+.timeline-period,
+.timeline-company,
+.timeline-achievements li::before,
+.form-group label,
+.form-fallback a,
+.contact-detail-value a,
+.contact-detail-icon i,
+.contact-detail-label,
+.social-btn i,
+.footer-copy span,
+.footer-links a,
+.group-meta {
+  color: #123f50;
+}
+
+.section-label::before,
+.nav-links a::after {
+  background: #123f50;
+}
+
+.hero-grid-lines {
+  background-image:
+    linear-gradient(#123f50 1px, transparent 1px),
+    linear-gradient(90deg, #123f50 1px, transparent 1px);
+}
+
+.hero-focus li {
+  border-color: rgba(18, 63, 80, 0.35);
+  color: #123f50;
+}
+
+.portrait-ring {
+  border-top-color: #123f50;
+  border-right-color: #123f50;
+}
+
+.portrait-corner {
+  border-color: #123f50;
+}
+
+.btn-primary {
+  background: #123f50;
+  border-color: #123f50;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: #18566a;
+  border-color: #18566a;
+}
+
+.btn-ghost:hover,
+.projects-cta-btn:hover {
+  border-color: #123f50;
+  color: #123f50;
+}
+
+.projects-cta-btn {
+  border-color: #123f50;
+  color: #123f50;
+}
+
+.highlight-chip:hover,
+.social-btn:hover {
+  border-color: #123f50;
+}
+
+/* Keep warm gold typography on dark project cards for contrast */
+.project-card {
+  --gold: #f0cf7a;
+  --gold-light: #ffe29a;
+  --gold-pale: #fff3d0;
+}
+.project-card .project-facts dt {
+  color: #ffe29a !important;
+}
+
 </style>
 </head>
 <body>
